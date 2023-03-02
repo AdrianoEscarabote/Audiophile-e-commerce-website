@@ -5,3 +5,5 @@ export const almostBlack: string = "#141414";
 export const almostWhite: string = "#f1f1f1";
 export const black: string = "#000000";
 export const lightGray: string = "#FAFAFA";
+export const footerBackground: string = "#101010";
+export const hoverBtnMain: string = "#4C4C4C";
