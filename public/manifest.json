@@ -1,0 +1,15 @@
+{
+  "short_name": "audiophile",
+  "name": "audiophile ecommerce website",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ECF2FF",
+  "background_color": "#ECF2FF"
+}
