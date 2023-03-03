@@ -1,4 +1,4 @@
-import { FooterStyled } from "@/styles/FooterStyled"
+import { FooterStyled } from "@/components/footer/FooterStyled"
 import Image from "next/image"
 import Link from "next/link";
 
@@ -15,9 +15,9 @@ export const Footer = () => {
           />
           <div className="links">
             <Link href="/">home</Link>
-            <Link href="/">headphones</Link>
-            <Link href="/">speakers</Link>
-            <Link href="/">earphones</Link>
+            <Link href="/Headphones">headphones</Link>
+            <Link href="/Speakers">speakers</Link>
+            <Link href="/Earphones">earphones</Link>
           </div>
           
         </div>

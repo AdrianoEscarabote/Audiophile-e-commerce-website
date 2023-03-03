@@ -1,4 +1,4 @@
-import { HeaderStyled } from "@/styles/HeaderStyled";
+import { HeaderStyled } from "@/components/header/HeaderStyled";
 import { LinkSeeProduct } from "@/styles/shared/linkSeeProduct";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,10 +20,10 @@ export const Header = () => {
 
           <nav>
             <ul>
-              <li><a href="/">home</a></li>
-              <li><a href="/">headphones</a></li>
-              <li><a href="/">speakers</a></li>
-              <li><a href="/">earphones</a></li>
+              <li><Link href="/">home</Link></li>
+              <li><Link href="/Headphones">headphones</Link></li>
+              <li><Link href="/Speakers">speakers</Link></li>
+              <li><Link href="/Earphones">earphones</Link></li>
             </ul>
           </nav>
 

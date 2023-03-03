@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { footerBackground, white } from "./colors";
-import { darkOrange } from "./colors";
+import { footerBackground, white } from "../../styles/colors";
+import { darkOrange } from "../../styles/colors";
 
 export const FooterStyled = styled.footer`
 background: ${footerBackground};
@@ -52,6 +52,13 @@ p {
         text-transform: uppercase;
         text-decoration: none;
         color: ${white};
+        &:hover {
+          text-decoration: underline;
+        }
+        &:hover,
+        &:focus {
+          color: ${darkOrange};
+        }
       }
     }
   }
@@ -63,6 +70,7 @@ p {
 
     .social-icons {
       display: flex;
+      align-items: flex-start;
       gap: 20px;
     }
   }

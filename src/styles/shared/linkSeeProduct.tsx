@@ -39,6 +39,7 @@ ${({ backgroundColor, fontColor, hoverBackground, border, hoverFont }) =>
   }
   &:focus {
     background-color: ${hoverBackground};
+    color: ${hoverFont ? hoverFont : fontColor};
     border: 2.6px dotted #000;
   }
   `

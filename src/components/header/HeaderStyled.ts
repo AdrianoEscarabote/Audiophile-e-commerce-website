@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { almostBlack, white } from "./colors";
+// colors
+import { almostBlack, darkOrange, white } from "../../styles/colors";
 
 export const HeaderStyled = styled.header`
 background: ${almostBlack};
@@ -33,11 +34,19 @@ justify-content: center;
             text-transform: uppercase;
             color: #FFFFFF;
             text-decoration: none;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              text-decoration: underline;
+            }
+            &:hover,
+            &:focus {
+              color: ${darkOrange};
+            }
           }
         }
       }
     }
-
     button {
       background: transparent;
       outline: transparent;

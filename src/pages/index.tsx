@@ -6,6 +6,8 @@ import { white } from '@/styles/colors';
 import { lightOrange } from '@/styles/colors';
 import Image from 'next/image';
 import { hoverBtnMain } from '@/styles/colors';
+import ListProducts from '@/components/list_products/ListProducts';
+import InfoComponent from '@/components/infoSection/InfoComponent';
 
 export default function Home() {
 
@@ -25,35 +27,7 @@ export default function Home() {
         </div>
       </section>
       <div className="container">
-        <div className="links-products">
-          <a href="/">
-            <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-headphones.png" width="200" height="200" alt=""  />
-            <p>headphones
-              <span>
-                shop
-                <Image src="/assets/shared/desktop/icon-arrow-right.svg" alt="" width="5" height="12" />
-              </span>
-            </p>
-          </a>
-          <a href="/">
-            <Image className='img'  src="/assets/shared/desktop/image-category-thumbnail-speakers.png"  width="200" height="200" alt=""  />
-            <p>speakers
-              <span>
-                shop
-                <Image  src="/assets/shared/desktop/icon-arrow-right.svg" width="5" height="12" alt="" />
-              </span>
-            </p>
-          </a>
-          <a href="/">
-            <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="200" height="200" alt=""  />
-            <p>earphones
-              <span>
-                shop
-                <Image src="/assets/shared/desktop/icon-arrow-right.svg" width="5" height="12" alt="" />
-              </span>
-            </p>
-          </a>
-        </div>
+        <ListProducts />
         <section className="grid-items">
           <div className="zx9-speaker">
             <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="410" height="493" />
@@ -69,9 +43,16 @@ export default function Home() {
               <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct>
             </div>
           </div>
+          <div className="yx1-earphones">
+            <Image src="/assets/home/desktop/image-earphones-yx1.jpg" alt="" width="540" height="320" />
+            <div className="text">
+              <h3>YX1 EARPHONES</h3>
+              <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct>
+            </div>
+          </div>
         </section>
+        <InfoComponent />
       </div>
-      <Link href="/About">Ir para o About</Link>
     </MainStyled>
   );
 };

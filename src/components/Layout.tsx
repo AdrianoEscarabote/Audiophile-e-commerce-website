@@ -1,5 +1,5 @@
-import { Header } from "./Header"
-import { Footer } from "./Footer"
+import { Header } from "./header/Header"
+import { Footer } from "./footer/Footer"
 import React, { ReactNode } from "react"
 
 interface LayoutProps {
@@ -13,5 +13,5 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       { children }
       <Footer />
     </>
-  )
-}
+  );
+};
