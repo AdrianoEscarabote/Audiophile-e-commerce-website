@@ -1,11 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import ListProductsStyled from "./ListProductsStyled";
 
-const ListProducts = () => {
+interface ListProps {
+  className?: string
+}
+
+const ListProducts: React.FC<ListProps> = ({ className }) => {
   return (
-    <ListProductsStyled>
+    <ListProductsStyled className={className}>
       <li>
-        <a href="/">
+        <Link href="/Headphones">
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-headphones.png" width="200" height="200" alt=""  />
           <p>headphones
             <span>
@@ -13,10 +18,10 @@ const ListProducts = () => {
               <Image src="/assets/shared/desktop/icon-arrow-right.svg" alt="" width="5" height="12" />
             </span>
           </p>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/">
+        <Link href="/Speakers">
           <Image className='img'  src="/assets/shared/desktop/image-category-thumbnail-speakers.png"  width="200" height="200" alt=""  />
           <p>speakers
             <span>
@@ -24,10 +29,10 @@ const ListProducts = () => {
               <Image  src="/assets/shared/desktop/icon-arrow-right.svg" width="5" height="12" alt="" />
             </span>
           </p>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/">
+        <Link href="/Earphones">
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="200" height="200" alt=""  />
           <p>earphones
             <span>
@@ -35,7 +40,7 @@ const ListProducts = () => {
               <Image src="/assets/shared/desktop/icon-arrow-right.svg" width="5" height="12" alt="" />
             </span>
           </p>
-        </a>
+        </Link>
       </li>
     </ListProductsStyled>
   )

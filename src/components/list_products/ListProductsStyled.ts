@@ -73,5 +73,10 @@ li {
     opacity: 0.5;
   }
 }
+
+// tablet
+@media (max-width: 768px) {
+  
+}
 `
 export default ListProductsStyled;
