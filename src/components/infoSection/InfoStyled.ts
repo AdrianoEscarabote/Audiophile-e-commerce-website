@@ -39,6 +39,14 @@ img {
     mix-blend-mode: normal;
     opacity: 0.5;
   }
-}`
+}
+
+@media (max-width: 828px) {
+  display: flex !Important;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+`
 
 export default InfoStyled;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // colors
-import { almostBlack, darkOrange, white } from "../../styles/colors";
+import { almostBlack, black, darkOrange, white } from "../../styles/colors";
 
 export const HeaderStyled = styled.header`
 background: ${almostBlack};
@@ -62,6 +62,29 @@ justify-content: center;
       background: transparent;
       outline: transparent;
       border: transparent;
+      cursor: pointer;
+      position: relative;
+
+      span {
+        background: ${darkOrange};
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 90%;
+        height: auto;
+        font-size: 12px;
+      }
+    
+      &:hover,
+      &:focus {
+        img {
+          filter: invert(56%) sepia(73%) saturate(391%) hue-rotate(336deg) brightness(86%) contrast(97%);
+        }
+      }
+      &:focus {
+        border: 1px dotted ${white};
+      }
     }
   }
 }

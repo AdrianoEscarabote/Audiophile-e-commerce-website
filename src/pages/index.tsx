@@ -17,7 +17,7 @@ export default function Home() {
       <Head>
         <title>Audiophile e-commerce website</title>
       </Head>
-      {/* <MainStyled>
+      <MainStyled>
         <section className="hero-image">
           <div className="content">
             <div className="col1">
@@ -25,9 +25,6 @@ export default function Home() {
               <h1>XX99 Mark II Headphones</h1>
               <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
               <LinkSeeProduct href='/' backgroundColor={darkOrange} fontColor={white} hoverBackground={lightOrange}>see product</LinkSeeProduct>
-            </div>
-            <div className="col2">
-              <Image src="/assets/home/desktop/image-hero.jpg" alt='' width="120" height="120" className='image' />
             </div>
           </div>
         </section>
@@ -49,7 +46,13 @@ export default function Home() {
               </div>
             </div>
             <div className="yx1-earphones">
-              <Image src="/assets/home/desktop/image-earphones-yx1.jpg" alt="" width="540" height="320" />
+              <picture>
+                <source
+                  srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
+                  media="(max-width: 828px)"
+                />
+                <Image src="/assets/home/desktop/image-earphones-yx1.jpg" alt="" width="540" height="320" />
+              </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
                 <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct>
@@ -58,7 +61,7 @@ export default function Home() {
           </section>
           <InfoComponent />
         </div>
-      </MainStyled> */}
+      </MainStyled>
     </>
   );
 };

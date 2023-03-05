@@ -8,9 +8,14 @@ import ListProductsStyled from "../list_products/ListProductsStyled";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [cartOpen, setCartOpen] = useState<boolean>(false)
 
   const handleClickMenu = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true)
+  }
+
+  const handleClickCart = () => {
+    cartOpen ? setCartOpen(false) : setCartOpen(true)    
   }
   
   return (
@@ -45,14 +50,14 @@ export const Header = () => {
             <ListProducts className={menuOpen ? "list-mobile" : "list-mobile-closed"}/>
           </nav>
 
-          <button>
+          <button className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
             <Image 
             src="./assets/shared/desktop/icon-cart.svg"
             width="23"
             height="20"
             alt="" />
+            <span></span>
           </button>
-
         </div>   
 
       </div>

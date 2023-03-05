@@ -25,6 +25,9 @@ align-items: center;
     grid-template-columns: 50% 50%;
     height: 632px;
     place-content: center;
+    background: url("./assets/home/desktop/image-hero.jpg") no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px -40px;
 
     .col1 {
       max-width: 398px;
@@ -61,13 +64,6 @@ align-items: center;
       
       a {
         margin-top: 10px;
-      }
-    }
-    .col2 {
-      position: relative;
-      z-index: 1;
-      img {
-        height: 100% !Important;
       }
     }
   }
@@ -162,6 +158,70 @@ align-items: center;
         justify-content: center;
         border-radius: 8px;
         background: ${almostWhite};
+      }
+    }
+  }
+}
+
+@media(max-width: 1148px) {
+  .container {
+    padding: 120px 60px 30px 60px;
+  }
+
+  .content {
+    padding: 30px 60px !important;
+  } 
+
+  .zx9-speaker {
+    .text {
+      padding: 0px !important;
+    }
+  }
+} 
+
+@media (max-width: 828px) {
+  .hero-image {
+    background: url("./assets/home/tablet/image-hero.jpg") no-repeat;
+  }
+  .content {
+    display: flex !Important;
+    align-items: center;
+    justify-content: center;
+    background-position: unset !Important;
+    
+    .col1 {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .grid-items {
+    grid-template-rows: 720px 320px 320px !Important;    
+
+    .zx9-speaker {
+      flex-direction: column;
+      background-position: center -280px !Important;
+  
+      img {
+        width: 197px;
+        height: 237px;
+        position: initial !Important;   
+      }
+      .text {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .zx7-speaker {
+      background: url("./assets/home/tablet/image-speaker-zx7.jpg") no-repeat 100% !Important;
+      .text {
+        padding-left: 62px;
+      }
+    }
+    .yx1-earphones {
+      .text {
+        padding-left: 40px;
       }
     }
   }

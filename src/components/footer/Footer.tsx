@@ -7,19 +7,20 @@ export const Footer = () => {
     <FooterStyled>
       <div className="container">
         <div className="row1">
-          <Image 
-            src="/assets/shared/desktop/logo.svg"
-            width="143"
-            height="25"
-            alt=""
-          />
+          <Link href="/">
+            <Image 
+              src="/assets/shared/desktop/logo.svg"
+              width="143"
+              height="25"
+              alt=""
+            />
+          </Link>
           <div className="links">
             <Link href="/">home</Link>
             <Link href="/Headphones">headphones</Link>
             <Link href="/Speakers">speakers</Link>
             <Link href="/Earphones">earphones</Link>
           </div>
-          
         </div>
         <div className="row2">
           <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>

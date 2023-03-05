@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { footerBackground, white } from "../../styles/colors";
-import { darkOrange } from "../../styles/colors";
+
+// colors
+import { footerBackground, white, darkOrange} from "../../styles/colors";
 
 export const FooterStyled = styled.footer`
 background: ${footerBackground};
@@ -11,26 +12,26 @@ align-items: center;
 justify-content: center;
 
 p {
-  max-width: 540px;
+  max-width: 33.75rem;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
   mix-blend-mode: normal;
   opacity: 0.5;
 }
 
 .container {
-  max-width: 1440px;
-  padding: 30px 165px;
+  max-width: 90rem;
+  padding: 1.875rem 10.3125rem;
   width: 100%;
 
   &::before {
     content: "";
-    width: 101px;
-    height: 4px;
+    width: 6.3125rem;
+    height: 0.25rem;
     background: ${darkOrange};
     position: absolute;
-    top: 0px;
+    top: 0rem;
   }
 
   .row1 {
@@ -42,13 +43,13 @@ p {
     .links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 1.25rem;
 
       a {
         font-weight: 700;
-        font-size: 13px;
-        line-height: 25px;
-        letter-spacing: 2px;
+        font-size: 0.8125rem;
+        line-height: 1.5625rem;
+        letter-spacing: 0.125rem;
         text-transform: uppercase;
         text-decoration: none;
         color: ${white};
@@ -63,7 +64,7 @@ p {
     }
   }
   .row2 {
-    margin-top: 36px;
+    margin-top: 2.25rem;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -71,22 +72,22 @@ p {
     .social-icons {
       display: flex;
       align-items: flex-start;
-      gap: 20px;
+      gap: 1.25rem;
     }
   }
   .row3 {
-    margin-top: 36px;
+    margin-top: 2.25rem;
     display: flex;
   }
 }
 
-@media(max-width: 1148px) {
+@media(max-width: 71.75rem) {
   .container {
-    padding: 30px 60px;
+    padding: 1.875rem 3.75rem;
   }
   .row1 {
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: flex-start !Important;
   }
   .social-icons {
@@ -95,11 +96,11 @@ p {
 }
 
 // tablet
-@media(max-width: 768px) {
+@media(max-width: 48rem) {
   .social-icons {
     position: absolute;
-    bottom: 30px;
-    right: 60px;
+    bottom: 1.875rem;
+    right: 3.75rem;
   }
   .links {
     flex-wrap: wrap;
@@ -107,9 +108,9 @@ p {
 }
 
 // mobile
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .container {
-    padding: 30px 20px;
+    padding: 1.875rem 1.25rem 0rem;
     text-align: center;
   }
   .row1 {
@@ -120,17 +121,21 @@ p {
       align-items: center !Important;
     }
   }
+  .row2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5625rem;
+  }
   .row3 {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     p {
       text-align: center;
     }
   }
   .social-icons {
-    left: 2% !Important;
+    position: initial;
   }
-}
-`
+}`
