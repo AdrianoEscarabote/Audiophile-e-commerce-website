@@ -13,8 +13,19 @@ const InfoComponent = () => {
         <source
           srcSet="/assets/shared/tablet/image-best-gear.jpg"
           media="(max-width: 828px)"
+          height={300}
         />
-        <Image src="/assets/shared/desktop/image-best-gear.jpg" width="540" height="588" alt=""/>
+        <source
+          srcSet="/assets/shared/mobile/image-best-gear.jpg"
+          media="(max-width: 480px)"
+          height={300}
+        />
+        <Image
+          src="/assets/shared/desktop/image-best-gear.jpg"
+          alt=""
+          width={540}
+          height={588}
+        />
       </picture>
     </InfoStyled>
   );

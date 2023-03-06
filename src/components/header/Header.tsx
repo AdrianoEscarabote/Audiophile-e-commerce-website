@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <div className="container">
-
+    
         <div className="content">
 
           <div className="wrapper">

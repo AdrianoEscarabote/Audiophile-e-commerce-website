@@ -21,7 +21,7 @@ li {
     text-decoration: none;
     background: ${almostWhite};
     border-radius: 8px;
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     &:focus {
       span {
         transform: scale(104%);

@@ -179,24 +179,42 @@ align-items: center;
   }
 } 
 
+// tablet
 @media (max-width: 828px) {
   .hero-image {
-    background: url("./assets/home/tablet/image-hero.jpg") no-repeat;
   }
   .content {
     display: flex !Important;
     align-items: center;
     justify-content: center;
-    background-position: unset !Important;
+    background: url("./assets/home/tablet/image-hero.jpg") no-repeat !Important;
+    background-size: 100% 90% !Important;
+    background-position: center -0px !Important;
     
     .col1 {
       align-items: center;
       text-align: center;
     }
   }
+  .container {
+    ul {
+      gap: 90px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+
+      li {
+        display: flex;
+        justify-content: center;
+      }
+
+      a {
+        margin: 0px !important;
+      }
+    }
+  }
 
   .grid-items {
-    grid-template-rows: 720px 320px 320px !Important;    
+    grid-template-rows: 720px 320px auto !Important;    
 
     .zx9-speaker {
       flex-direction: column;
@@ -223,6 +241,77 @@ align-items: center;
       .text {
         padding-left: 40px;
       }
+    }
+  }
+}
+
+// mobile
+@media (max-width: 584px) {
+  header {
+    .container {
+      padding: 35px 20px 0px 20px !Important;
+    }
+  }
+  .content {
+    height: 510px !Important;
+    padding: 0px 20px 30px 20px !Important;
+    background: url("./assets/home/mobile/image-hero.jpg") no-repeat !Important;
+    background-size: 100% 90% !Important;
+    background-position: center -0px !Important;
+    .wrapper {
+      width: 100%;
+      justify-content: space-between !Important;
+    }
+    .col1 {
+      h1 {
+        font-size: 36px !Important;
+        line-height: 40px !Important;
+      }
+    }
+  }
+  .container {
+    padding: 120px 20px 30px 20px;
+    ul {
+      gap: 60px;
+      a {
+        height: 165px;
+      }
+      .img {
+        top: -45px;
+        width: auto;
+        height: 144px;
+      }
+      p {
+        font-size: 15px !Important;
+        line-height: 20px !Important;
+      }
+    }
+  }
+  .grid-items {
+    margin-top: 120px !Important;
+    grid-template-rows: 600px 320px auto !Important; 
+    .yx1-earphones {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .text {
+        padding: 41px !Important;
+        width: 100%;
+      }
+    }
+    .zx9-speaker {
+      background-position: center -135px !Important;
+      background-size: 720px !Important;
+      h2 {
+        font-size: 36px !Important;
+        line-height: 40px !Important;
+      }
+    }
+    .zx7-speaker {
+      background: url("/assets/home/mobile/image-speaker-zx7.jpg") no-repeat !Important;
+      background-size: 100% 100%;
+      background-position: right !Important;
     }
   }
 }`

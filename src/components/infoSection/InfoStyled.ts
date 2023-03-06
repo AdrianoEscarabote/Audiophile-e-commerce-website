@@ -42,10 +42,12 @@ img {
 }
 
 @media (max-width: 828px) {
+  margin: 96px 0px;
   display: flex !Important;
   flex-direction: column-reverse;
   align-items: center;
-  text-align: center;
+  text-align: center;  
+  gap: 20px;
 }
 `
 

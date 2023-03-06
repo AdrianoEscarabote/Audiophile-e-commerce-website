@@ -119,7 +119,7 @@ justify-content: center;
 }
 
 // mobile
-@media (max-width: 375px) {
+@media (max-width: 584px) {
   .container {
     padding: 30px 20px;
   }

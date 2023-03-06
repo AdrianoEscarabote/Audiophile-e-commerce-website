@@ -112,6 +112,10 @@ p {
   .container {
     padding: 1.875rem 1.25rem 0rem;
     text-align: center;
+
+    &::before {
+      left: 38%;
+    }
   }
   .row1 {
     align-items: center !Important;
