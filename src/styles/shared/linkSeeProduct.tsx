@@ -1,7 +1,8 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 interface LinkProps {
-  backgroundColor: string;
+  backgroundcolor: string;
   fontColor: string;
   hoverBackground: string;
   border?: string;
@@ -14,7 +15,7 @@ interface LinkProps {
 // button 2 default
 {/* <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct> */}
 
-export const LinkSeeProduct = styled.a<LinkProps>`
+export const LinkSeeProduct = styled(Link)<LinkProps>`
 display: grid;
 place-content: center;
 width: 160px;
@@ -28,9 +29,9 @@ text-transform: uppercase;
 outline: transparent;
 cursor: pointer;
 transition: 0.2s ease-in-out;
-${({ backgroundColor, fontColor, hoverBackground, border, hoverFont }) =>
-  backgroundColor && `
-  background-color: ${backgroundColor};
+${({ backgroundcolor, fontColor, hoverBackground, border, hoverFont }) =>
+backgroundcolor && `
+  background-color: ${backgroundcolor};
   border: ${border ? border: "unset"};
   color: ${fontColor};
   &:hover {

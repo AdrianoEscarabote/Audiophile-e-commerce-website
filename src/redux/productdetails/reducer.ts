@@ -1,5 +1,9 @@
 import ProductTypes from "./action-type";
 
+const initialState = {
+  name: ""
+}
+
 interface stateProps {
   name: string
 };
@@ -9,7 +13,7 @@ interface ActionProps {
   payload: string
 };
 
-const productReducer = (state: stateProps, action: ActionProps) => {
+const productReducer = (state: stateProps = initialState, action: ActionProps) => {
   switch(action.type) {
     case ProductTypes.SHOW_PRODUCT:
       return {

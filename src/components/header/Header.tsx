@@ -1,10 +1,8 @@
 import { HeaderStyled } from "@/components/header/HeaderStyled";
-import { LinkSeeProduct } from "@/styles/shared/linkSeeProduct";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ListProducts from "../list_products/ListProducts";
-import ListProductsStyled from "../list_products/ListProductsStyled";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
