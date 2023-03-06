@@ -9,13 +9,21 @@ import { hoverBtnMain } from '@/styles/colors';
 import ListProducts from '@/components/list_products/ListProducts';
 import InfoComponent from '@/components/infoSection/InfoComponent';
 import Head from 'next/head';
+import { useDispatch } from 'react-redux';
+import { findProduct } from '@/redux/productdetails/actions';
 
 export default function Home() {
+  const dispatch = useDispatch()
+
+  const HandleClickLink = (name: string) => {
+    dispatch(findProduct(name))
+  }
 
   return (
     <>
       <Head>
         <title>Audiophile e-commerce website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <MainStyled>
         <section className="hero-image">
@@ -24,7 +32,7 @@ export default function Home() {
               <h2>new product</h2>
               <h1>XX99 Mark II Headphones</h1>
               <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-              <LinkSeeProduct href='/' backgroundColor={darkOrange} fontColor={white} hoverBackground={lightOrange}>see product</LinkSeeProduct>
+              <LinkSeeProduct href='/' backgroundColor={darkOrange} fontColor={white} hoverBackground={lightOrange} onClick={(e) => HandleClickLink(e.currentTarget.innerText)}>see product</LinkSeeProduct>
             </div>
           </div>
         </section>
@@ -36,13 +44,13 @@ export default function Home() {
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <LinkSeeProduct backgroundColor={black} hoverBackground={hoverBtnMain} hoverFont="#FFFFFF" fontColor={white} border="1px solid #000000" href="/About">see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundColor={black} hoverBackground={hoverBtnMain} hoverFont="#FFFFFF" fontColor={white} border="1px solid #000000" href="/About" onClick={(e) => HandleClickLink(e.currentTarget.innerText)}>see product</LinkSeeProduct>
               </div>
             </div>
             <div className="zx7-speaker">
               <div className="text">
                 <h3>zx7 speaker</h3>
-                <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About" onClick={(e) => HandleClickLink(e.currentTarget.innerText)}>see product</LinkSeeProduct>
               </div>
             </div>
             <div className="yx1-earphones">
@@ -55,7 +63,7 @@ export default function Home() {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About" onClick={(e) => HandleClickLink(e.currentTarget.innerText)}>see product</LinkSeeProduct>
               </div>
             </div>
           </section>

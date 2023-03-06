@@ -10,6 +10,7 @@ const Earphones = () => {
     <>
       <Head>
         <title>Audiophile - Earphones</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <EarphonesStyled>
         <div className="wrapper">

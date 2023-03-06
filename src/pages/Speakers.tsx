@@ -11,6 +11,7 @@ const Speakers = () => {
     <>
       <Head>
         <title>Audiophile - Speakers</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SpeakersStyled>
         <div className="wrapper">
