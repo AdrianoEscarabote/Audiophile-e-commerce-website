@@ -11,7 +11,7 @@ const ProductDetailStyled = styled.main`
     width: 100%;
     padding: 60px 165px 30px 165px;
 
-    a {
+    .back {
       font-weight: 500;
       font-size: 15px;
       line-height: 25px;
@@ -155,6 +155,10 @@ const ProductDetailStyled = styled.main`
           }
         }
       }
+    }
+
+    ul {
+      margin-top: 160px;
     }
   }
 `
