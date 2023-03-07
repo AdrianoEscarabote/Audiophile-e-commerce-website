@@ -45,7 +45,10 @@ export const Header = () => {
               <li><Link href="/Speakers">speakers</Link></li>
               <li><Link href="/Earphones">earphones</Link></li>
             </ul>
-            <ListProducts className={menuOpen ? "list-mobile" : "list-mobile-closed"}/>
+            <div className={menuOpen ? "list-mobile open" : "list-mobile"}>
+              <ListProducts />
+              <div className="shadow"></div>
+            </div>
           </nav>
 
           <button className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
