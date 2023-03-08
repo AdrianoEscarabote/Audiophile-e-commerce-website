@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darkOrange, white } from "./colors";
+import { almostBlack, almostWhite, darkOrange, lightOrange, white } from "./colors";
 
 const ProductDetailStyled = styled.main`
   display: flex;
@@ -76,21 +76,64 @@ const ProductDetailStyled = styled.main`
           color: #000000;
         }
 
-        button {
-          background: ${darkOrange};
-          font-weight: 700;
-          font-size: 13px;
-          line-height: 18px;
-          letter-spacing: 1px;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: ${white};
-          outline: transparent;
-          border: transparent;
-          cursor: pointer;
-          transition: 0.2s ease-in-out;
-          max-width: 160px;
-          height: 48px;
+        .wrapper {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .container-button {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 120px;
+            height: 48px;
+            background: ${almostWhite};
+
+            button {
+              cursor: pointer;
+              width: 16px;
+              heihgt: 18px;
+              background: transparent;
+              border: transparent;
+              height: auto;
+
+              &:hover {
+                color: ${darkOrange};
+              }
+
+              &:focus {
+                color: ${darkOrange};
+                outline: 2px dotted ${almostBlack};
+              }
+            }
+          }
+
+          .add {
+            background: ${darkOrange};
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: ${white};
+            outline: transparent;
+            border: transparent;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            max-width: 160px;
+            width: 100%;
+            height: 48px;
+  
+            &:hover {
+              background: ${lightOrange};
+            }
+  
+            &:focus {
+              border: 2.6px dotted ${almostBlack};
+              background: ${lightOrange};
+            }
+          }
         }
       }
     }

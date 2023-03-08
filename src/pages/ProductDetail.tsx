@@ -2,21 +2,22 @@ import ProductDetailStyled from "../styles/ProductDetailStyled";
 import { useSelector } from "react-redux";
 import rootReducer from "@/redux/root-reducer";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridImages from "@/components/gridImages/GridImages";
 import AlsoLike from "@/components/alsoLike/AlsoLike";
 import ListProducts from "@/components/list_products/ListProducts";
 import InfoComponent from "@/components/infoSection/InfoComponent";
+import useFetch from "@/custom/useFetch";
 
 interface productState {
   name: string
-}
+};
 
 interface RootState {
   productReducer: productState;
-} 
+} ;
 
 const gallery = {
   first: {
@@ -34,7 +35,7 @@ const gallery = {
     tablet: "./assets/product-yx1-earphones/tablet/image-gallery-3.jpg",
     desktop: "./assets/product-yx1-earphones/desktop/image-gallery-3.jpg"
   }
-}
+};
 
 interface AlsoLikeProps {
   others: {
@@ -46,7 +47,7 @@ interface AlsoLikeProps {
       desktop: string;
     };
   }[];
-}
+};
 
 const others: AlsoLikeProps["others"] = [
   {
@@ -78,16 +79,25 @@ const others: AlsoLikeProps["others"] = [
   },
 ];
 
-
 const ProductDetail = () => {
   
   const { name } = useSelector((rootReducer: RootState) => rootReducer.productReducer);
 
   useEffect(() => {
     console.log(name)
-  }, []) 
+  }, [])
+
+  const increaseQuantity = () => {
+    setQuantity((quantity) => quantity + 1)
+  }
+
+  const decreaseQuantity = () => {
+    quantity === 1 ? null : setQuantity((quantity) => quantity - 1)
+  }
 
   // usar o {name} para acessar os dados!
+
+  const [quantity, setQuantity] = useState<number>(1)
 
   return (
     <>
@@ -105,7 +115,14 @@ const ProductDetail = () => {
               <h1>XX99 Mark II Headphones</h1>
               <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
               <span className="price">$ 2,999</span>
-              <button>add to cart</button>
+              <div className="wrapper">
+                <div className="container-button">
+                  <button onClick={decreaseQuantity}>-</button>
+                  <span>{quantity}</span>
+                  <button onClick={increaseQuantity}>+</button>
+                </div>
+                <button className="add">add to cart</button>
+              </div>
             </div>
           </section>
           <section className="details">

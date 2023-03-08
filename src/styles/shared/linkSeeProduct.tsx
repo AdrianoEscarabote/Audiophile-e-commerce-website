@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 interface LinkProps {
   backgroundcolor: string;
-  fontColor: string;
-  hoverBackground: string;
+  fontcolor: string;
+  hoverbackground: string;
   border?: string;
-  hoverFont?: string;
+  hoverfont?: string;
 }
 
 // button 1 default
@@ -29,18 +29,18 @@ text-transform: uppercase;
 outline: transparent;
 cursor: pointer;
 transition: 0.2s ease-in-out;
-${({ backgroundcolor, fontColor, hoverBackground, border, hoverFont }) =>
+${({ backgroundcolor, fontcolor, hoverbackground, border, hoverfont }) =>
 backgroundcolor && `
   background-color: ${backgroundcolor};
   border: ${border ? border: "unset"};
-  color: ${fontColor};
+  color: ${fontcolor};
   &:hover {
-    background-color: ${hoverBackground};
-    color: ${hoverFont ? hoverFont : fontColor};
+    background-color: ${hoverbackground};
+    color: ${hoverfont ? hoverfont : fontcolor};
   }
   &:focus {
-    background-color: ${hoverBackground};
-    color: ${hoverFont ? hoverFont : fontColor};
+    background-color: ${hoverbackground};
+    color: ${hoverfont ? hoverfont : fontcolor};
     border: 2.6px dotted #000;
   }
   `

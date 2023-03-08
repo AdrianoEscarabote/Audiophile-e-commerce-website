@@ -34,7 +34,7 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
           {
             others &&
             others.map((item: ItemTypes, index) => (
-              <div className={"col" + (index + 1)}>
+              <div key={index + 1} className={"col" + (index + 1)}>
                 <picture>
                   <source
                     srcSet={item.image.tablet}
@@ -49,7 +49,7 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
                   <Image src={item.image.desktop} alt="" width={350} height={318} />
                 </picture>
                 <h4>{item.name}</h4>
-                <LinkSeeProduct backgroundcolor="#D87D4A" hoverBackground="#FBAF85" fontColor="#FFFFFF" href="/">see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/">see product</LinkSeeProduct>
               </div>
             ))
           }

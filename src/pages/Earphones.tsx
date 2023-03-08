@@ -23,7 +23,7 @@ const Earphones = () => {
                 <span>new product</span>
                 <h2>YX1 WIRELESS EARPHONES</h2>
                 <p>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
-                <LinkSeeProduct backgroundColor="#D87D4A" hoverBackground="#FBAF85" fontColor="#FFFFFF" href="/">see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/">see product</LinkSeeProduct>
               </div>
             </section>
             <ListProducts />
