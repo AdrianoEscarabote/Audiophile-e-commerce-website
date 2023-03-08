@@ -1,31 +1,10 @@
 import { LinkSeeProduct } from "@/styles/shared/linkSeeProduct";
 import Image from "next/image";
 import AlsoLikeStyled from "./AlsoLikeStyled";
-
-interface ItemTypes {
-  slug: string;
-  name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  }
-}
-
-interface AlsoLikeProps {
-  others: {
-    slug: string;
-    name: string;
-    image: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-  }[];
-}
+import { ItemTypes, AlsoLikeProps } from "@/types/AlsoLikeProps";
 
 const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
-
+  
   return (
     <AlsoLikeStyled>
       <h3>you may also like</h3>
@@ -56,7 +35,7 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
         </>
       </div>
     </AlsoLikeStyled>
-  )
-}
+  );
+};
 
 export default AlsoLike;

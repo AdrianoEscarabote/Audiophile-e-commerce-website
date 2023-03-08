@@ -8,6 +8,7 @@ export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState<boolean>(false)
 
+  // click functions
   const handleClickMenu = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true)
   }

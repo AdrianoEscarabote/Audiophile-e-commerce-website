@@ -10,6 +10,7 @@ import AlsoLike from "@/components/alsoLike/AlsoLike";
 import ListProducts from "@/components/list_products/ListProducts";
 import InfoComponent from "@/components/infoSection/InfoComponent";
 import useFetch from "@/custom/useFetch";
+import { DataProps } from "@/types/ProductDetailsProps";
 
 interface productState {
   name: string
@@ -17,76 +18,22 @@ interface productState {
 
 interface RootState {
   productReducer: productState;
-} ;
-
-const gallery = {
-  first: {
-    mobile: "./assets/product-yx1-earphones/mobile/image-gallery-1.jpg",
-    tablet: "./assets/product-yx1-earphones/tablet/image-gallery-1.jpg",
-    desktop: "./assets/product-yx1-earphones/desktop/image-gallery-1.jpg"
-  },
-  second: {
-    mobile: "./assets/product-yx1-earphones/mobile/image-gallery-2.jpg",
-    tablet: "./assets/product-yx1-earphones/tablet/image-gallery-2.jpg",
-    desktop: "./assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
-  },
-  third: {
-    mobile: "./assets/product-yx1-earphones/mobile/image-gallery-3.jpg",
-    tablet: "./assets/product-yx1-earphones/tablet/image-gallery-3.jpg",
-    desktop: "./assets/product-yx1-earphones/desktop/image-gallery-3.jpg"
-  }
 };
-
-interface AlsoLikeProps {
-  others: {
-    slug: string;
-    name: string;
-    image: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-  }[];
-};
-
-const others: AlsoLikeProps["others"] = [
-  {
-    slug: "xx99-mark-one-headphones",
-    name: "XX99 Mark I",
-    image: {
-      mobile: "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
-      tablet: "/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-      desktop: "/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
-    },
-  },
-  {
-    slug: "xx59-headphones",
-    name: "XX59",
-    image: {
-      mobile: "/assets/shared/mobile/image-xx59-headphones.jpg",
-      tablet: "/assets/shared/tablet/image-xx59-headphones.jpg",
-      desktop: "/assets/shared/desktop/image-xx59-headphones.jpg",
-    },
-  },
-  {
-    slug: "zx9-speaker",
-    name: "ZX9 Speaker",
-    image: {
-      mobile: "/assets/shared/mobile/image-zx9-speaker.jpg",
-      tablet: "/assets/shared/tablet/image-zx9-speaker.jpg",
-      desktop: "/assets/shared/desktop/image-zx9-speaker.jpg",
-    },
-  },
-];
 
 const ProductDetail = () => {
-  
+  const [quantity, setQuantity] = useState<number>(1)
   const { name } = useSelector((rootReducer: RootState) => rootReducer.productReducer);
 
   useEffect(() => {
     console.log(name)
   }, [])
 
+  const { data } = useFetch();
+  const dataFormated: DataProps[] = data.filter((product: any) => product.name === name)
+
+  console.log(dataFormated)
+
+  // increse and decrease button
   const increaseQuantity = () => {
     setQuantity((quantity) => quantity + 1)
   }
@@ -94,10 +41,6 @@ const ProductDetail = () => {
   const decreaseQuantity = () => {
     quantity === 1 ? null : setQuantity((quantity) => quantity - 1)
   }
-
-  // usar o {name} para acessar os dados!
-
-  const [quantity, setQuantity] = useState<number>(1)
 
   return (
     <>
@@ -108,67 +51,67 @@ const ProductDetail = () => {
       <ProductDetailStyled>
         <div className="container">
           <Link href="/" className="back">Go Back</Link>
-          <section className="grid-items">
-            <Image src="/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg" alt="" width="540" height="560" />
-            <div className="text">
-              <h2>new product</h2>
-              <h1>XX99 Mark II Headphones</h1>
-              <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-              <span className="price">$ 2,999</span>
-              <div className="wrapper">
-                <div className="container-button">
-                  <button onClick={decreaseQuantity}>-</button>
-                  <span>{quantity}</span>
-                  <button onClick={increaseQuantity}>+</button>
-                </div>
-                <button className="add">add to cart</button>
-              </div>
-            </div>
-          </section>
-          <section className="details">
-            <div className="features">
-              <h3>features</h3>
-              <p>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.</p>
-              <p>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
-            </div>
-            <div className="list-box">
-              <h3>in the box</h3>
-              <ul>
-                <li>
-                  <p>
-                    <span>1x</span>
-                    Headphone Unit
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span>2x</span>
-                    Replacement Earcups
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span>1x</span>
-                    User Manual
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span>1x</span>
-                    3.5mm 5m Audio Cable
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span>1x</span>
-                    Travel Bag
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <GridImages gallery={gallery} />  
-          <AlsoLike others={others}/>
+          <>
+            {
+              dataFormated &&
+              dataFormated.map(product => (
+                <>
+                  <section className="grid-items">
+                    <picture>
+                      <source
+                        srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
+                        media="(max-width: 828px)"
+                      />
+                      <source
+                        srcSet="/assets/shared/mobile/image-best-gear.jpg"
+                        media="(max-width: 480px)"
+                        height={300}
+                      />
+                      <Image src={product.image.desktop} alt="" width={540} height={560} />
+                    </picture>
+                    <div className="text">
+                      <h2>{product.new ? "new product" : null}</h2>
+                      <h1>{product.name}</h1>
+                      <p>{product.description}</p>
+                      <span className="price">{product.price}</span>
+                      <div className="wrapper">
+                        <div className="container-button">
+                          <button onClick={decreaseQuantity}>-</button>
+                          <span>{quantity}</span>
+                          <button onClick={increaseQuantity}>+</button>
+                        </div>
+                        <button className="add">add to cart</button>
+                      </div>
+                    </div>
+                  </section>
+                  <section className="details">
+                    <div className="features">
+                      <h3>features</h3>
+                      <p>{product.feature1}</p>
+                      <p>{product.feature2}</p>
+                    </div>
+                    <div className="list-box">
+                      <h3>in the box</h3>
+                      <ul>
+                        {
+                          product.includes.map((item) => (
+                            <li>
+                              <p>
+                                <span>{item.quantity}x</span>
+                                {item.item}
+                              </p>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  </section>
+                  <GridImages gallery={product.gallery} />
+                  <AlsoLike others={product.others} />
+                </>
+              ))
+            }
+          </>
           <ListProducts />
           <InfoComponent />
         </div>

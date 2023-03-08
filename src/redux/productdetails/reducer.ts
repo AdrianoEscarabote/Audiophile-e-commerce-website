@@ -1,6 +1,4 @@
 import ProductTypes from "./action-type";
-import { convertTypeAcquisitionFromJson } from "typescript";
-import useFetch from "@/custom/useFetch";
 
 const initialState = {
   name: ""

@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import ListProductsStyled from "./ListProductsStyled";
+import { ListProductsProps } from "@/types/ListProductsProps";
 
-interface ListProps {
-  className?: string
-}
-
-const ListProducts: React.FC<ListProps> = ({ className }) => {
+const ListProducts: React.FC<ListProductsProps> = ({ className }) => {
+  
   return (
     <ListProductsStyled className={className}>
       <li>
@@ -43,7 +41,7 @@ const ListProducts: React.FC<ListProps> = ({ className }) => {
         </Link>
       </li>
     </ListProductsStyled>
-  )
-}
+  );
+};
 
 export default ListProducts;

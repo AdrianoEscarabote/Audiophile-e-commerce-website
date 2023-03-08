@@ -1,24 +1,5 @@
 import GridImagesStyled from "./GridImagesStyled";
-
-interface GridImagesProps {
-  gallery: {
-    first: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    },
-    second: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    },
-    third: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    }
-  }
-}
+import { GridImagesProps } from "@/types/GridImagesProps";
 
 const GridImages: React.FC<GridImagesProps> = ({ gallery }) => {
 
