@@ -17,6 +17,7 @@ justify-content: center;
   position: relative;
   
   .content {
+    position: relative;
     padding-bottom: 35px;
     display: flex;
     justify-content: space-between;

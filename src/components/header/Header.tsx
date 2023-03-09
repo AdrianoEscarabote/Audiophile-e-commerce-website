@@ -2,6 +2,7 @@ import { HeaderStyled } from "@/components/header/HeaderStyled";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Cart } from "../cart/Cart";
 import ListProducts from "../list_products/ListProducts";
 
 export const Header = () => {
@@ -60,8 +61,13 @@ export const Header = () => {
             alt="" />
             <span></span>
           </button>
-        </div>   
-
+          {
+            cartOpen ? (
+              <Cart /> 
+            ) :
+            null
+          }  
+        </div> 
       </div>
     </HeaderStyled>
   );
