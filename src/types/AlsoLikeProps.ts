@@ -9,6 +9,7 @@ export interface ItemTypes {
 }
 
 export interface AlsoLikeProps {
+  clickLinkRenderNewData: (nameToFind: string) => void;
   others: {
     slug: string;
     name: string;

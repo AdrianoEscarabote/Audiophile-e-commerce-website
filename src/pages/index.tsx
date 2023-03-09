@@ -11,19 +11,18 @@ import InfoComponent from '@/components/infoSection/InfoComponent';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';
 import { findProduct } from '@/redux/productdetails/actions';
-import { useEffect } from 'react';
 
-// products name
 const nameProducts = {
-  zx9speaker: "ZX9 Speaker",
-  zx7speaker: "ZX7 Speaker",
-  yx1earphones: "YX1 Wireless Earphones"
+  zx9speaker: "zx9-speaker", 
+  zx7speaker: "zx7-speaker", 
+  yx1earphones: "yx1-earphones", 
+  xx99markiiheadphones: "xx99-mark-two-headphones", 
 }
 
 export default function Home() {
   const dispatch = useDispatch()
 
-  const HandleClickLink = (name: string) => {
+  const handleClickLink = (name: string) => {
     dispatch(findProduct(name))
   }
 
@@ -40,7 +39,7 @@ export default function Home() {
               <h2>new product</h2>
               <h1>XX99 Mark II Headphones</h1>
               <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-              <LinkSeeProduct href='/' backgroundcolor={darkOrange} fontcolor={white} hoverbackground={lightOrange} onClick={(e) => HandleClickLink(nameProducts.zx9speaker)}>see product</LinkSeeProduct>
+              <LinkSeeProduct href='/ProductDetail' backgroundcolor={darkOrange} fontcolor={white} hoverbackground={lightOrange} onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</LinkSeeProduct>
             </div>
           </div>
         </section>
@@ -52,13 +51,13 @@ export default function Home() {
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <LinkSeeProduct backgroundcolor={black} hoverbackground={hoverBtnMain} hoverfont="#FFFFFF" fontcolor={white} border="1px solid #000000" href="/ProductDetail" onClick={(e) => HandleClickLink(nameProducts.zx9speaker)}>see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor={black} hoverbackground={hoverBtnMain} hoverfont="#FFFFFF" fontcolor={white} border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</LinkSeeProduct>
               </div>
             </div>
             <div className="zx7-speaker">
               <div className="text">
                 <h3>zx7 speaker</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => HandleClickLink(nameProducts.zx7speaker)}>see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => handleClickLink(nameProducts.zx7speaker)}>see product</LinkSeeProduct>
               </div>
             </div>
             <div className="yx1-earphones">
@@ -71,7 +70,7 @@ export default function Home() {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => HandleClickLink(nameProducts.yx1earphones)}>see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => handleClickLink(nameProducts.yx1earphones)}>see product</LinkSeeProduct>
               </div>
             </div>
           </section>

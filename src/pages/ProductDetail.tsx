@@ -2,7 +2,7 @@ import ProductDetailStyled from "../styles/ProductDetailStyled";
 import { useSelector } from "react-redux";
 import rootReducer from "@/redux/root-reducer";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridImages from "@/components/gridImages/GridImages";
@@ -11,6 +11,8 @@ import ListProducts from "@/components/list_products/ListProducts";
 import InfoComponent from "@/components/infoSection/InfoComponent";
 import useFetch from "@/custom/useFetch";
 import { DataProps } from "@/types/ProductDetailsProps";
+import { useDispatch } from "react-redux";
+import { findProduct } from "@/redux/productdetails/actions";
 
 interface productState {
   name: string
@@ -21,23 +23,27 @@ interface RootState {
 };
 
 const ProductDetail = () => {
+  
   const [quantity, setQuantity] = useState<number>(1)
+
+  // name - redux
   const { name } = useSelector((rootReducer: RootState) => rootReducer.productReducer);
 
-  useEffect(() => {
-    console.log(name)
-  }, [])
+  // data
+  const dispatch = useDispatch()
+  const { data, refetch } = useFetch();
 
-  const { data } = useFetch();
-  const dataFormated: DataProps[] = data.filter((product: any) => product.name === name)
+  const clickLinkRenderNewData = (nameToFind: string) => {
+    dispatch(findProduct(nameToFind))
+    refetch()
+  }
 
-  console.log(dataFormated)
+  let dataFormated: DataProps[] = data.filter((product: any) => product.slug === name)
 
   // increse and decrease button
   const increaseQuantity = () => {
     setQuantity((quantity) => quantity + 1)
   }
-
   const decreaseQuantity = () => {
     quantity === 1 ? null : setQuantity((quantity) => quantity - 1)
   }
@@ -54,9 +60,9 @@ const ProductDetail = () => {
           <>
             {
               dataFormated &&
-              dataFormated.map(product => (
+              dataFormated.map((product) => (
                 <>
-                  <section className="grid-items">
+                  <section key={product.id} className="grid-items">
                     <picture>
                       <source
                         srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
@@ -73,7 +79,7 @@ const ProductDetail = () => {
                       <h2>{product.new ? "new product" : null}</h2>
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>
-                      <span className="price">{product.price}</span>
+                      <span className="price">$ {product.price}</span>
                       <div className="wrapper">
                         <div className="container-button">
                           <button onClick={decreaseQuantity}>-</button>
@@ -94,8 +100,8 @@ const ProductDetail = () => {
                       <h3>in the box</h3>
                       <ul>
                         {
-                          product.includes.map((item) => (
-                            <li>
+                          product.includes.map((item, index_item) => (
+                            <li key={index_item}>
                               <p>
                                 <span>{item.quantity}x</span>
                                 {item.item}
@@ -107,7 +113,7 @@ const ProductDetail = () => {
                     </div>
                   </section>
                   <GridImages gallery={product.gallery} />
-                  <AlsoLike others={product.others} />
+                  <AlsoLike others={product.others} clickLinkRenderNewData={clickLinkRenderNewData} />
                 </>
               ))
             }

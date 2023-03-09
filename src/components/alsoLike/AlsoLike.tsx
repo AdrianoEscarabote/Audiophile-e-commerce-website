@@ -3,7 +3,7 @@ import Image from "next/image";
 import AlsoLikeStyled from "./AlsoLikeStyled";
 import { ItemTypes, AlsoLikeProps } from "@/types/AlsoLikeProps";
 
-const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
+const AlsoLike: React.FC<AlsoLikeProps> = ({ others, clickLinkRenderNewData }) => {
   
   return (
     <AlsoLikeStyled>
@@ -28,7 +28,7 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others }) => {
                   <Image src={item.image.desktop} alt="" width={350} height={318} />
                 </picture>
                 <h4>{item.name}</h4>
-                <LinkSeeProduct backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/">see product</LinkSeeProduct>
+                <LinkSeeProduct onClick={() => clickLinkRenderNewData(item.slug)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             ))
           }
