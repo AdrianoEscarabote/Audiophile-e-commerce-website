@@ -1,4 +1,4 @@
-import { black, white, almostWhite, darkOrange } from "@/styles/colors";
+import { black, white, almostWhite, darkOrange, lightOrange } from "@/styles/colors";
 import styled from "styled-components";
 
 const CartStyled = styled.section`
@@ -10,6 +10,8 @@ position: absolute;
 bottom: -500px;
 right: 0px;
 padding: 32px;
+animation: cartAnimation 0.5s ease-in-out;
+overflow: hidden;
 
 .wrapper_button_cart {
   width: 100%;
@@ -42,6 +44,23 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
+  height: 264px;
+  overflow-y: scroll;
+  transition: 0.4s ease-in-out;
+
+  &::-webkit-scrollbar {
+    width: 12px;              
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${darkOrange};    
+    &:hover {
+      background: ${lightOrange};
+    }
+    border-radius: 1.25rem;    
+  }
 
   .content-list {
     width: 100%;
@@ -100,14 +119,19 @@ ul {
         width: 16px;
         height: 18px;
         font-weight: 700;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 18px;
         text-align: center;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: ${black};
         mix-blend-mode: normal;
-        opacity: 0.7;
+        opacity: 0.8;
+
+        &:hover,
+        &:focus {
+          color: ${darkOrange};
+        }
       }
     }
   }
@@ -146,8 +170,23 @@ a {
   text-transform: uppercase;
   color: ${white};
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: ${lightOrange};
+  }
 }
 
-`
+@keyframes cartAnimation {
+  from {
+    bottom: 0px;
+    height: 0px;
+    opacity: 0;
+  } to {
+    bottom: -500px;
+    height: 488px;
+    opacity: 1;
+  }
+}`
 
 export default CartStyled;

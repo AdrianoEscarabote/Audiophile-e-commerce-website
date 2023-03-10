@@ -30,7 +30,7 @@ align-items: center;
   width: 100%;
   padding: 120px 165px 30px 165px;
 
-  .phones {
+  .headphones {
     margin: 20px 0px 234px 0px;
 
     .mark2,
@@ -85,5 +85,106 @@ align-items: center;
       margin-top: 160px;
     }
   }
-}`
+}
+
+@media(max-width: 1148px) {
+  .container {
+    padding: 120px 60px 30px 60px !Important;
+
+    .headphones {
+      img {
+        width: 440px;
+        height: 460px;
+      }
+      .text {
+        padding: 0px 10px;
+      }
+    }
+  }
+}
+
+// tablet
+@media (max-width: 1000px) {
+  .container {
+    padding: 0px 60px 30px 60px !Important;
+  }
+  .mark2,
+  .xx59 {
+    margin-top: 120px !important;
+    width: 100%;
+    display: flex !Important; 
+    flex-direction: column !Important;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 100% !Important;
+      height: 352px !Important;
+    }
+
+    .text {
+      padding: 0px !important;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  .mark1 {
+    margin-top: 120px !important;
+    display: flex !Important; 
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+    img {
+      height: 352px !important;
+      width: 100% !important;
+    }
+    .text {
+      padding: 0px !important;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  ul {
+    gap: 90px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    li {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      margin: 0px !important;
+    }
+  }
+}
+
+// mobile
+@media (max-width: 584px) {
+  .container {
+    padding: 0px 20px 30px 20px !Important;
+  }
+
+  .wrapper {
+    height: 102px !important; 
+    padding: 0px !Important;
+
+    h1 {
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+
+  .text {
+    h2 {
+      font-size: 28px !important;
+      line-height: 38px !important;
+    }
+  }
+}
+
+`
 export default HeadphonesStyled;

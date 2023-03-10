@@ -74,5 +74,21 @@ flex-direction: column;
     margin-top: 160px;
     margin-bottom: 234px;
   }
-}`
+}
+
+@media(max-width: 1148px) {
+
+}
+
+// tablet
+@media (max-width: 828px) {
+  
+}
+
+// mobile
+@media (max-width: 584px) {
+  
+}
+
+`
 export default SpeakersStyled;

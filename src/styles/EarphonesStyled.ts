@@ -77,5 +77,21 @@ align-items: center;
       }
     }
   }
-}`
+}
+
+@media(max-width: 1148px) {
+
+}
+
+// tablet
+@media (max-width: 828px) {
+  
+}
+
+// mobile
+@media (max-width: 584px) {
+  
+}
+
+`
 export default EarphonesStyled;

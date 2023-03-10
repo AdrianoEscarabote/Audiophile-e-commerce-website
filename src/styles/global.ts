@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { darkOrange, lightOrange } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
 /* Box sizing rules */

@@ -62,6 +62,22 @@ export const Cart = () => {
               </div>
             </div>
         </li>
+        <li>
+          <div className="content-list">
+              <div className="details">
+                <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
+                <p>
+                  XX99 MK II
+                  <span>$ 899</span>
+                </p>
+              </div>
+              <div className="wrapper_button">
+                <button>-</button>
+                <span>2</span>
+                <button>+</button>
+              </div>
+            </div>
+        </li>
       </ul>
 
       <div className="total">
