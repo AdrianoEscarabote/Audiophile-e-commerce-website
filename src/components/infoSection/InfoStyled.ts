@@ -49,6 +49,13 @@ img {
   text-align: center;  
   gap: 20px;
 }
+
+@media (max-width: 480px) {
+  h3 {
+    font-size: 28px !Important;
+    line-height: 38px !Important;
+  }
+}
 `
 
 export default InfoStyled;

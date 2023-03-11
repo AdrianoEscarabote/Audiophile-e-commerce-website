@@ -30,7 +30,18 @@ const Earphones = () => {
         </div>
           <div className="container">
             <section className="preview-product">
-              <Image src="/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              <picture>
+              <source
+                  srcSet="/assets/product-yx1-earphones/tablet/image-category-page-preview.jpg"
+                  media="(min-width: 480px) and (max-width: 1148px)"
+                />
+                <source
+                  srcSet="/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg"
+                  media="(max-width: 480px)"
+                />
+
+                <Image src="/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              </picture>
               <div className="text-product">
                 <span>new product</span>
                 <h2>YX1 WIRELESS EARPHONES</h2>
