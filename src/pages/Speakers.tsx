@@ -32,7 +32,17 @@ const Speakers = () => {
         <div className="container">
           <section className="products">
             <div className="zx9">
-              <Image src="/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              <picture>
+                <source
+                  srcSet="/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg"
+                  media="(min-width: 480px) and (max-width: 1148px)"
+                />
+                <source
+                  srcSet="/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg"
+                  media="(max-width: 480px)"
+                />
+                <Image src="/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              </picture>
               <div className="text">
                 <span>new product</span>
                 <h2>zx9 speaker</h2>
@@ -46,7 +56,17 @@ const Speakers = () => {
                 <p>Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
                 <LinkSeeProduct onClick={() => handleClickLink(nameProducts.zx7speaker)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
-              <Image src="/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              <picture>
+                <source
+                  srcSet="/assets/product-zx7-speaker/tablet/image-category-page-preview.jpg"
+                  media="(min-width: 480px) and (max-width: 1148px)"
+                />
+                <source
+                  srcSet="/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg"
+                  media="(max-width: 480px)"
+                />
+                <Image src="/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
+              </picture>
             </div>
           </section>
           <ListProducts />
