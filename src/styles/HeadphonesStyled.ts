@@ -87,7 +87,7 @@ align-items: center;
   }
 }
 
-@media(max-width: 1148px) {
+@media(max-width: 1348px) {
   .container {
     padding: 120px 60px 30px 60px !Important;
 

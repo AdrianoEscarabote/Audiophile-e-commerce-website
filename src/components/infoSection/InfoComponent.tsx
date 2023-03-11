@@ -12,7 +12,7 @@ const InfoComponent = () => {
       <picture>
         <source
           srcSet="/assets/shared/tablet/image-best-gear.jpg"
-          media="(max-width: 828px)"
+          media="(min-width: 480px) and (max-width: 1148px)"
           height={300}
         />
         <source
@@ -30,5 +30,5 @@ const InfoComponent = () => {
     </InfoStyled>
   );
 };
-
+              
 export default InfoComponent;

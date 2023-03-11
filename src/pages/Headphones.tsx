@@ -36,15 +36,14 @@ const Headphones = () => {
               <picture>
                 <source
                   srcSet="/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg"
-                  media="(max-width: 1000px)"
+                  media="(min-width: 480px) and (max-width: 1148px)"
                 />
                 <source
                   srcSet="/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
-                  media="(max-width: 584px)"
+                  media="(max-width: 480px)"
                 />
                 <Image src="/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" width="540" height="560" alt="" />
               </picture>
-              
               <div className="text">
                 <span>new product</span>
                 <h2>XX99 Mark II Headphones</h2>
@@ -62,32 +61,26 @@ const Headphones = () => {
               <picture>
                 <source
                   srcSet="/assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg"
-                  media="(max-width: 1000px)"
+                  media="(min-width: 480px) and (max-width: 1148px)"
                 />
                 <source
-                  srcSet="/assets/shared/mobile/image-best-gear.jpg"
+                  srcSet="/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg"
                   media="(max-width: 480px)"
                 />
                 <Image src="/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg" alt="" width="540" height="560" />
-
               </picture>
             </div>
-
             <div className="xx59">
-              <picture>
-
+              <picture> 
                 <source
                   srcSet="/assets/product-xx59-headphones/tablet/image-category-page-preview.jpg"
-                  media="(max-width: 1000px)"
+                  media="(min-width: 480px) and (max-width: 1148px)"
                 />
-
                 <source
                   srcSet="/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg"
-                  media="(max-width: 584px)"
+                  media="(max-width: 480px)"
                 />
-
                 <Image src="/assets/product-xx59-headphones/desktop/image-category-page-preview.jpg" alt="" width="540" height="560" />
-
               </picture>
 
               <div className="text">
