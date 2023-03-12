@@ -63,7 +63,9 @@ export const Header = () => {
           </button>
           {
             cartOpen ? (
-              <Cart /> 
+              <div className="wrapper-cart">
+                <Cart /> 
+              </div>
             ) :
             null
           }  

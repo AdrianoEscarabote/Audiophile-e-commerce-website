@@ -98,6 +98,16 @@ justify-content: center;
   }
 }
 
+.wrapper-cart {
+  position: absolute;
+  min-height: 100vh;
+  top: 200px;
+  left: 0px;
+  background: ${black};
+  opacity: 0.6;
+
+}
+
 @media(max-width: 1148px) {
   .container {
     padding: 35px 60px 0px 60px;
