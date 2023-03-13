@@ -1,60 +1,49 @@
 import styled from "styled-components";
 
-interface GridImagesStyledProps {
-  first: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  },
-  second: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  },
-  third: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  }
-}
-
-const GridImagesStyled = styled.section<GridImagesStyledProps>`
+const GridImagesStyled = styled.section`
 width: 100%;
 display: grid;
 grid-template-columns: 445px 635px;
 gap: 30px;
 margin-top: 160px;
 
-${({ first, second ,third }) => `
-.img1 {
-  background: url(${first.desktop});
-}
-.img2 {
-  background: url(${second.desktop});
-}
-.img3 {
-  background: url(${third.desktop});
-}
-` }
-
 .col1 {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+img {
+  border-radius: 8px;
+}
 
-  .img1,
-  .img2 {
-    width: 445px;
-    height: 280px;
-    border-radius: 8px;
+.col2 {
+  img {
+    width: 100% !important;
   }
 }
-.col2 {
-  .img3 {
-    width: 635px;
-    height: 592px; 
-    border-radius: 8px;
+
+@media (max-width: 1380px) {
+  grid-template-columns: 40% 60%;
+  
+  .col2 {
+    img {
+      width: unset !important;
+    }
   }
+}
+
+@media (max-width: 1148px) {
+  display: flex;
+  align-items: center;
+
+  .col1 {
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  margin-top: 90px;
+  flex-direction: column;
 }
 `
 

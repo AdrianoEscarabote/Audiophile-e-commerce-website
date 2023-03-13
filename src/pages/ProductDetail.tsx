@@ -23,7 +23,6 @@ interface RootState {
 };
 
 const ProductDetail = () => {
-  
   const [quantity, setQuantity] = useState<number>(1)
 
   // name - redux
@@ -65,12 +64,12 @@ const ProductDetail = () => {
                   <section key={product.id} className="grid-items">
                     <picture>
                       <source
-                        srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
-                        media="(max-width: 828px)"
+                        srcSet={product.image.tablet}
+                        media="(min-width: 685px) and (max-width: 848px)"
                       />
                       <source
-                        srcSet="/assets/shared/mobile/image-best-gear.jpg"
-                        media="(max-width: 480px)"
+                        srcSet={product.image.mobile}
+                        media="(max-width: 685px)"
                         height={300}
                       />
                       <Image src={product.image.desktop} alt="" width={540} height={560} />

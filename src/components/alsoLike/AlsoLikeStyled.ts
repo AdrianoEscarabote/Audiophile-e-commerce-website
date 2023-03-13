@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 const AlsoLikeStyled = styled.section`
 margin-top: 160px;
 
@@ -40,6 +38,23 @@ h3 {
       text-transform: uppercase;
       color: #000000;
     }
+  }
+}
+
+@media (max-width: 685px) {
+  margin-top: 90px;
+  .grid-items {
+    gap: 60px;
+
+    .col1,
+    .col2,
+    .col3 {
+      max-width: unset !important;
+    }
+  }
+  h3 {
+    font-size: 24px !important;
+    line-height: 36px !important;
   }
 }
 `

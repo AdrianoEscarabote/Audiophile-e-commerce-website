@@ -17,11 +17,11 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others, clickLinkRenderNewData }) =
                 <picture>
                   <source
                     srcSet={item.image.tablet}
-                    media="(max-width: 828px)"
+                    media="(min-width: 685px) and (max-width: 848px)"
                   />
                   <source
                     srcSet={item.image.mobile}
-                    media="(max-width: 480px)"
+                    media="(max-width: 685px)"
                     width={350}
                     height={318}
                   />
