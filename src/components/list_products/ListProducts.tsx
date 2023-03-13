@@ -3,12 +3,12 @@ import Link from "next/link";
 import ListProductsStyled from "./ListProductsStyled";
 import { ListProductsProps } from "@/types/ListProductsProps";
 
-const ListProducts: React.FC<ListProductsProps> = ({ className }) => {
+const ListProducts: React.FC<ListProductsProps> = ({ className, linkClick }) => {
   
   return (
     <ListProductsStyled className={className}>
       <li>
-        <Link href="/Headphones">
+        <Link href="/Headphones" onClick={linkClick}>
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-headphones.png" width="200" height="200" alt=""  />
           <p>headphones
             <span>
@@ -19,7 +19,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ className }) => {
         </Link>
       </li>
       <li>
-        <Link href="/Speakers">
+        <Link href="/Speakers" onClick={linkClick}>
           <Image className='img'  src="/assets/shared/desktop/image-category-thumbnail-speakers.png"  width="200" height="200" alt=""  />
           <p>speakers
             <span>
@@ -30,7 +30,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ className }) => {
         </Link>
       </li>
       <li>
-        <Link href="/Earphones">
+        <Link href="/Earphones" onClick={linkClick}>
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="200" height="200" alt=""  />
           <p>earphones
             <span>

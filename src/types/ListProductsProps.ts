@@ -1,3 +1,4 @@
 export interface ListProductsProps {
-  className?: string
+  className?: string,
+  linkClick?: () => void
 }

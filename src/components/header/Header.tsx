@@ -19,8 +19,8 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
-  }, [cartOpen]);
+    cartOpen || menuOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
+  }, [cartOpen, menuOpen]);
   
   return (
     <HeaderStyled>
@@ -51,10 +51,6 @@ export const Header = () => {
               <li><Link href="/Speakers">speakers</Link></li>
               <li><Link href="/Earphones">earphones</Link></li>
             </ul>
-            <div className={menuOpen ? "list-mobile open" : "list-mobile"}>
-              <ListProducts />
-              <div className="shadow"></div>
-            </div>
           </nav>
 
           <button className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
@@ -74,6 +70,17 @@ export const Header = () => {
               <Cart /> 
             </div>
           </div>
+        ) :
+        null
+      }
+      {
+        menuOpen ? (
+          <>
+          <div className={menuOpen ? "list-mobile open" : "list-mobile"}>
+            <ListProducts linkClick={handleClickMenu}/>
+          </div>
+          <div className="wrapper-shadow" onClick={handleClickMenu}></div>
+          </>
         ) :
         null
       }
