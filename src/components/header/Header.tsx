@@ -1,22 +1,26 @@
 import { HeaderStyled } from "@/components/header/HeaderStyled";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Cart } from "../cart/Cart";
 import ListProducts from "../list_products/ListProducts";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [cartOpen, setCartOpen] = useState<boolean>(false)
+  const [cartOpen, setCartOpen] = useState<boolean>(false);
 
   // click functions
   const handleClickMenu = () => {
-    menuOpen ? setMenuOpen(false) : setMenuOpen(true)
-  }
+    setMenuOpen(!menuOpen);
+  };
 
   const handleClickCart = () => {
-    cartOpen ? setCartOpen(false) : setCartOpen(true)    
-  }
+    setCartOpen(!cartOpen);
+  };
+
+  useEffect(() => {
+    cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
+  }, [cartOpen]);
   
   return (
     <HeaderStyled>
@@ -60,17 +64,19 @@ export const Header = () => {
             height="20"
             alt="" />
             <span></span>
-          </button>
-          {
-            cartOpen ? (
-              <div className="wrapper-cart">
-                <Cart /> 
-              </div>
-            ) :
-            null
-          }  
+          </button>  
         </div> 
       </div>
+      {
+        cartOpen ? (
+          <div className="wrapper-cart" onClick={handleClickCart}>
+            <div className="content-cart" onClick={handleClickCart}> 
+              <Cart /> 
+            </div>
+          </div>
+        ) :
+        null
+      }
     </HeaderStyled>
   );
 };

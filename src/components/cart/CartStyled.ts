@@ -2,23 +2,25 @@ import { black, white, almostWhite, darkOrange, lightOrange } from "@/styles/col
 import styled from "styled-components";
 
 const CartStyled = styled.section`
+margin-right: 165px;
 background: ${white};
 border-radius: 8px;
 width: 377px;
 height: 488px;
 position: absolute;
-bottom: -500px;
+top: 40px;
 right: 0px;
 padding: 32px;
+opacity: 1 !Important;
 animation: cartAnimation 0.5s ease-in-out;
 overflow: hidden;
+z-index: 300 !Important;
 
 .wrapper_button_cart {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 
   p {
     font-weight: 700;

@@ -78,4 +78,6 @@ select {
 body {
   text-rendering: optimizeSpeed;
 }
-`
+body.overflow-hidden {
+  overflow: hidden;
+}`

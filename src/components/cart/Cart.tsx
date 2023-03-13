@@ -2,12 +2,10 @@ import Image from "next/image"
 import Link from "next/link"
 import CartStyled from "./CartStyled"
 
-
-
 export const Cart = () => {
 
   return (
-    <CartStyled> 
+    <CartStyled onClick={(e) => e.stopPropagation()}> 
       <div className="wrapper_button_cart">
         <p>CART (3)</p>
         <button>Remove all</button>

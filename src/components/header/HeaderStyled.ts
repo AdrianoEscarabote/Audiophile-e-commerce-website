@@ -100,12 +100,24 @@ justify-content: center;
 
 .wrapper-cart {
   position: absolute;
-  min-height: 100vh;
-  top: 200px;
+  width: 100%;
+  height: 100vh;
+  top: 97px;
   left: 0px;
-  background: ${black};
-  opacity: 0.6;
+  background: #1d1d1d93;
+  z-index: 5 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .content-cart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    background: transparent;
+    padding: 0px 165px;
+  }
 }
 
 @media(max-width: 1148px) {
