@@ -39,6 +39,8 @@ z-index: 300 !Important;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.7;
+    border: transparent;
+    background: transparent;
   }
 }
 

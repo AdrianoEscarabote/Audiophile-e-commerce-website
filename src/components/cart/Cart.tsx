@@ -82,7 +82,7 @@ export const Cart = () => {
         <p>TOTAL <span>$ 5,396</span></p>
       </div>
 
-      <Link href="/">checkout</Link>
+      <Link href="/Checkout" >checkout</Link>
 
       <h4>oi</h4>
     </CartStyled>

@@ -59,7 +59,7 @@ export const Header = () => {
             width="23"
             height="20"
             alt="" />
-            <span></span>
+            <span>4</span>
           </button>  
         </div> 
       </div>
