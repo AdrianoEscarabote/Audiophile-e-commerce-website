@@ -126,6 +126,30 @@ section {
   }
 }
 
+@media (max-width: 580px) {
+  padding: 0px 10px;
+  section {
+    height: auto;
+
+    .wrapper-order {
+      height: auto !Important;
+      display: flex !important;
+      flex-direction: column;
+
+      .col2 {
+        padding: 15px;
+        justify-content: flex-start;
+      }
+    }
+    a {
+      margin-top: 20px;
+    }
+    h2 {
+      margin: 20px 0px 16px 0px;
+    }
+  }
+}
+
 ` 
 
 export default CheckoutModalStyled;
