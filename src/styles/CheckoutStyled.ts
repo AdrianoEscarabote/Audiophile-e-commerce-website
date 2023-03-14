@@ -337,7 +337,6 @@ justify-content: center;
   }
   .wrapper-money {
     flex-direction: column;
-
   }
 }
 
