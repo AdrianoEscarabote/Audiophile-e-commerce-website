@@ -5,10 +5,10 @@ const InfoStyled = styled.section`
 display: grid;
 grid-template-columns: 50% 50%;
 place-content: center;
-margin: 200px 0px;
+margin: 12.5rem 0rem;
 
 img {
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .text-info {
@@ -16,14 +16,14 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 445px;
-  gap: 39px;
+  max-width: 27.8125rem;
+  gap: 2.4375rem;
 
   h3 {
     font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
-    letter-spacing: 1.42857px;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.0893rem;
     text-transform: uppercase;
     color: ${black};
     span {
@@ -33,27 +33,27 @@ img {
 
   p {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: ${black};
     mix-blend-mode: normal;
     opacity: 0.5;
   }
 }
 
-@media (max-width: 828px) {
-  margin: 96px 0px;
+@media (max-width: 51.75rem) {
+  margin: 6rem 0rem;
   display: flex !Important;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;  
-  gap: 20px;
+  gap: 1.25rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   h3 {
-    font-size: 28px !Important;
-    line-height: 38px !Important;
+    font-size: 1.75rem !Important;
+    line-height: 2.375rem !Important;
   }
 }
 `

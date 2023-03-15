@@ -12,10 +12,12 @@ export const Header = () => {
   // click functions
   const handleClickMenu = () => {
     setMenuOpen(!menuOpen);
+    setCartOpen(false)
   };
 
   const handleClickCart = () => {
     setCartOpen(!cartOpen);
+    setMenuOpen(false)
   };
 
   useEffect(() => {

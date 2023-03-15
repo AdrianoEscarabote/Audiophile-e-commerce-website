@@ -6,8 +6,8 @@ background: #1d1d1d93;
 width: 100%;
 min-height: 100vh;
 position: absolute;
-top: 90px;
-left: 0px;
+top: 5.625rem;
+left: 0rem;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -16,19 +16,19 @@ z-index: 100;
 section {
   z-index: 200;
   background: ${white};
-  border-radius: 8px;
-  width: 540px;
-  height: 581px;
-  padding: 48px;
+  border-radius: 0.5rem;
+  width: 33.75rem;
+  height: 36.3125rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
 
   h2 {
-    margin: 33px 0px 24px 0px;
+    margin: 2.0625rem 0rem 1.5rem 0rem;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: 1.14286px;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.0714rem;
     text-transform: uppercase;
     color: ${black};
     display: flex;
@@ -36,45 +36,45 @@ section {
   }
   p {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: ${black};
     mix-blend-mode: normal;
   }
   .wrapper-order {
-    margin-top: 33px;
+    margin-top: 2.0625rem;
     display: grid;
     grid-template-columns: 56% 44%;
-    height: 140px;
-    border-radius: 8px;
+    height: 8.75rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 
     .col1 {
-      padding: 24px;
+      padding: 1.5rem;
       background: ${almostWhite};
 
       .item {
-        padding-bottom: 12px;
-        border-bottom: 0.2px solid ${black};
+        padding-bottom: 0.75rem;
+        border-bottom: 0.0125rem solid ${black};
         display: flex;
         justify-content: space-between;
 
         .details {
           display: flex;
-          gap: 10px;
+          gap: 0.625rem;
           
           p {
             display: flex;
             flex-direction: column;
             font-weight: 700;
-            font-size: 15px;
-            line-height: 25px;            
+            font-size: 0.9375rem;
+            line-height: 1.5625rem;            
             color: ${black};
           }
         }
       }
       .amout-itens {
-        margin-top: 14px;
+        margin-top: 0.875rem;
         text-align: center;
       }
     }
@@ -90,15 +90,15 @@ section {
         flex-direction: column;
         align-items: flex-start;
         font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         color: ${white};
         text-transform: uppercase;
 
         span {
           font-weight: 700;
-          font-size: 18px;
-          line-height: 25px;
+          font-size: 1.125rem;
+          line-height: 1.5625rem;
           text-align: right;
           color: ${white};
         }
@@ -107,18 +107,18 @@ section {
   }
 
   a {
-    margin-top: 46px;
+    margin-top: 2.875rem;
     display: grid;
     place-content: center;
     width: 100%;
-    max-width: 444px;
-    height: 48px;
+    max-width: 27.75rem;
+    height: 3rem;
     background: ${darkOrange};
     font-weight: 700;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     text-transform: uppercase;
     color: #FFFFFF;
     text-decoration: none;
@@ -126,8 +126,8 @@ section {
   }
 }
 
-@media (max-width: 580px) {
-  padding: 0px 10px;
+@media (max-width: 36.25rem) {
+  padding: 0rem 0.625rem;
   section {
     height: auto;
 
@@ -137,19 +137,17 @@ section {
       flex-direction: column;
 
       .col2 {
-        padding: 15px;
+        padding: 0.9375rem;
         justify-content: flex-start;
       }
     }
     a {
-      margin-top: 20px;
+      margin-top: 1.25rem;
     }
     h2 {
-      margin: 20px 0px 16px 0px;
+      margin: 1.25rem 0rem 1rem 0rem;
     }
   }
-}
-
-` 
+}` 
 
 export default CheckoutModalStyled;

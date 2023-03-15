@@ -3,17 +3,17 @@ import styled from "styled-components";
 const GridImagesStyled = styled.section`
 width: 100%;
 display: grid;
-grid-template-columns: 445px 635px;
-gap: 30px;
-margin-top: 160px;
+grid-template-columns: 27.8125rem 39.6875rem;
+gap: 1.875rem;
+margin-top: 10rem;
 
 .col1 {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
 }
 img {
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .col2 {
@@ -22,7 +22,7 @@ img {
   }
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 86.25rem) {
   grid-template-columns: 40% 60%;
   
   .col2 {
@@ -32,17 +32,17 @@ img {
   }
 }
 
-@media (max-width: 1148px) {
+@media (max-width: 71.75rem) {
   display: flex;
   align-items: center;
 
   .col1 {
-    gap: 20px !important;
+    gap: 1.25rem !important;
   }
 }
 
-@media (max-width: 520px) {
-  margin-top: 90px;
+@media (max-width: 32.5rem) {
+  margin-top: 5.625rem;
   flex-direction: column;
 }
 `

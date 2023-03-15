@@ -7,7 +7,7 @@ export const Footer = () => {
     <FooterStyled>
       <div className="container">
         <div className="row1">
-          <Link href="/">
+          <Link href="/" aria-label="go to main page">
             <Image 
               src="/assets/shared/desktop/logo.svg"
               width="143"
@@ -17,27 +17,27 @@ export const Footer = () => {
           </Link>
           <div className="links">
             <Link href="/">home</Link>
-            <Link href="/Headphones">headphones</Link>
-            <Link href="/Speakers">speakers</Link>
-            <Link href="/Earphones">earphones</Link>
+            <Link href="/Headphones" aria-label="go to Headphone page">headphones</Link>
+            <Link href="/Speakers" aria-label="go to Speaker page">speakers</Link>
+            <Link href="/Earphones" aria-label="go to Earphone page">earphones</Link>
           </div>
         </div>
         <div className="row2">
           <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
           <div className="social-icons">
-            <a href="/">
+            <a href="/" aria-label="go to our facebook">
               <Image src="/assets/shared/desktop/icon-facebook.svg" alt="" width="24" height="24" />
             </a>
-            <a href="">
+            <a href="" aria-label="go to our twitter">
               <Image src="/assets/shared/desktop/icon-twitter.svg" alt="" width="24" height="24" />
             </a>
-            <a href="">
+            <a href="" aria-label="go to our instagram">
               <Image src="/assets/shared/desktop/icon-instagram.svg" alt="" width="24" height="24" />
             </a>
           </div>
         </div>
         <div className="row3">
-          <p>Copyright 2021. All Rights Reserved</p>
+          <p>Copyright 2023. All Rights Reserved</p>
         </div>
       </div>
     </FooterStyled>

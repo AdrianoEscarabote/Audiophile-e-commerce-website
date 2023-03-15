@@ -2,15 +2,15 @@ import { black, white, almostWhite, darkOrange, lightOrange } from "@/styles/col
 import styled from "styled-components";
 
 const CartStyled = styled.section`
-margin-right: 165px;
+margin-right: 10.3125rem;
 background: ${white};
-border-radius: 8px;
-width: 377px;
-height: 488px;
+border-radius: 0.5rem;
+width: 23.5625rem;
+height: 30.5rem;
 position: absolute;
-top: 40px;
-right: 0px;
-padding: 32px;
+top: 2.5rem;
+right: 0rem;
+padding: 2rem;
 opacity: 1 !Important;
 animation: cartAnimation 0.5s ease-in-out;
 overflow: hidden;
@@ -24,17 +24,17 @@ z-index: 300 !Important;
 
   p {
     font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 1.28571px;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.0804rem;
     text-transform: uppercase;
     color: ${black};
   }
 
   button {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     text-decoration-line: underline;
     color: #000000;
     mix-blend-mode: normal;
@@ -48,12 +48,12 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 264px;
+  height: 16.5rem;
   overflow-y: scroll;
   transition: 0.4s ease-in-out;
 
   &::-webkit-scrollbar {
-    width: 12px;              
+    width: 0.75rem;              
   }
   &::-webkit-scrollbar-track {
     background: transparent;        
@@ -63,7 +63,7 @@ ul {
     &:hover {
       background: ${lightOrange};
     }
-    border-radius: 1.25rem;    
+    border-radius: 20px;    
   }
 
   .content-list {
@@ -71,29 +71,29 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 24px;
+    margin-top: 1.5rem;
 
     .details {
       display: flex;
-      gap: 20px;
+      gap: 1.25rem;
       align-items: center;
 
       img {
-        border-radius: 8px;
+        border-radius: 0.5rem;
       }
 
       p {
         display: flex;
         flex-direction: column;
         font-weight: 700;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         color: ${black};
 
         span {
           font-weight: 700;
-          font-size: 14px;
-          line-height: 25px;
+          font-size: 0.875rem;
+          line-height: 1.5625rem;
           color: ${black};
           mix-blend-mode: normal;
           opacity: 0.6;
@@ -102,8 +102,8 @@ ul {
     }
 
     .wrapper_button {
-      width: 96px;
-      height: 32px;
+      width: 6rem;
+      height: 2rem;
       background: ${almostWhite};
       display: flex;
       align-items: center;
@@ -111,22 +111,22 @@ ul {
 
       span {
         font-weight: 700;
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
         text-align: center;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625rem;
         text-transform: uppercase;
         color: ${black};
       }
 
       button {
-        width: 16px;
-        height: 18px;
+        width: 1rem;
+        height: 1.125rem;
         font-weight: 700;
-        font-size: 15px;
-        line-height: 18px;
+        font-size: 0.9375rem;
+        line-height: 1.125rem;
         text-align: center;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625rem;
         text-transform: uppercase;
         color: ${black};
         mix-blend-mode: normal;
@@ -144,15 +144,15 @@ ul {
 .total {
   width: 100%;
   display: flex;
-  margin-top: 32px;
+  margin-top: 2rem;
   
   p {
     width: 100%;
     display: flex;
     justify-content: space-between;
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.6;
@@ -160,17 +160,17 @@ ul {
 }
 
 a {
-  margin-top: 32px;
+  margin-top: 2rem;
   display: grid;
   place-content: center;
   width: 100%;
-  height: 48px;
-  border-radius: 8px;
+  height: 3rem;
+  border-radius: 0.5rem;
   background: ${darkOrange};
   font-weight: 700;
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 1px;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0625rem;
   text-transform: uppercase;
   color: ${white};
   text-decoration: none;
@@ -183,12 +183,12 @@ a {
 
 @keyframes cartAnimation {
   from {
-    bottom: 0px;
-    height: 0px;
+    bottom: 0rem;
+    height: 0rem;
     opacity: 0;
   } to {
-    bottom: -500px;
-    height: 488px;
+    bottom: -31.25rem;
+    height: 30.5rem;
     opacity: 1;
   }
 }`

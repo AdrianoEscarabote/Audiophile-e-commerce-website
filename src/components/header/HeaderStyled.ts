@@ -11,21 +11,21 @@ align-items: center;
 justify-content: center;
 
 .container {
-  padding: 35px 165px 0px 165px;
+  padding: 2.1875rem 10.3125rem 0rem 10.3125rem;
   width: 100%;
-  max-width: 1440px;
+  max-width: 90rem;
   position: relative;
   
   .content {
     position: relative;
-    padding-bottom: 35px;
+    padding-bottom: 2.1875rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #979797;
+    border-bottom: 0.0625rem solid #979797;
 
     .wrapper {
       display: flex;
-      gap: 34px;
+      gap: 2.125rem;
       button {
         display: none;
       }
@@ -34,13 +34,13 @@ justify-content: center;
     nav {
       ul {
         display: flex;
-        gap: 34px;
+        gap: 2.125rem;
         li {
           a {
             font-weight: 700;
-            font-size: 13px;
-            line-height: 25px;
-            letter-spacing: 2px;
+            font-size: 0.8125rem;
+            line-height: 1.5625rem;
+            letter-spacing: 0.125rem;
             text-transform: uppercase;
             color: #FFFFFF;
             text-decoration: none;
@@ -58,13 +58,13 @@ justify-content: center;
       }
 
       .list-mobile {
-        height: 0px;
+        height: 0rem;
         transition: 0.5s ease-in-out;
         display: none;
 
         ul {
           display: none;
-          gap: 70px;
+          gap: 4.375rem;
         }
       }
     }
@@ -79,11 +79,11 @@ justify-content: center;
         background: ${darkOrange};
         border-radius: 50%;
         position: absolute;
-        top: -10px;
-        right: -10px;
+        top: -0.625rem;
+        right: -0.625rem;
         width: 90%;
         height: auto;
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     
       &:hover,
@@ -93,7 +93,7 @@ justify-content: center;
         }
       }
       &:focus {
-        border: 1px dotted ${white};
+        border: 0.0625rem dotted ${white};
       }
     }
   }
@@ -103,8 +103,8 @@ justify-content: center;
   position: absolute;
   width: 100%;
   height: 100vh;
-  top: 97px;
-  left: 0px;
+  top: 6.0625rem;
+  left: 0rem;
   background: #1d1d1d93;
   z-index: 5 !important;
   display: flex;
@@ -115,20 +115,20 @@ justify-content: center;
     position: relative;
     width: 100%;
     height: 100%;
-    max-width: 1440px;
+    max-width: 90rem;
     background: transparent;
-    padding: 0px 165px;
+    padding: 0rem 10.3125rem;
   }
 }
 
-@media(max-width: 1148px) {
+@media(max-width: 71.75rem) {
   .container {
-    padding: 35px 60px 0px 60px;
+    padding: 2.1875rem 3.75rem 0rem 3.75rem;
   }
 }
 
 // tablet
-@media(max-width: 768px) {
+@media(max-width: 48rem) {
   .wrapper {
     button {
       display: block !important;
@@ -143,31 +143,39 @@ justify-content: center;
 }
 
 // mobile menu
-@media(max-width: 768px) {
+@media (min-width: 48rem) {
+  .list-mobile.open {
+    display: none !Important;
+    ul {
+      display: none !important;
+    }
+  }
+}
+@media(max-width: 48rem) {
   .list-mobile.open {
     animation: mobileAnimation 0.9s ease-in-out;
     opacity: 1 !Important;
-    height: 334px !important;
+    height: 20.875rem !important;
     display: block !Important;
     position: absolute;
-    left: 0px;
-    top: 90px;
+    left: 0rem;
+    top: 5.625rem;
     width: 100%;
-    padding: 90px 20px 30px;
+    padding: 5.625rem 1.25rem 1.875rem;
     background: ${white};
     visibility: visible !Important;
     z-index: 200;
     ul {
       display: flex !important;
-      gap: 85px;
+      gap: 5.3125rem;
       li {
         a {
-          height: 155px !important;
+          height: 9.6875rem !important;
           img {
-            top: -80px;
+            top: -5rem;
           }
           p {
-            gap: 12px;
+            gap: 0.75rem;
           }
         }
       }
@@ -178,21 +186,21 @@ justify-content: center;
     min-height: 100vh;
     position: absolute;
     background: #1d1d1d93;
-    left: 0px;
-    top: 90px;
+    left: 0rem;
+    top: 5.625rem;
     z-index: 20 !important;
   }
 }
 
 // mobile layout
-@media (max-width: 584px) {
+@media (max-width: 36.5rem) {
   .container {
-    padding: 30px 20px 0px 20px;
+    padding: 1.875rem 1.25rem 0rem 1.25rem;
   }
 
   .list-mobile.open {
-    height: 750px !important;
-    bottom: -720px !Important;
+    height: 46.875rem !important;
+    bottom: -45rem !Important;
 
     .shadow {
       width: 100%;
