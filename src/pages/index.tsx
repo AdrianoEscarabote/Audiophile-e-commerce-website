@@ -32,7 +32,7 @@ const Home = () => {
         <title>Audiophile e-commerce website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <MainStyled>
+      <MainStyled key={"Main"}>
         <section className="hero-image">
           <div className="content">
             <div className="col1">
