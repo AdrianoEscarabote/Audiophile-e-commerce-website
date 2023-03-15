@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { MainStyled } from '@/styles/MainStyled';
 import { LinkSeeProduct } from '@/styles/shared/linkSeeProduct';
 import { black, darkOrange } from '@/styles/colors';
@@ -32,7 +31,8 @@ const Home = () => {
         <title>Audiophile e-commerce website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <MainStyled key={"Main"}>
+      <MainStyled />
+      <main>
         <section className="hero-image">
           <div className="content">
             <div className="col1">
@@ -57,7 +57,7 @@ const Home = () => {
             <div className="zx7-speaker">
               <div className="text">
                 <h3>zx7 speaker</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => handleClickLink(nameProducts.zx7speaker)}>see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx7speaker)}>see product</LinkSeeProduct>
               </div>
             </div>
             <div className="yx1-earphones">
@@ -70,13 +70,13 @@ const Home = () => {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={(e) => handleClickLink(nameProducts.yx1earphones)}>see product</LinkSeeProduct>
+                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</LinkSeeProduct>
               </div>
             </div>
           </section>
           <InfoComponent />
         </div>
-      </MainStyled>
+      </main>
     </>
   );
 };
