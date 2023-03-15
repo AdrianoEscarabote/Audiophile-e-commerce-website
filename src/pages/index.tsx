@@ -19,7 +19,7 @@ const nameProducts = {
   xx99markiiheadphones: "xx99-mark-two-headphones", 
 }
 
-export default function Home() {
+const Home = () => {
   const dispatch = useDispatch()
 
   const handleClickLink = (name: string) => {
@@ -80,3 +80,5 @@ export default function Home() {
     </>
   );
 };
+
+export default Home;
