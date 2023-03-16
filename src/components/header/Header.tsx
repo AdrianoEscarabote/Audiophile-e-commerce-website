@@ -69,7 +69,7 @@ export const Header = () => {
         cartOpen ? (
           <div className="wrapper-cart" onClick={handleClickCart}>
             <div className="content-cart" onClick={handleClickCart}> 
-              <Cart /> 
+              <Cart closeCart={handleClickCart} cartOpen={cartOpen} /> 
             </div>
           </div>
         ) :

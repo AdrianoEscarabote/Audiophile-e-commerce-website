@@ -1,8 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
 import CartStyled from "./CartStyled"
 
-export const Cart = () => {
+interface CartProps {
+  cartOpen: boolean
+  closeCart: () => void
+}
+
+export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
+  
+  useEffect(() => {
+    cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
+  }, [cartOpen])
 
   return (
     <CartStyled onClick={(e) => e.stopPropagation()}> 
@@ -82,7 +92,7 @@ export const Cart = () => {
         <p>TOTAL <span>$ 5,396</span></p>
       </div>
 
-      <Link href="/Checkout" >checkout</Link>
+      <Link href="/Checkout" onClick={closeCart}>checkout</Link>
 
       <h4>oi</h4>
     </CartStyled>

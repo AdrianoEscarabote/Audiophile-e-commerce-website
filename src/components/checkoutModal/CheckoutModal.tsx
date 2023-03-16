@@ -8,14 +8,20 @@ interface CheckoutModalProps {
 
 const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
 
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key == "Escape") {
+      closeModal()
+    }
+  })
+
   return (
     <CheckoutModalStyled onClick={closeModal}>
-      <section className="modal" onClick={(e) => e.stopPropagation()}>
+      <section className="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-content" onClick={(e) => e.stopPropagation()}>
         <Image src="/assets/checkout/icon-order-confirmation.svg" alt="" width="64" height="64" />
-        <h2>thank you <span>for your order</span></h2>
+        <h2 id="modal-title">thank you <span>for your order</span></h2>
         <p>You will receive an email confirmation shortly.</p>
 
-        <div className="wrapper-order">
+        <div className="wrapper-order" id="modal-content">
           <div className="col1">
             <div className="item">
               <div className="details">
@@ -35,7 +41,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
           </div>
         </div>
 
-        <Link href="/">back to home</Link>
+        <Link href="/" onClick={closeModal}>back to home</Link>
       </section>
     </CheckoutModalStyled>
   );

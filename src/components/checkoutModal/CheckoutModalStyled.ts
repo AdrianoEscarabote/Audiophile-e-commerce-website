@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 const CheckoutModalStyled = styled.div`
 background: #1d1d1d93;
+position: fixed;
+top: 0;
+left: 0;
 width: 100%;
-min-height: 100vh;
-position: absolute;
-top: 5.625rem;
-left: 0rem;
+height: 100vh;
 display: flex;
-align-items: center;
 justify-content: center;
+align-items: center;
 z-index: 100;
 
 section {
@@ -20,8 +20,10 @@ section {
   width: 33.75rem;
   height: 36.3125rem;
   padding: 3rem;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  left: 0%;
+  transform: translateX(-50%);
+  transform: translateY(-0%);
 
   h2 {
     margin: 2.0625rem 0rem 1.5rem 0rem;
