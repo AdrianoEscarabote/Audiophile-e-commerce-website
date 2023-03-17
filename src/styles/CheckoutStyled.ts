@@ -69,6 +69,18 @@ justify-content: center;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
+              position: relative;
+
+              span {
+                position: absolute;
+                right: 10px;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: right;
+                letter-spacing: -0.214286px;
+                color: #CD2C2C;
+              } 
 
               label {
                 font-weight: 700;
@@ -126,6 +138,18 @@ justify-content: center;
               flex-direction: column;
               justify-content: space-between;
               height: 81px;
+              position: relative;
+
+              span {
+                position: absolute;
+                right: 10px;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: right;
+                letter-spacing: -0.214286px;
+                color: #CD2C2C;
+              } 
 
 
               label {

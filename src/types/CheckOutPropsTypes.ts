@@ -33,6 +33,7 @@ export type Action =
 | { type: "SET_ERROR_COUNTRY"; payload: string }
 | { type: "SET_ERROR_MONEYNUMBER"; payload: string }
 | { type: "SET_ERROR_MONEYPIN"; payload: string }
+| { type: "SET_ERROR_ADDRESS"; payload: string }
 
 export const initialState: FormState = {
   name: "",
