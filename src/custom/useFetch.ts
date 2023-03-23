@@ -8,7 +8,7 @@ const useFetch = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("/data.json").
+      const response = await axios.get("data/data.json").
       then((response) => response.data)
       .catch((err) => setError(err)) 
       setData(response)
@@ -18,7 +18,7 @@ const useFetch = () => {
   }, [])
 
   const refetch = async () => {
-    const response = await axios.get("/data.json").
+    const response = await axios.get("data/data.json").
     then((response) => response.data)
     .catch((err) => setError(err)) 
     console.log(data)

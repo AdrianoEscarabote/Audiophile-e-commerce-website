@@ -5,8 +5,7 @@ import { Action, FormState, initialState } from "@/types/CheckOutPropsTypes";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { ButtonHTMLAttributes, useEffect, useReducer, useRef, useState } from "react";
-
+import {  SetStateAction, useEffect, useReducer, useRef, useState } from "react";
 
 const formReducer = (state: FormState, action: Action ) => {
   switch(action.type) {
@@ -47,16 +46,12 @@ const formReducer = (state: FormState, action: Action ) => {
   }
 }
 
-
-
-
 const Checkout = () => {
   const [formData, dispatch] = useReducer(formReducer, initialState);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
-
-
-
+  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -116,11 +111,24 @@ const Checkout = () => {
           dispatch({ type: "SET_ERROR_COUNTRY", payload: "" })
         } 
         break
+      case "pin":
+        dispatch({ type: "SET_MONEYPIN", payload: value})
+        if (value === "") {
+          dispatch({ type: "SET_ERROR_MONEYPIN", payload: "e-Money PIN can't be empty"})
+        } else {
+          dispatch({ type: "SET_ERROR_MONEYPIN", payload: ""})
+        }
+        break
+      case "number":
+        dispatch({ type: "SET_MONEYNUMBER", payload: value })
+        if (value === "") {
+          dispatch({ type: "SET_ERROR_MONEYNUMBER", payload: "e-Money Number can't be empty"})
+        } else {
+          dispatch({ type: "SET_ERROR_MONEYNUMBER", payload: ""})
+        } 
+        break
     }
   }
-
-
-
 
 
   const handleClickCountryName = (name: string) => {
@@ -130,8 +138,14 @@ const Checkout = () => {
     }
   }
 
+  // handle radio changes
+  const [eMoney, setEMoney] = useState<boolean>(true);
+  const [cash, setCash] = useState<boolean>(false);
 
-
+  const handleChangeRadio = () => {
+    setCash((prevState) => !prevState)
+    setEMoney((prevState) => !prevState)
+  }
 
 
 
@@ -173,6 +187,25 @@ const Checkout = () => {
     };
   }, []);
 
+  useEffect(() => {
+    validateForm();
+  }, [formData]);
+  
+  function validateForm() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /\s*(?:\+?(\d{1,3}))?[\W\D\s]^|()*(\d[\W\D\s]*?\d[\D\W\s]*?\d)[\W\D\s]*(\d[\W\D\s]*?\d[\D\W\s]*?\d)[\W\D\s]*(\d[\W\D\s]*?\d[\D\W\s]*?\d[\W\D\s]*?\d)(?: *x(\d+))?\s*$/;
+  
+    const { address, city, country, e_money_number, e_money_pin, email, name, phone } = formData;
+  
+    const isEmailValid = emailRegex.test(email);
+    const isPhoneValid = phoneRegex.test(phone);
+    const isEMoneyPinValid = e_money_pin.length >= 4;
+  
+    const isAllFieldsValid = isEmailValid && isPhoneValid && isEMoneyPinValid && address && city && country && e_money_number && name;
+  
+    setIsFormValid(isAllFieldsValid as SetStateAction<boolean>);
+  }
+
   return (
     <>
       <Head>
@@ -188,9 +221,7 @@ const Checkout = () => {
               <form noValidate>
                 <fieldset>
                   <legend className="sr-only">Enter your information in all fields</legend>
-
                   <h2>Billing Details</h2>
-
                   <div className="wrapper-billing">
                     <div className="wrapper-input">
                       <label htmlFor="name">Name</label>
@@ -211,9 +242,7 @@ const Checkout = () => {
                     </div>
 
                   </div>
-
                   <h2>shipping info</h2>
-
                   <div className="wrapper-shipping">
                     <div className="wrapper-input">
                       <label htmlFor="address">Address</label>
@@ -223,8 +252,8 @@ const Checkout = () => {
 
                     <div className="wrapper-input">
                       <label htmlFor="city">City</label>
-                      <span>wrong format</span>
-                      <input type="text" name="city" id="city" placeholder="New York" />
+                      <span>{formData.errorMessageCity}</span>
+                      <input type="text" value={formData.city} onChange={handleChange} name="city" id="city" placeholder="New York" />
                     </div>
 
                     <div className="wrapper-input">
@@ -249,45 +278,36 @@ const Checkout = () => {
                     </div>
 
                   </div>
-
                   <h2>payment details</h2>
-
                   <div className="wrapper-payment">
-
                     <div className="text">
                       <p>Payment Method</p>
                     </div>
 
                     <div className="labels">
-                        <span>wrong format</span>
-                      <label htmlFor="e-money">
-                        <input type="radio" name="e-money" id="e-money" />
+                      <label htmlFor="e-money" className={eMoney ? "marked" : ""}>
+                        <input  type="radio" checked={eMoney} onChange={handleChangeRadio} name="payment_method" id="e-money" />
                         <span>e-Money</span>
                       </label>
-                      <span>wrong format</span>
-                      <label htmlFor="cash">
-                        <input type="radio" name="cash" id="cash" />
+                      <label htmlFor="cash" className={cash ? "marked" : ""}>
+                        <input type="radio"  checked={cash} onChange={handleChangeRadio} name="payment_method" id="cash" />
                         <span>Cash on Delivery</span>
                       </label>
                     </div>
-
                   </div>
 
                   <div className="wrapper-money">
                     <div className="wrapper-input">
                       <label htmlFor="number">e-Money Number</label>
-                      <span>wrong format</span>
-                      <input type="text" name="number" id="number" placeholder="238521993" />
+                      <span>{formData.errorMessageEMoneyNumber}</span>
+                      <input type="text" maxLength={9} value={formData.e_money_number.replace(/[^0-9/]/g, '')} onChange={handleChange} name="number" id="number" placeholder="238521993" />
                     </div>
-
                     <div className="wrapper-input">
                       <label htmlFor="pin">e-Money PIN</label>
-                      <span>wrong format</span>
-                      <input type="text" name="pin" id="pin" placeholder="6891" />
+                      <span>{formData.errorMessageEMoneyPin}</span>
+                      <input type="text" maxLength={4} value={formData.e_money_pin.replace(/[^0-9/]/g, '')} onChange={handleChange} name="pin" id="pin" placeholder="6891" />
                     </div>
-                    
                   </div>
-
                 </fieldset>
               </form>
             </section>
@@ -348,7 +368,7 @@ const Checkout = () => {
                 <p>grand total <span>$ 5,446</span></p>
               </div>
 
-              <button onClick={handleClickOpenModal}>continue & pay</button>
+              <button onClick={handleClickOpenModal} className={isFormValid ? "" : "disabled"}>continue & pay</button>
             </section>
           </div>
           {

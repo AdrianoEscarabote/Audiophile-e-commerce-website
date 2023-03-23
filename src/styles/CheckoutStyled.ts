@@ -151,7 +151,6 @@ justify-content: center;
                 color: #CD2C2C;
               } 
 
-
               label {
                 font-weight: 700;
                 font-size: 12px;
@@ -313,6 +312,12 @@ justify-content: center;
   }
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
 .list_countries {
   position: absolute;
   width: 100%;
@@ -364,6 +369,10 @@ justify-content: center;
     }
     border-radius: 20px;    
   }
+}
+
+.marked {
+  border: 1px solid #D87D4A !important;
 }
 
 @media (max-width: 1418px) {

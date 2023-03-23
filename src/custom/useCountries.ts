@@ -8,7 +8,7 @@ const useCountries = () => {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-      .get("/countries.json")
+      .get("data/countries.json")
       .then((resolve) => setCountriesList(resolve.data))
       .catch(err => console.error(err)) 
     } 
@@ -20,7 +20,7 @@ const useCountries = () => {
     const filterName = value.toLowerCase()
 
     try {
-      const response = await axios.get("/countries.json");
+      const response = await axios.get("data/countries.json");
       const countriesList: Countries[] = response.data;
       const filteredList = countriesList.filter(country =>
         country.country_name.toLowerCase().startsWith(filterName)
