@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { almostWhite, black, darkOrange, white } from "./colors";
+import { almostBlack, almostWhite, black, darkOrange, lightOrange, white } from "./colors";
 
 const CheckoutStyled = styled.main`
 display: flex;
@@ -310,6 +310,59 @@ justify-content: center;
         cursor: pointer;
       }
     }
+  }
+}
+
+.list_countries {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  background: ${almostWhite};
+  color: ${black};
+  border: 1px solid #00000054;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px 20px;
+  z-index: 100 !Important;
+  height: 295px;
+  overflow-y: scroll;
+
+  li {
+    button {
+      border: unset;
+      outline: transparent;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 25px;
+      cursor: pointer;
+
+      &:focus {
+        border: 2.6px solid ${black};
+        border-radius: 8px;
+      } 
+
+      &:hover,
+      &:active {
+        border: unset !important;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.75rem;              
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${darkOrange};    
+    &:hover {
+      background: ${lightOrange};
+    }
+    border-radius: 20px;    
   }
 }
 

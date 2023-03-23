@@ -1,10 +1,11 @@
 import CheckoutModal from "@/components/checkoutModal/CheckoutModal";
+import useCountries from "@/custom/useCountries";
 import CheckoutStyled from "@/styles/CheckoutStyled";
 import { Action, FormState, initialState } from "@/types/CheckOutPropsTypes";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useReducer, useState } from "react";
+import { ButtonHTMLAttributes, useEffect, useReducer, useRef, useState } from "react";
 
 
 const formReducer = (state: FormState, action: Action ) => {
@@ -71,6 +72,7 @@ const Checkout = () => {
         } else {
           dispatch({type: "SET_ERROR_EMAIL", payload: ""})
         }
+        break
       case "name":
         dispatch({ type: "SET_NAME", payload: value })
         if (value === "") {
@@ -78,6 +80,7 @@ const Checkout = () => {
         } else {
           dispatch({ type: "SET_ERROR_NAME", payload: "" })
         }
+        break
       case "phone":
         dispatch({ type: "SET_PHONE", payload: value })      
         if (value === "") {
@@ -87,6 +90,7 @@ const Checkout = () => {
         } else {
           dispatch({ type: "SET_ERROR_PHONE", payload: "" })
         }
+        break
       case "address":
         dispatch({ type: "SET_ADDRESS", payload: value })
         if (value === "") {
@@ -94,6 +98,7 @@ const Checkout = () => {
         } else {
           dispatch({ type: "SET_ERROR_ADDRESS", payload: "" })
         }
+        break
       case "city": 
         dispatch({ type: "SET_CITY", payload: value })
         if (value === "") {
@@ -101,13 +106,27 @@ const Checkout = () => {
         } else {
           dispatch({ type: "SET_ERROR_CITY", payload: "" })
         }
+        break
       case "country":
         dispatch({ type: "SET_COUNTRY", payload: value })
+        refetch(value)
         if (value === "") {
           dispatch({ type: "SET_ERROR_COUNTRY", payload: "Country can't be empty" })
         } else {
           dispatch({ type: "SET_ERROR_COUNTRY", payload: "" })
         } 
+        break
+    }
+  }
+
+
+
+
+
+  const handleClickCountryName = (name: string) => {
+    if (name)  {
+      dispatch({ type: "SET_COUNTRY", payload: name})
+      setCountriesListOpen(false)
     }
   }
 
@@ -119,14 +138,7 @@ const Checkout = () => {
 
 
 
-
-
-
-
-
-
-
-
+  const [countriesListOpen, setCountriesListOpen] = useState<boolean>(false)
 
   const handleClickOpenModal = () => {
     setModalOpen(!modalOpen)
@@ -135,6 +147,31 @@ const Checkout = () => {
   useEffect(() => {
     modalOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden")
   }, [modalOpen])
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  function handleClickOutside(event: MouseEvent) {
+    if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
+      if (listRef.current && listRef.current.contains(event.target as Node)) {
+        // Clicou dentro da lista de países, não faz nada
+        null
+      } else {
+        // Clicou fora da lista de países, fecha a lista
+        setCountriesListOpen(false);
+      }
+    }
+  }
+
+  const { CountriesList, refetch } = useCountries();
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    console.log(CountriesList)
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -170,7 +207,7 @@ const Checkout = () => {
                     <div className="wrapper-input">
                       <label htmlFor="phone">Phone</label>
                       <span>{formData.errorMessagePhone}</span>
-                      <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} placeholder="+1 202-555-0136" />
+                      <input type="text" name="phone" id="phone" value={formData.phone.replace(/[^0-9\s\(\)\-\+]/g, '')} onChange={handleChange} placeholder="+1 202-555-0136" />
                     </div>
 
                   </div>
@@ -180,8 +217,8 @@ const Checkout = () => {
                   <div className="wrapper-shipping">
                     <div className="wrapper-input">
                       <label htmlFor="address">Address</label>
-                      <span>wrong format</span>
-                      <input type="text" name="address" id="address" placeholder="1137 Williams Avenue" />
+                      <span>{formData.errorMessageAddress}</span>
+                      <input type="text" value={formData.address} onChange={handleChange} name="address" id="address" placeholder="1137 Williams Avenue" />
                     </div>
 
                     <div className="wrapper-input">
@@ -192,8 +229,23 @@ const Checkout = () => {
 
                     <div className="wrapper-input">
                       <label htmlFor="country">Country</label>
-                      <span>wrong format</span>
-                      <input type="text" name="country" id="country" placeholder="United States" />
+                      <span>{formData.errorMessageCountry}</span>
+                      <input type="text" value={formData.country} onFocus={() => setCountriesListOpen(true)} onChange={handleChange} name="country" id="country" placeholder="United States" ref={inputRef} />
+                      {
+                        countriesListOpen && CountriesList ? (
+                          <ul className="list_countries" ref={listRef}>
+                            {
+                              CountriesList.map((item, index) => (
+                                <li key={index}>
+                                  <button type="button" onClick={(ev) => handleClickCountryName(ev.currentTarget.innerText)}>
+                                    {item.country_name}
+                                  </button>
+                                </li>
+                              ))
+                            }
+                          </ul>
+                        ) : null
+                      }
                     </div>
 
                   </div>
