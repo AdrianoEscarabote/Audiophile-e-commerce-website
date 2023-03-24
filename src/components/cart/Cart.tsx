@@ -5,9 +5,10 @@ import CartStyled from "./CartStyled"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import rootReducer from "@/redux/root-reducer"
-import { cleanCart } from "@/redux/cart/actions"
+import { cleanCart, Decrease, Increase } from "@/redux/cart/actions"
 import { CartProps, RootState } from "@/types/CartProps"
 import { selectProductTotalPrice, selectProductsCount } from "@/redux/cart/cart.selector"
+import { ProductTypes } from "@/types/CartProps"
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
 
@@ -31,6 +32,14 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
     dispatch(cleanCart())
   }
 
+  const handleDecreaseQuantity = (product: any) => {
+    dispatch(Decrease(product))
+  } 
+
+  const handleIncreaseQuantity = (product: any) => {
+    dispatch(Increase(product))
+  }
+
   return (
     <CartStyled onClick={(e) => e.stopPropagation()}> 
       <div className="wrapper_button_cart">
@@ -51,9 +60,9 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
                   </p>
                 </div>
                 <div className="wrapper_button">
-                  <button>-</button>
+                  <button onClick={() => handleDecreaseQuantity(product)}>-</button>
                   <span>{product.quantity}</span>
-                  <button>+</button>
+                  <button onClick={() => handleIncreaseQuantity(product)}>+</button>
                 </div>
               </div>
             </li>

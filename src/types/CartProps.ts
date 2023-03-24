@@ -12,7 +12,7 @@ export interface ProductTypes {
   price: number,
   imagePath: string,
   quantity: number,
-  id: string
+  id: number
 }
 
 export interface RootState {

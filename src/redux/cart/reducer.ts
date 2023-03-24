@@ -32,6 +32,21 @@ const cartReducer = (state = initialState, action: ActionProps) => {
         ...state,
         products: []
       }
+    case cartActionTypes.INCREASE:
+      return {
+        ...state,
+        products: state.products.map((product) => product.id === action.payload.id 
+        ? {...product, quantity: product.quantity + 1}
+        : product)
+      }
+    case cartActionTypes.DECREASE:
+      return {
+        ...state,
+        products: state.products.map((product) => product.id === action.payload.id
+        ? {...product, quantity: product.quantity - 1}
+        : product)
+        .filter((product) => product.quantity > 0)
+      }
     default: 
     return {...state}
   }
