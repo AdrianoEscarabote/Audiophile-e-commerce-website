@@ -43,6 +43,7 @@ const ProductDetail = () => {
 
   const clickLinkRenderNewData = (nameToFind: string) => {
     dispatch(findProduct(nameToFind))
+    setQuantity(1)
     refetch()
   }
 

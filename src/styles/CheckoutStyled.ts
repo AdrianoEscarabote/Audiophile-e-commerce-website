@@ -296,7 +296,7 @@ justify-content: center;
         width: 100%;
         max-width: 284px;
         height: 48px;
-        background: ${darkOrange};
+        background-color: ${darkOrange};
         font-weight: 700;
         font-size: 13px;
         line-height: 18px;
@@ -307,6 +307,19 @@ justify-content: center;
         border: none;
         outline: transparent;
         cursor: pointer;
+
+        &:focus-visible {
+          background-color: ${darkOrange} !important; 
+        }
+
+        &:focus {
+          background-color: ${lightOrange} !important;
+          border: 2.6px dotted ${black};
+        }
+
+        &:hover {
+          background-color: ${lightOrange} !important;
+        }
       }
     }
   }

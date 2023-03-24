@@ -35,12 +35,25 @@ z-index: 300 !Important;
     font-weight: 500;
     font-size: 0.9375rem;
     line-height: 1.5625rem;
-    text-decoration-line: underline;
+    text-decoration-line: none;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.7;
     border: transparent;
     background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+
+    &:focus {
+      border: unset !Important;
+    }
+  
+    &:focus-visible {
+      border: 1px solid ${black};
+    }
   }
 }
 
@@ -64,6 +77,16 @@ ul {
       background: ${lightOrange};
     }
     border-radius: 20px;    
+  }
+
+  .no-product {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.6;
   }
 
   .content-list {
@@ -127,10 +150,18 @@ ul {
         line-height: 1.125rem;
         text-align: center;
         letter-spacing: 0.0625rem;
-        text-transform: uppercase;
         color: ${black};
         mix-blend-mode: normal;
         opacity: 0.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        
+        &:focus-visible {
+          color: ${black} !important; 
+        }
 
         &:hover,
         &:focus {
@@ -139,6 +170,11 @@ ul {
       }
     }
   }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 .total {

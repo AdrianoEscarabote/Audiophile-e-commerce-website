@@ -1,4 +1,4 @@
-import { almostWhite, black, darkOrange, white } from "@/styles/colors";
+import { almostWhite, black, darkOrange, lightOrange, white } from "@/styles/colors";
 import styled from "styled-components";
 
 const CheckoutModalStyled = styled.div`
@@ -125,6 +125,18 @@ section {
     color: #FFFFFF;
     text-decoration: none;
     opacity: 1 !important;
+
+    &:focus-visible {
+      background-color: ${darkOrange} !important; 
+    }
+
+    &:focus {
+      background-color: ${lightOrange} !important;
+    }
+
+    &:hover {
+      background-color: ${lightOrange} !important;
+    }
   }
 }
 

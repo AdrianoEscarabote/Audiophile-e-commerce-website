@@ -5,5 +5,5 @@ export const selectProductsCount = (rootReducer: RootState) => {
 }
 
 export const selectProductTotalPrice = (rootReducer: RootState) => {
-  return rootReducer.cartReducer.products.reduce((accum, curr) => accum + curr.price, 0)
+  return rootReducer.cartReducer.products.reduce((accum, curr) => accum + curr.price * curr.quantity, 0)
 } 

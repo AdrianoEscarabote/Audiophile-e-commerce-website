@@ -368,7 +368,7 @@ const Checkout = () => {
                 <p>grand total <span>$ 5,446</span></p>
               </div>
 
-              <button onClick={handleClickOpenModal} className={isFormValid ? "" : "disabled"}>continue & pay</button>
+              <button onClick={isFormValid ? handleClickOpenModal : undefined} className={isFormValid ? "" : "disabled"}>continue & pay</button>
             </section>
           </div>
           {

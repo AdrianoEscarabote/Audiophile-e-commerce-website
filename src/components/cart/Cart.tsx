@@ -49,7 +49,7 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
 
       <ul>
         {
-          products.map(product => (
+          products.length >= 1 ? products.map(product => (
             <li key={product.id}>
               <div className="content-list">
                 <div className="details">
@@ -66,7 +66,7 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
                 </div>
               </div>
             </li>
-          ))
+          )) : <p className="no-product">No product in cart...</p>
         }
       </ul>
 
@@ -74,7 +74,7 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
         <p>TOTAL <span>$ {ProductTotalPrice}</span></p>
       </div>
 
-      <Link href="/Checkout" onClick={closeCart}>checkout</Link>
+      <Link href={products.length >= 1 ? "/Checkout" : "/"} className={products.length >= 1 ? "" : "disabled"} onClick={closeCart}>checkout</Link>
     </CartStyled>
-  )
+  ) 
 }
