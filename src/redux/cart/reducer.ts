@@ -27,7 +27,11 @@ const cartReducer = (state = initialState, action: ActionProps) => {
         ...state,
         products: [...state.products, {...action.payload, quantity: action.payload.quantity}]
       }
-      break
+    case cartActionTypes.CLEAN_CART:
+      return {
+        ...state,
+        products: []
+      }
     default: 
     return {...state}
   }

@@ -5,47 +5,37 @@ import CartStyled from "./CartStyled"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import rootReducer from "@/redux/root-reducer"
-
-interface CartProps {
-  cartOpen: boolean
-  closeCart: () => void
-}
-
-interface cartReducer {
-  products: ProductTypes[]
-};
-
-interface ProductTypes {
-  name: string,
-  price: number,
-  imagePath: string,
-  quantity: number,
-  id: string
-}
-
-interface RootState {
-  cartReducer: cartReducer;
-};
+import { cleanCart } from "@/redux/cart/actions"
+import { CartProps, RootState } from "@/types/CartProps"
+import { selectProductTotalPrice, selectProductsCount } from "@/redux/cart/cart.selector"
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
+
+  const dispatch = useDispatch()
+
+  const ProductTotalPrice = useSelector(selectProductTotalPrice)
+  const ProductsCount = useSelector(selectProductsCount)
   
   useEffect(() => {
     cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
   }, [cartOpen])
 
-  const dispatch = useDispatch()
   
   const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
 
   useEffect(() => {
     console.log(products)
   })
+  
+  const handleCleanCart = () => {
+    dispatch(cleanCart())
+  }
 
   return (
     <CartStyled onClick={(e) => e.stopPropagation()}> 
       <div className="wrapper_button_cart">
-        <p>CART (4)</p>
-        <button>Remove all</button>
+        <p>CART {ProductsCount != 0 ? `(${ProductsCount})` : null}</p>
+        <button onClick={handleCleanCart}>Remove all</button>
       </div>
 
       <ul>
@@ -72,12 +62,10 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
       </ul>
 
       <div className="total">
-        <p>TOTAL <span>$ 5,396</span></p>
+        <p>TOTAL <span>$ {ProductTotalPrice}</span></p>
       </div>
 
       <Link href="/Checkout" onClick={closeCart}>checkout</Link>
-
-      <h4>oi</h4>
     </CartStyled>
   )
 }

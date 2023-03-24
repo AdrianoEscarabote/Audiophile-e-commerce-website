@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Cart } from "../cart/Cart";
 import ListProducts from "../list_products/ListProducts";
+import { useSelector } from "react-redux";
+import { selectProductsCount } from "@/redux/cart/cart.selector";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -19,6 +21,8 @@ export const Header = () => {
     setCartOpen(!cartOpen);
     setMenuOpen(false)
   };
+
+  const ProductsCount = useSelector(selectProductsCount)
 
   useEffect(() => {
     cartOpen || menuOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
@@ -61,7 +65,7 @@ export const Header = () => {
             width="23"
             height="20"
             alt="" />
-            <span>4</span>
+            <span>{ProductsCount != 0 ? ProductsCount : null}</span>
           </button>  
         </div> 
       </div>

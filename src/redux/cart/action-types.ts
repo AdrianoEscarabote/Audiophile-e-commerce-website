@@ -1,8 +1,8 @@
 const cartActionTypes = {
   ADD_PRODUCT: "cart/add-product",
-  REMOVE_PRODUCT: "cart/remove-product",
   INCREASE: "cart/increase",
-  DECREASE: "cart/decrease"
+  DECREASE: "cart/decrease",
+  CLEAN_CART: "cart/clean"
 }
 
 export default cartActionTypes;
