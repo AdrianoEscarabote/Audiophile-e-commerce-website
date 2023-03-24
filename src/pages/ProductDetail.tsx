@@ -2,7 +2,7 @@ import ProductDetailStyled from "../styles/ProductDetailStyled";
 import { useSelector } from "react-redux";
 import rootReducer from "@/redux/root-reducer";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridImages from "@/components/gridImages/GridImages";
@@ -13,6 +13,15 @@ import useFetch from "@/custom/useFetch";
 import { DataProps } from "@/types/ProductDetailsProps";
 import { useDispatch } from "react-redux";
 import { findProduct } from "@/redux/productdetails/actions";
+import { addProductToCart } from "@/redux/cart/actions";
+
+interface ProductTypeCart {
+  name: string,
+  price: number,
+  imagePath: string,
+  quantity: number,
+  id: number
+}
 
 interface productState {
   name: string
@@ -46,6 +55,26 @@ const ProductDetail = () => {
   const decreaseQuantity = () => {
     quantity === 1 ? null : setQuantity((quantity) => quantity - 1)
   }
+
+  const ProductToCart: ProductTypeCart = {
+   id: 0,
+   imagePath: "",
+   name: "",
+   price: 0,
+   quantity: 0
+  }
+
+  const handleAddProduct = () => {
+    dispatch(addProductToCart(ProductToCart))
+  } 
+
+  useEffect(() => {
+    dataFormated.map(product => ProductToCart.id = product.id)
+    dataFormated.map(product => ProductToCart.name = product.name)
+    dataFormated.map(product => ProductToCart.imagePath = product.slug)
+    dataFormated.map(product => ProductToCart.price = product.price)
+    dataFormated.map(() => ProductToCart.quantity = quantity)
+  }, [dataFormated])
 
   return (
     <>
@@ -85,7 +114,7 @@ const ProductDetail = () => {
                           <span>{quantity}</span>
                           <button onClick={increaseQuantity}>+</button>
                         </div>
-                        <button className="add">add to cart</button>
+                        <button className="add" onClick={handleAddProduct}>add to cart</button>
                       </div>
                     </div>
                   </section>

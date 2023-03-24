@@ -2,11 +2,30 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect } from "react"
 import CartStyled from "./CartStyled"
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+import rootReducer from "@/redux/root-reducer"
 
 interface CartProps {
   cartOpen: boolean
   closeCart: () => void
 }
+
+interface cartReducer {
+  products: ProductTypes[]
+};
+
+interface ProductTypes {
+  name: string,
+  price: number,
+  imagePath: string,
+  quantity: number,
+  id: string
+}
+
+interface RootState {
+  cartReducer: cartReducer;
+};
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
   
@@ -14,78 +33,42 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
     cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
   }, [cartOpen])
 
+  const dispatch = useDispatch()
+  
+  const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
+
+  useEffect(() => {
+    console.log(products)
+  })
+
   return (
     <CartStyled onClick={(e) => e.stopPropagation()}> 
       <div className="wrapper_button_cart">
-        <p>CART (3)</p>
+        <p>CART (4)</p>
         <button>Remove all</button>
       </div>
 
       <ul>
-        <li>
-          <div className="content-list">
-            <div className="details">
-              <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
-              <p>
-                XX99 MK II
-                <span>$ 899</span>
-              </p>
-            </div>
-            <div className="wrapper_button">
-              <button>-</button>
-              <span>2</span>
-              <button>+</button>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="content-list">
-              <div className="details">
-                <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
-                <p>
-                  XX99 MK II
-                  <span>$ 899</span>
-                </p>
+        {
+          products.map(product => (
+            <li key={product.id}>
+              <div className="content-list">
+                <div className="details">
+                  <Image src={`/assets/cart/image-${product.imagePath}.jpg`} width={64} height={64} alt="" />
+                  <p>
+                    {product.name}
+                    <span>$ {product.price}</span>
+                  </p>
+                </div>
+                <div className="wrapper_button">
+                  <button>-</button>
+                  <span>{product.quantity}</span>
+                  <button>+</button>
+                </div>
               </div>
-              <div className="wrapper_button">
-                <button>-</button>
-                <span>2</span>
-                <button>+</button>
-              </div>
-            </div>
-        </li>
-        <li>
-          <div className="content-list">
-              <div className="details">
-                <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
-                <p>
-                  XX99 MK II
-                  <span>$ 899</span>
-                </p>
-              </div>
-              <div className="wrapper_button">
-                <button>-</button>
-                <span>2</span>
-                <button>+</button>
-              </div>
-            </div>
-        </li>
-        <li>
-          <div className="content-list">
-              <div className="details">
-                <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
-                <p>
-                  XX99 MK II
-                  <span>$ 899</span>
-                </p>
-              </div>
-              <div className="wrapper_button">
-                <button>-</button>
-                <span>2</span>
-                <button>+</button>
-              </div>
-            </div>
-        </li>
+            </li>
+          ))
+        }
       </ul>
 
       <div className="total">
