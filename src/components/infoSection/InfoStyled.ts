@@ -9,6 +9,8 @@ margin: 12.5rem 0rem;
 
 img {
   border-radius: 0.5rem;
+  position: relative;
+  left: 16px;
 }
 
 .text-info {

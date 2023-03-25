@@ -31,7 +31,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ className, linkClick }) => 
       </li>
       <li>
         <Link href="/Earphones" onClick={linkClick}>
-          <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="200" height="200" alt=""  />
+          <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="220" height="200" alt=""  />
           <p>earphones
             <span>
               shop

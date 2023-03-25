@@ -5,7 +5,8 @@ const ListProductsStyled = styled.ul`
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 0.625rem;
+gap: 1.25rem;
+width: 100%;
 
 li {
   width: 100%;
@@ -54,6 +55,8 @@ li {
     text-align: center;
     letter-spacing: 0.0804rem;
     text-transform: uppercase;
+    position: relative;
+    bottom: 12px;
   }
   .img {
     position: absolute;
@@ -72,11 +75,6 @@ li {
     mix-blend-mode: normal;
     opacity: 0.5;
   }
-}
+}`
 
-// tablet
-@media (max-width: 48rem) {
-  
-}
-`
 export default ListProductsStyled;

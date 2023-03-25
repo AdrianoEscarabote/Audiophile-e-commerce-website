@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { almostBlack, darkOrange } from "./colors";
+import { almostBlack, black, darkOrange, lightOrange } from "./colors";
 import { white } from "./colors";
 import { almostWhite } from "./colors";
 
@@ -26,14 +26,14 @@ main {
       height: 632px;
       place-content: center;
       background: url("./assets/home/desktop/image-hero.jpg") no-repeat;
-      background-size: 100% 100%;
-      background-position: 0px -40px;
+      background-size: 100% 115%;
+      background-position: 0px -95px;
   
       .col1 {
         max-width: 398px;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 50px;
   
         h1 {
           font-weight: 700;
@@ -41,6 +41,8 @@ main {
           line-height: 58px;
           letter-spacing: 2px;
           text-transform: uppercase;
+          position: relative;
+          bottom: 11px;
         }
   
         h2 {
@@ -51,19 +53,50 @@ main {
           text-transform: uppercase;
           opacity: 0.5;
           mix-blend-mode: normal;
+          position: relative;
+          bottom: -14px;
         }
   
   
         p {
+          position: relative;
+          bottom: 34px;
+          max-width: 349px; 
           font-weight: 500;
           font-size: 15px;
           line-height: 25px;
           mix-blend-mode: normal;
           opacity: 0.75;
         }
-        
+
         a {
-          margin-top: 10px;
+          display: grid;
+          place-content: center;
+          width: 160px;
+          height: 48px;
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 18px;
+          letter-spacing: 1px;
+          text-decoration: none;
+          text-transform: uppercase;
+          outline: transparent;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+          position: relative;
+          bottom: 46px;
+          background-color: ${darkOrange};
+          border: unset;
+          color: ${white};
+
+          &:hover {
+            background-color: ${lightOrange} !important;
+          }
+
+          &:focus {
+            background-color: ${lightOrange};
+            outline: 2.6px dotted ${white};
+          }
         }
       }
     }
@@ -71,10 +104,19 @@ main {
   .container {
     max-width: 1440px;
     width: 100%;
-    padding: 120px 165px 30px 165px;
+    padding: 200px 165px 0px 165px;
+
+    ul {
+      /* padding: 0 20px 0px 20px; */
+      width: 100%;
+
+      li {
+        padding: 0 0px 0px 26px;
+      }
+    }
   
     .grid-items {
-      margin-top: 161px;
+      margin-top: 168px;
       display: grid;
       grid-template-rows: 560px 320px 320px;    
       gap: 48px;
@@ -87,18 +129,21 @@ main {
         justify-content: space-evenly;
         overflow: hidden;
         background: url("./assets/home/desktop/pattern-circles.svg") no-repeat ${darkOrange};
-        background-position: -170px 10px;
+        background-position: -144px -30px;
   
         img {
           position: relative;
-          bottom: -45px;
+          bottom: -70px;
+          left: 11px;
         }
   
         .text {
           max-width: 349px;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 35px;
+          position: relative;
+          left: -63px;
           
           h2 {
             font-weight: 700;

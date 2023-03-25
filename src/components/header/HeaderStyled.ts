@@ -35,6 +35,9 @@ justify-content: center;
       ul {
         display: flex;
         gap: 2.125rem;
+        position: relative;
+        top: -2px;
+        left: -62px;
         li {
           a {
             font-weight: 700;
@@ -124,6 +127,11 @@ justify-content: center;
 @media(max-width: 71.75rem) {
   .container {
     padding: 2.1875rem 3.75rem 0rem 3.75rem;
+  }
+  nav {
+    ul {
+      position: initial !important;
+    }
   }
 }
 

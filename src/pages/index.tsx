@@ -10,6 +10,7 @@ import InfoComponent from '@/components/infoSection/InfoComponent';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';
 import { findProduct } from '@/redux/productdetails/actions';
+import Link from 'next/link';
 
 const nameProducts = {
   zx9speaker: "zx9-speaker", 
@@ -38,8 +39,8 @@ const Home = () => {
             <div className="col1">
               <h2>new product</h2>
               <h1>XX99 Mark II Headphones</h1>
-              <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-              <LinkSeeProduct href='/ProductDetail' backgroundcolor={darkOrange} fontcolor={white} hoverbackground={lightOrange} onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</LinkSeeProduct>
+              <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p> 
+              <Link href='/ProductDetail' onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</Link>
             </div>
           </div>
         </section>
@@ -47,7 +48,7 @@ const Home = () => {
           <ListProducts />
           <section className="grid-items">
             <div className="zx9-speaker">
-              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="410" height="493" />
+              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="380" height="473" />
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>

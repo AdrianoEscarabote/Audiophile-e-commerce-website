@@ -22,7 +22,7 @@ p {
 
 .container {
   max-width: 90rem;
-  padding: 1.875rem 10.3125rem;
+  padding: 76px 165px 46px 165px;
   width: 100%;
 
   &::before {
@@ -43,7 +43,7 @@ p {
     .links {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 2rem;
 
       a {
         font-weight: 700;
@@ -71,12 +71,13 @@ p {
 
     .social-icons {
       display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
+      align-items: flex-end;
+      gap: 16px;
+      padding-bottom: 6px;
     }
   }
   .row3 {
-    margin-top: 2.25rem;
+    margin-top: 3.25rem;
     display: flex;
   }
 }
