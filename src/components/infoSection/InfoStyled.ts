@@ -57,7 +57,9 @@ img {
     font-size: 1.75rem !Important;
     line-height: 2.375rem !Important;
   }
-}
-`
+  img {
+    position: initial !Important;
+  }
+}`
 
 export default InfoStyled;

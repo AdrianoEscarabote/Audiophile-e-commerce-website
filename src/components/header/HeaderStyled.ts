@@ -36,8 +36,8 @@ justify-content: center;
         display: flex;
         gap: 2.125rem;
         position: relative;
-        top: -2px;
-        left: -62px;
+        top: -0.125rem;
+        left: -3.875rem;
         li {
           a {
             font-weight: 700;
@@ -103,7 +103,7 @@ justify-content: center;
 }
 
 .wrapper-cart {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 6.0625rem;
@@ -121,6 +121,13 @@ justify-content: center;
     max-width: 90rem;
     background: transparent;
     padding: 0rem 10.3125rem;
+  }
+}
+
+
+@media (max-width: 36.5rem) {
+  .wrapper-cart {
+    padding: 0 0.625rem !important;
   }
 }
 
@@ -145,6 +152,9 @@ justify-content: center;
       }
     }
   }
+  .wrapper-cart {
+    top: 6rem !important;
+  }
   .list-desktop {
     display: none !Important;
   }
@@ -159,7 +169,10 @@ justify-content: center;
     }
   }
 }
-@media(max-width: 48rem) {
+@media(max-width: 768px) {
+  .wrapper-cart {
+    top: 5.6875rem !important;
+  }
   .list-mobile.open {
     animation: mobileAnimation 0.9s ease-in-out;
     opacity: 1 !Important;
@@ -173,9 +186,10 @@ justify-content: center;
     background: ${white};
     visibility: visible !Important;
     z-index: 200;
+    overflow-y: scroll;
     ul {
       display: flex !important;
-      gap: 5.3125rem;
+     gap: 20px;
       li {
         a {
           height: 9.6875rem !important;
@@ -205,7 +219,11 @@ justify-content: center;
   .container {
     padding: 1.875rem 1.25rem 0rem 1.25rem;
   }
-
+  .wrapper-cart {
+    .content-cart {
+      padding: 0rem !Important;
+    }
+  }
   .list-mobile.open {
     height: 46.875rem !important;
     bottom: -45rem !Important;
@@ -222,6 +240,7 @@ justify-content: center;
     ul {
       display: flex !important;
       flex-wrap: wrap;
+      gap: 5.3125rem;
 
       li {
         display: flex;
@@ -230,6 +249,19 @@ justify-content: center;
         width: 100%;
       }
     }
+  }
+}
+
+@media (max-height: 52.5rem) and (max-width: 36.5rem) {
+  .list-mobile.open {
+    height: 100% !Important;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (max-height:  47.5rem) {
+  .list-mobile.open {
+    padding-bottom: 8.75rem;
   }
 }
 

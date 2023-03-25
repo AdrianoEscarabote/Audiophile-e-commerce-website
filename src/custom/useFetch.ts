@@ -21,7 +21,6 @@ const useFetch = () => {
     const response = await axios.get("data/data.json").
     then((response) => response.data)
     .catch((err) => setError(err)) 
-    console.log(data)
     setData(response)
   }
 

@@ -8,35 +8,35 @@ justify-content: center;
 
 .container {
   width: 100%;
-  max-width: 1440px;
-  padding: 40px 165px;
+  max-width: 90rem;
+  padding: 2.5rem 10.3125rem;
 
   a {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.5;
   }
 
   .wrapper {
-    margin-top: 38px;
+    margin-top: 2.375rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     
     .checkout {
-      padding: 54px 48px;
+      padding: 3.375rem 3rem;
       background: ${white};
-      max-width: 730px;
-      border-radius: 8px;
+      max-width: 45.625rem;
+      border-radius: 0.5rem;
   
       h1 {
         font-weight: 700;
-        font-size: 32px;
-        line-height: 36px;
-        letter-spacing: 1.14286px;
+        font-size: 2rem;
+        line-height: 2.25rem;
+        letter-spacing: 0.0714rem;
         text-transform: uppercase;
         color: ${black};
       }
@@ -47,25 +47,25 @@ justify-content: center;
 
           h2 {
             font-weight: 700;
-            font-size: 13px;
-            line-height: 25px;
-            letter-spacing: 0.928571px;
+            font-size: 0.8125rem;
+            line-height: 1.5625rem;
+            letter-spacing: 0.058rem;
             text-transform: uppercase;
             color: ${darkOrange};
-            padding-bottom: 24px;
+            padding-bottom: 1.5rem;
           }
 
           .wrapper-billing,
           .wrapper-shipping {
             display: flex;
-            gap: 16px;
+            gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 54px;
+            margin-bottom: 3.375rem;
             
             .wrapper-input {
               width: 100%;
-              max-width: 309px;
-              height: 81px;
+              max-width: 19.3125rem;
+              height: 5.0625rem;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
@@ -73,28 +73,28 @@ justify-content: center;
 
               span {
                 position: absolute;
-                right: 10px;
+                right: 0.625rem;
                 font-weight: 500;
-                font-size: 12px;
-                line-height: 16px;
+                font-size: 0.75rem;
+                line-height: 1rem;
                 text-align: right;
-                letter-spacing: -0.214286px;
+                letter-spacing: -0.0134rem;
                 color: #CD2C2C;
               } 
 
               label {
                 font-weight: 700;
-                font-size: 12px;
-                line-height: 16px;
-                letter-spacing: -0.214286px;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                letter-spacing: -0.0134rem;
                 color: #000000;
               }
 
               input {
-                height: 56px;
-                border: 1px solid #CFCFCF;
-                border-radius: 8px;
-                padding-left: 25px;
+                height: 3.5rem;
+                border: 0.0625rem solid #CFCFCF;
+                border-radius: 0.5rem;
+                padding-left: 1.5625rem;
               }
             }
           }
@@ -106,64 +106,64 @@ justify-content: center;
             .text {
               p {
                 font-weight: 700;
-                font-size: 12px;
-                line-height: 16px;
-                letter-spacing: -0.214286px;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                letter-spacing: -0.0134rem;
                 color: ${black};
               }
             }
             .labels {
               display: flex;
               flex-direction: column;
-              gap: 16px;
+              gap: 1rem;
 
               label {
                 width: 100%;
-                padding: 16px;
-                border: 1px solid #CFCFCF;
-                border-radius: 8px;
+                padding: 1rem;
+                border: 0.0625rem solid #CFCFCF;
+                border-radius: 0.5rem;
                 display: flex;
-                gap: 16px;
+                gap: 1rem;
               }
             }
           }
           .wrapper-money {
             display: flex;
-            gap: 16px;
+            gap: 1rem;
 
             .wrapper-input {
-              margin-top: 24px;
+              margin-top: 1.5rem;
               width: 100%;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
-              height: 81px;
+              height: 5.0625rem;
               position: relative;
 
               span {
                 position: absolute;
-                right: 10px;
+                right: 0.625rem;
                 font-weight: 500;
-                font-size: 12px;
-                line-height: 16px;
+                font-size: 0.75rem;
+                line-height: 1rem;
                 text-align: right;
-                letter-spacing: -0.214286px;
+                letter-spacing: -0.0134rem;
                 color: #CD2C2C;
               } 
 
               label {
                 font-weight: 700;
-                font-size: 12px;
-                line-height: 16px;
-                letter-spacing: -0.214286px;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                letter-spacing: -0.0134rem;
                 color: #000000;
               }
 
               input {
-                height: 56px;
-                border: 1px solid #CFCFCF;
-                border-radius: 8px;
-                padding-left: 25px;
+                height: 3.5rem;
+                border: 0.0625rem solid #CFCFCF;
+                border-radius: 0.5rem;
+                padding-left: 1.5625rem;
               }
             }
           }
@@ -173,17 +173,17 @@ justify-content: center;
 
     .summary {
       background: ${white};
-      border-radius: 8px;
-      max-width: 350px;
+      border-radius: 0.5rem;
+      max-width: 21.875rem;
       height: auto;
       width: 100%;
-      padding: 32px 33px;
+      padding: 2rem 2.0625rem;
 
       h2 {
         font-weight: 700;
-        font-size: 18px;
-        line-height: 25px;
-        letter-spacing: 1.28571px;
+        font-size: 1.125rem;
+        line-height: 1.5625rem;
+        letter-spacing: 0.0804rem;
         text-transform: uppercase;
         color: ${black};
       }
@@ -191,8 +191,8 @@ justify-content: center;
       ul {
         display: flex;
         flex-direction: column;
-        margin: 32px 0px;
-        gap: 24px;
+        margin: 2rem 0rem;
+        gap: 1.5rem;
 
         li {
           display: flex;
@@ -202,10 +202,10 @@ justify-content: center;
             width: 100%;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 1rem;
 
             img {
-              border-radius: 8px;
+              border-radius: 0.5rem;
             }
 
             .price {
@@ -215,15 +215,15 @@ justify-content: center;
 
               .name {
                 font-weight: 700;
-                font-size: 15px;
-                line-height: 25px;
+                font-size: 0.9375rem;
+                line-height: 1.5625rem;
                 color: ${black};
               }
 
               span {
                 font-weight: 700;
-                font-size: 14px;
-                line-height: 25px;
+                font-size: 0.875rem;
+                line-height: 1.5625rem;
                 color: #000000;
                 mix-blend-mode: normal;
                 opacity: 0.7;
@@ -234,8 +234,8 @@ justify-content: center;
           .amount {
             span {
               font-weight: 700;
-              font-size: 15px;
-              line-height: 25px;
+              font-size: 0.9375rem;
+              line-height: 1.5625rem;
               text-align: right;
               color: ${black};
               mix-blend-mode: normal;
@@ -248,21 +248,21 @@ justify-content: center;
       .total,
       .shipping,
       .vat {
-        margin-top: 8px;
+        margin-top: 0.5rem;
         p {
           width: 100%;
           display: flex;
           justify-content: space-between;
           font-weight: 500;
-          font-size: 15px;
-          line-height: 25px;
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
           color: #1d1d1d93;
           text-transform: uppercase;
 
           span {
             font-weight: 700;
-            font-size: 18px;
-            line-height: 25px;
+            font-size: 1.125rem;
+            line-height: 1.5625rem;
             text-align: right;
             text-transform: uppercase;
             color: ${black};
@@ -270,21 +270,21 @@ justify-content: center;
         }
       }
       .grand-total {
-        margin: 16px 0px;
+        margin: 1rem 0rem;
         p {
           width: 100%;
           display: flex;
           justify-content: space-between;
           font-weight: 500;
-          font-size: 15px;
-          line-height: 25px;
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
           text-transform: uppercase;
           color: #1d1d1d93;
 
           span {
             font-weight: 700;
-            font-size: 18px;
-            line-height: 25px;
+            font-size: 1.125rem;
+            line-height: 1.5625rem;
             text-align: right;
             text-transform: uppercase;
             color: ${darkOrange};
@@ -294,14 +294,14 @@ justify-content: center;
 
       button {
         width: 100%;
-        max-width: 284px;
-        height: 48px;
+        max-width: 17.75rem;
+        height: 3rem;
         background-color: ${darkOrange};
         font-weight: 700;
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
         text-align: center;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625rem;
         text-transform: uppercase;
         color: ${white};
         border: none;
@@ -314,7 +314,7 @@ justify-content: center;
 
         &:focus {
           background-color: ${lightOrange} !important;
-          border: 2.6px dotted ${black};
+          border: 0.1625rem dotted ${black};
         }
 
         &:hover {
@@ -334,17 +334,17 @@ justify-content: center;
 .list_countries {
   position: absolute;
   width: 100%;
-  top: 100px;
+  top: 6.25rem;
   background: ${almostWhite};
   color: ${black};
-  border: 1px solid #00000054;
-  border-radius: 8px;
+  border: 0.0625rem solid #00000054;
+  border-radius: 0.5rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   z-index: 100 !Important;
-  height: 295px;
+  height: 18.4375rem;
   overflow-y: scroll;
 
   li {
@@ -352,13 +352,13 @@ justify-content: center;
       border: unset;
       outline: transparent;
       font-weight: 500;
-      font-size: 15px;
-      line-height: 25px;
+      font-size: 0.9375rem;
+      line-height: 1.5625rem;
       cursor: pointer;
 
       &:focus {
-        border: 2.6px solid ${black};
-        border-radius: 8px;
+        border: 0.1625rem solid ${black};
+        border-radius: 0.5rem;
       } 
 
       &:hover,
@@ -370,7 +370,7 @@ justify-content: center;
   }
 
   &::-webkit-scrollbar {
-    width: 0.75rem;              
+    width: 12px;              
   }
   &::-webkit-scrollbar-track {
     background: transparent;        
@@ -380,18 +380,18 @@ justify-content: center;
     &:hover {
       background: ${lightOrange};
     }
-    border-radius: 20px;    
+    border-radius: 1.25rem;    
   }
 }
 
 .marked {
-  border: 1px solid #D87D4A !important;
+  border: 0.0625rem solid #D87D4A !important;
 }
 
-@media (max-width: 1418px) {
+@media (max-width: 88.625rem) {
   .wrapper {
     flex-direction: column;
-    gap: 30px;
+    gap: 1.875rem;
   }
   .checkout {
     width: 100%;
@@ -407,16 +407,16 @@ justify-content: center;
   }
 }
 
-@media (max-width: 1148px) {
+@media (max-width: 71.75rem) {
   .container {
-    padding: 40px 60px
+    padding: 2.5rem 3.75rem
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .checkout,
   .summary {
-    padding: 32px 20px !important;
+    padding: 2rem 1.25rem !important;
   }
   .wrapper-billing,
   .wrapper-shipping {
@@ -431,7 +431,7 @@ justify-content: center;
   }
   .wrapper-payment {
     display: flex !important;
-    gap: 20px;
+    gap: 1.25rem;
     flex-direction: column;
   }
   .wrapper-money {
@@ -439,9 +439,9 @@ justify-content: center;
   }
 }
 
-@media (max-width: 584px) {
+@media (max-width: 36.5rem) {
   .container {
-    padding: 30px 20px !important;
+    padding: 1.875rem 1.25rem !important;
   }
 }
 `

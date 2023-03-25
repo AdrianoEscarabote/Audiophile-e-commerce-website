@@ -1,12 +1,6 @@
 import { MainStyled } from '@/styles/MainStyled';
-import { LinkSeeProduct } from '@/styles/shared/linkSeeProduct';
-import { black, darkOrange } from '@/styles/colors';
-import { white } from '@/styles/colors';
-import { lightOrange } from '@/styles/colors';
 import Image from 'next/image';
-import { hoverBtnMain } from '@/styles/colors';
 import ListProducts from '@/components/list_products/ListProducts';
-import InfoComponent from '@/components/infoSection/InfoComponent';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';
 import { findProduct } from '@/redux/productdetails/actions';
@@ -52,13 +46,13 @@ const Home = () => {
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <LinkSeeProduct backgroundcolor={black} hoverbackground={hoverBtnMain} hoverfont="#FFFFFF" fontcolor={white} border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</LinkSeeProduct>
+                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</Link>
               </div>
             </div>
             <div className="zx7-speaker">
               <div className="text">
                 <h3>zx7 speaker</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx7speaker)}>see product</LinkSeeProduct>
+                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx7speaker)}>see product</Link>
               </div>
             </div>
             <div className="yx1-earphones">
@@ -71,11 +65,34 @@ const Home = () => {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <LinkSeeProduct backgroundcolor="#ffffff" hoverbackground="#000000" hoverfont="#FFFFFF" fontcolor="#000000" border="1px solid #000000" href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</LinkSeeProduct>
+                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</Link>
               </div>
             </div>
           </section>
-          <InfoComponent />
+          <section className="info">
+            <div className="text-info">
+              <h3>Bringing you the <span>best</span> audio gear</h3>
+              <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+            </div>
+            <picture>
+              <source
+                srcSet="/assets/shared/tablet/image-best-gear.jpg"
+                media="(min-width: 480px) and (max-width: 1148px)"
+                height={300}
+              />
+              <source
+                srcSet="/assets/shared/mobile/image-best-gear.jpg"
+                media="(max-width: 480px)"
+                height={300}
+              />
+              <Image
+                src="/assets/shared/desktop/image-best-gear.jpg"
+                alt=""
+                width={540}
+                height={588}
+              />
+            </picture>
+          </section>
         </div>
       </main>
     </>

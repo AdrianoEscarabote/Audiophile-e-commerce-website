@@ -140,8 +140,9 @@ section {
 }
 
 @media (max-width: 36.25rem) {
-  padding: 0rem 0.625rem;
+  padding: 0px 10px;
   section {
+    padding: 2rem 1.25rem !important;
     height: auto;
 
     .wrapper-order {
@@ -159,6 +160,8 @@ section {
     }
     h2 {
       margin: 1.25rem 0rem 1rem 0rem;
+      font-size: 24px;
+      line-height: 28px;
     }
   }
 }` 

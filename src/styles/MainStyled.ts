@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { almostBlack, black, darkOrange, lightOrange } from "./colors";
-import { white } from "./colors";
-import { almostWhite } from "./colors";
+import { almostWhite, hoverBtnMain, almostBlack, black, darkOrange, lightOrange, white } from "./colors";
 
 export const MainStyled = createGlobalStyle`
 main {
@@ -18,53 +16,53 @@ main {
     justify-content: center;
   
     .content {
-      max-width: 1440px;
+      max-width: 90rem;
       width: 100%;
-      padding: 30px 165px;
+      padding: 1.875rem 10.3125rem;
       display: grid;
       grid-template-columns: 50% 50%;
-      height: 632px;
+      height: 39.5rem;
       place-content: center;
       background: url("./assets/home/desktop/image-hero.jpg") no-repeat;
       background-size: 100% 115%;
-      background-position: 0px -95px;
+      background-position: 0rem -5.9375rem;
   
       .col1 {
-        max-width: 398px;
+        max-width: 24.875rem;
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 3.125rem;
   
         h1 {
           font-weight: 700;
-          font-size: 56px;
-          line-height: 58px;
-          letter-spacing: 2px;
+          font-size: 3.5rem;
+          line-height: 3.625rem;
+          letter-spacing: 0.125rem;
           text-transform: uppercase;
           position: relative;
-          bottom: 11px;
+          bottom: 0.6875rem;
         }
   
         h2 {
           font-weight: 400;
-          font-size: 14px;
-          line-height: 19px;
-          letter-spacing: 10px;
+          font-size: 0.875rem;
+          line-height: 1.1875rem;
+          letter-spacing: 0.625rem;
           text-transform: uppercase;
           opacity: 0.5;
           mix-blend-mode: normal;
           position: relative;
-          bottom: -14px;
+          bottom: -0.875rem;
         }
   
   
         p {
           position: relative;
-          bottom: 34px;
-          max-width: 349px; 
+          bottom: 2.125rem;
+          max-width: 21.8125rem; 
           font-weight: 500;
-          font-size: 15px;
-          line-height: 25px;
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
           mix-blend-mode: normal;
           opacity: 0.75;
         }
@@ -72,19 +70,19 @@ main {
         a {
           display: grid;
           place-content: center;
-          width: 160px;
-          height: 48px;
+          width: 10rem;
+          height: 3rem;
           font-weight: 700;
-          font-size: 13px;
-          line-height: 18px;
-          letter-spacing: 1px;
+          font-size: 0.8125rem;
+          line-height: 1.125rem;
+          letter-spacing: 0.0625rem;
           text-decoration: none;
           text-transform: uppercase;
           outline: transparent;
           cursor: pointer;
           transition: 0.2s ease-in-out;
           position: relative;
-          bottom: 46px;
+          bottom: 2.875rem;
           background-color: ${darkOrange};
           border: unset;
           color: ${white};
@@ -95,71 +93,99 @@ main {
 
           &:focus {
             background-color: ${lightOrange};
-            outline: 2.6px dotted ${white};
+            outline: 0.1625rem dotted ${white};
           }
         }
       }
     }
   }
   .container {
-    max-width: 1440px;
+    max-width: 90rem;
     width: 100%;
-    padding: 200px 165px 0px 165px;
+    padding: 12.5rem 10.3125rem 0rem 10.3125rem;
 
     ul {
-      /* padding: 0 20px 0px 20px; */
+      /* padding: 0 1.25rem 0rem 1.25rem; */
       width: 100%;
 
       li {
-        padding: 0 0px 0px 26px;
+        padding: 0 0rem 0rem 1.625rem;
       }
     }
   
     .grid-items {
-      margin-top: 168px;
+      margin-top: 10.5rem;
       display: grid;
-      grid-template-rows: 560px 320px 320px;    
-      gap: 48px;
+      grid-template-rows: 35rem 20rem 20rem;    
+      gap: 3rem;
   
       .zx9-speaker {
         grid-column: 1;
         display: flex;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         align-items: center;
         justify-content: space-evenly;
         overflow: hidden;
         background: url("./assets/home/desktop/pattern-circles.svg") no-repeat ${darkOrange};
-        background-position: -144px -30px;
+        background-position: -9rem -1.875rem;
   
         img {
           position: relative;
-          bottom: -70px;
-          left: 11px;
+          bottom: -4.375rem;
+          left: 0.6875rem;
         }
   
         .text {
-          max-width: 349px;
+          max-width: 21.8125rem;
           display: flex;
           flex-direction: column;
-          gap: 35px;
+          gap: 2.1875rem;
           position: relative;
-          left: -63px;
+          left: -3.9375rem;
           
           h2 {
             font-weight: 700;
-            font-size: 56px;
-            line-height: 58px;
-            letter-spacing: 2px;
+            font-size: 3.5rem;
+            line-height: 3.625rem;
+            letter-spacing: 0.125rem;
             text-transform: uppercase;
           }
     
           p {
             font-weight: 500;
-            font-size: 15px;
-            line-height: 25px;
+            font-size: 0.9375rem;
+            line-height: 1.5625rem;
             color: #FFFFFF;
             mix-blend-mode: normal;
             opacity: 0.75;
+          }
+
+          a {
+            display: grid;
+            place-content: center;
+            width: 10rem;
+            height: 3rem;
+            font-weight: 700;
+            font-size: 0.8125rem;
+            line-height: 1.125rem;
+            letter-spacing: 0.0625rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            outline: transparent;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            background-color: ${black};
+            border: unset;
+            color: ${white};
+  
+            &:hover {
+              background-color: ${hoverBtnMain} !important;
+            }
+  
+            &:focus {
+              background-color: ${hoverBtnMain};
+              outline: 0.1625rem dotted ${black};
+            }
           }
         }
       }
@@ -169,20 +195,20 @@ main {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        border-radius: 8px;
+        border-radius: 0.5rem;
       }
   
       .text {
-        padding-left: 96px;
+        padding-left: 6rem;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 1.25rem;
   
         h3 {
           font-weight: 700;
-          font-size: 28px;
-          line-height: 38px;
-          letter-spacing: 2px;
+          font-size: 1.75rem;
+          line-height: 2.375rem;
+          letter-spacing: 0.125rem;
           text-transform: uppercase;
           color: #000000;
         }
@@ -194,45 +220,144 @@ main {
         place-content: center;
   
         img {
-          border-radius: 8px;
+          border-radius: 0.5rem;
         }
   
         .text {
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          border-radius: 8px;
+          border-radius: 0.5rem;
           background: ${almostWhite};
+        }
+      }
+
+      .zx7-speaker,
+      .yx1-earphones {
+        a {
+          display: grid;
+          place-content: center;
+          width: 10rem;
+          height: 3rem;
+          font-weight: 700;
+          font-size: 0.8125rem;
+          line-height: 1.125rem;
+          letter-spacing: 0.0625rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          outline: transparent;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+          background-color: transparent;
+          border: 0.0625rem solid ${black};
+          color: ${black};
+
+          &:hover {
+            background-color: ${black} !important;
+            color: ${white};
+          }
+
+          &:focus {
+            background-color: ${black};
+            outline: 0.1625rem dotted ${white};
+            color: ${white};
+          }
+        }
+      }
+    }
+    .info {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      place-content: center;
+      margin: 12.5rem 0rem;
+
+      img {
+        border-radius: 0.5rem;
+        position: relative;
+        left: 16px;
+      }
+
+      .text-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 27.8125rem;
+        gap: 2.4375rem;
+
+        h3 {
+          font-weight: 700;
+          font-size: 2.5rem;
+          line-height: 2.75rem;
+          letter-spacing: 0.0893rem;
+          text-transform: uppercase;
+          color: ${black};
+          span {
+            color: ${darkOrange};
+          }
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
+          color: ${black};
+          mix-blend-mode: normal;
+          opacity: 0.5;
         }
       }
     }
   }
 }
 
-@media(max-width: 1148px) {
+@media(max-width: 71.75rem) {
   main {
     .container {
-      padding: 120px 60px 30px 60px;
+      padding: 7.5rem 3.75rem 1.875rem 3.75rem;
+      ul {
+        li {
+          padding: 0px !Important;
+        }
+      }
     }
   }
   
   main {
     .content {
-      padding: 30px 60px !important;
+      padding: 1.875rem 3.75rem !important;
     } 
   }
 
   main {
     .zx9-speaker {
       .text {
-        padding: 0px !important;
+        position: initial !Important; 
+        padding: 0rem !important;
       }
     }
   }
 } 
 
+@media (max-width: 30rem) {
+  h3 {
+    font-size: 1.75rem !Important;
+    line-height: 2.375rem !Important;
+  }
+}
+
 // tablet
 @media (max-width: 828px) {
+  .info {
+    margin: 6rem 0rem;
+    display: flex !Important;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;  
+    gap: 1.25rem; 
+    img {
+      position: initial !Important;
+    }
+  }
   main {
     .content {
       display: flex !Important;
@@ -250,7 +375,7 @@ main {
 
     .container {
       ul {
-        gap: 90px;
+        gap: 5.625rem;
         flex-wrap: wrap;
         margin: 0 auto;
   
@@ -260,21 +385,21 @@ main {
         }
   
         a {
-          margin: 0px !important;
+          margin: 0rem !important;
         }
       }
     }
 
     .grid-items {
-      grid-template-rows: 720px 320px auto !Important;    
+      grid-template-rows: 45rem 20rem auto !Important;    
   
       .zx9-speaker {
         flex-direction: column;
-        background-position: center -280px !Important;
+        background-position: center -17.5rem !Important;
     
         img {
-          width: 197px;
-          height: 237px;
+          width: 12.3125rem;
+          height: 14.8125rem;
           position: initial !Important;   
         }
         .text {
@@ -286,12 +411,12 @@ main {
       .zx7-speaker {
         background: url("./assets/home/tablet/image-speaker-zx7.jpg") no-repeat 100% !Important;
         .text {
-          padding-left: 62px;
+          padding-left: 3.875rem;
         }
       }
       .yx1-earphones {
         .text {
-          padding-left: 40px;
+          padding-left: 2.5rem;
         }
       }
     }
@@ -299,64 +424,70 @@ main {
 }
 
 // mobile
-@media (max-width: 584px) {
+@media (max-width: 36.5rem) {
+  .info {
+    h3 {
+      font-size: 1.75rem !Important;
+      line-height: 2.375rem !Important;
+    }
+  }
   main {
     .content {
-      height: 510px !Important;
-      padding: 0px 20px 30px 20px !Important;
+      height: 31.875rem !Important;
+      padding: 0rem 1.25rem 1.875rem 1.25rem !Important;
       background: url("./assets/home/mobile/image-hero.jpg") no-repeat !Important;
       background-size: 100% 90% !Important;
-      background-position: center -0px !Important;
+      background-position: center -0rem !Important;
       .wrapper {
         width: 100%;
         justify-content: space-between !Important;
       }
       .col1 {
         h1 {
-          font-size: 36px !Important;
-          line-height: 40px !Important;
+          font-size: 2.25rem !Important;
+          line-height: 2.5rem !Important;
         }
       }
     }
     .container {
-      padding: 120px 20px 30px 20px;
+      padding: 7.5rem 1.25rem 1.875rem 1.25rem;
       ul {
-        gap: 60px;
+        gap: 3.75rem;
         a {
-          height: 165px;
+          height: 10.3125rem;
         }
         .img {
-          top: -45px;
+          top: -2.8125rem;
           width: auto;
-          height: 144px;
+          height: 9rem;
         }
         p {
-          font-size: 15px !Important;
-          line-height: 20px !Important;
+          font-size: 0.9375rem !Important;
+          line-height: 1.25rem !Important;
         }
       }
     }
   }
   main {
     .grid-items {
-      margin-top: 120px !Important;
-      grid-template-rows: 600px 320px auto !Important; 
+      margin-top: 7.5rem !Important;
+      grid-template-rows: 37.5rem 20rem auto !Important; 
       .yx1-earphones {
         display: flex !important;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 1.25rem;
     
         .text {
-          padding: 41px !Important;
+          padding: 2.5625rem !Important;
           width: 100%;
         }
       }
       .zx9-speaker {
-        background-position: center -135px !Important;
-        background-size: 720px !Important;
+        background-position: center -8.4375rem !Important;
+        background-size: 45rem !Important;
         h2 {
-          font-size: 36px !Important;
-          line-height: 40px !Important;
+          font-size: 2.25rem !Important;
+          line-height: 2.5rem !Important;
         }
       }
       .zx7-speaker {

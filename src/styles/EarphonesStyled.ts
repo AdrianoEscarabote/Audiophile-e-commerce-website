@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 // colors
 import { almostBlack, black, darkOrange, white } from "./colors";
 
@@ -14,63 +13,63 @@ align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0px;
+  padding: 6.25rem 0rem;
 
   h1 {
     font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
     text-align: center;
-    letter-spacing: 1.42857px;
+    letter-spacing: 0.0893rem;
     text-transform: uppercase;
     color: ${white};
   }
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 90rem;
   width: 100%;
-  padding: 120px 165px 30px 165px;
+  padding: 7.5rem 10.3125rem 1.875rem 10.3125rem;
 
   .preview-product {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0px 234px 0px;
+    margin: 2.5rem 0rem 14.625rem 0rem;
 
     img {
-      border-radius: 8px;
+      border-radius: 0.5rem;
     }
 
     .text-product {
-      max-width: 445px;
+      max-width: 27.8125rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      max-width: 445px;
-      gap: 20px;
+      max-width: 27.8125rem;
+      gap: 1.25rem;
       span {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 19px;
-        letter-spacing: 10px;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        letter-spacing: 0.625rem;
         text-transform: uppercase;
         color: ${darkOrange};
       }
       h2 {
         font-style: normal;
         font-weight: 700;
-        font-size: 40px;
-        line-height: 44px;
-        letter-spacing: 1.42857px;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        letter-spacing: 0.0893rem;
         text-transform: uppercase;
         color: ${black};
       }
       p {
-        margin: 10px 0px;
+        margin: 0.625rem 0rem;
         font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         color: #000000;
         mix-blend-mode: normal;
         opacity: 0.5;
@@ -79,48 +78,48 @@ align-items: center;
   }
 }
 
-@media(max-width: 1348px) {
+@media(max-width: 84.25rem) {
   .container {
-    padding: 120px 60px 30px 60px !Important;
+    padding: 7.5rem 3.75rem 1.875rem 3.75rem !Important;
 
     .preview-product {
       img {
-        width: 440px;
-        height: 460px;
+        width: 27.5rem;
+        height: 28.75rem;
       }
       .text {
-        padding: 0px 10px;
+        padding: 0rem 0.625rem;
       }
     }
   }
 }
 
 // tablet
-@media (max-width: 1000px) {
+@media (max-width: 62.5rem) {
   .container {
-    padding: 0px 60px 30px 60px !Important;
+    padding: 0rem 3.75rem 1.875rem 3.75rem !Important;
   }
 
   .preview-product  {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 2rem;
     
     img {
       width: 100% !Important;
-      height: 352px !Important;
+      height: 22rem !Important;
     }
   
     .text-product {
-      padding: 0px !important;
+      padding: 0rem !important;
       text-align: center;
       align-items: center !Important;
     }
   }
 
   ul {
-    gap: 90px;
+    gap: 5.625rem;
     flex-wrap: wrap;
     margin: 0 auto;
 
@@ -130,34 +129,33 @@ align-items: center;
     }
 
     a {
-      margin: 0px !important;
+      margin: 0rem !important;
     }
   }
 }
 
 // mobile
-@media (max-width: 584px) {
+@media (max-width: 36.5rem) {
   .container {
-    padding: 0px 20px 30px 20px !Important;
+    padding: 0rem 1.25rem 1.875rem 1.25rem !Important;
   }
 
   .wrapper {
-    height: 102px !important; 
-    padding: 0px !Important;
+    height: 6.375rem !important; 
+    padding: 0rem !Important;
 
     h1 {
-      font-size: 28px;
-      line-height: 38px;
+      font-size: 1.75rem;
+      line-height: 2.375rem;
     }
   }
 
   .text-product {
     h2 {
-      font-size: 28px !important;
-      line-height: 38px !important;
+      font-size: 1.75rem !important;
+      line-height: 2.375rem !important;
     }
   }
-}
+}`
 
-`
 export default EarphonesStyled;

@@ -1,29 +1,16 @@
+import { LinkSeeProductProps } from "@/types/LinkProductTypes";
 import Link from "next/link";
 import styled from "styled-components";
 
-interface LinkProps {
-  backgroundcolor: string;
-  fontcolor: string;
-  hoverbackground: string;
-  border?: string;
-  hoverfont?: string;
-}
-
-// button 1 default
-{/* <LinkSeeProduct backgroundColor="#D87D4A" hoverBackground="#FBAF85" fontColor="#FFFFFF" href="/About">see product</LinkSeeProduct> */}
-
-// button 2 default
-{/* <LinkSeeProduct backgroundColor="#ffffff" hoverBackground="#000000" hoverFont="#FFFFFF" fontColor="#000000" border="1px solid #000000" href="/About">see product</LinkSeeProduct> */}
-
-export const LinkSeeProduct = styled(Link)<LinkProps>`
+export const LinkSeeProduct = styled(Link)<LinkSeeProductProps>`
 display: grid;
 place-content: center;
-width: 160px;
-height: 48px;
+width: 10rem;
+height: 3rem;
 font-weight: 700;
-font-size: 13px;
-line-height: 18px;
-letter-spacing: 1px;
+font-size: 0.8125rem;
+line-height: 1.125rem;
+letter-spacing: 0.0625rem;
 text-decoration: none;
 text-transform: uppercase;
 outline: transparent;
@@ -41,7 +28,7 @@ backgroundcolor && `
   &:focus {
     background-color: ${hoverbackground};
     color: ${hoverfont ? hoverfont : fontcolor};
-    border: 2.6px dotted #000;
+    border: 0.1625rem dotted #000;
   }
   `
-}`;
+}`

@@ -7,14 +7,14 @@ align-items: center;
 justify-content: center;
 
 .container {
-  max-width: 1440px;
+  max-width: 90rem;
   width: 100%;
-  padding: 60px 165px 30px 165px;
+  padding: 3.75rem 10.3125rem 1.875rem 10.3125rem;
 
   .back {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.7;
@@ -29,39 +29,39 @@ justify-content: center;
   .grid-items {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-top: 56px;
+    margin-top: 3.5rem;
 
     .text {
       justify-self: flex-end;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 20px;
-      max-width: 445px;
+      gap: 1.25rem;
+      max-width: 27.8125rem;
       
 
       h2 {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 19px;
-        letter-spacing: 10px;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        letter-spacing: 0.625rem;
         text-transform: uppercase;
         color: #D87D4A;
       }
 
       h1 {
         font-weight: 700;
-        font-size: 40px;
-        line-height: 44px;
-        letter-spacing: 1.42857px;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        letter-spacing: 0.0893rem;
         text-transform: uppercase;
         color: #000000;
       }
 
       p {
         font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         color: #000000;
         mix-blend-mode: normal;
         opacity: 0.5;
@@ -69,9 +69,9 @@ justify-content: center;
 
       .price {
         font-weight: 700;
-        font-size: 18px;
-        line-height: 25px;
-        letter-spacing: 1.28571px;
+        font-size: 1.125rem;
+        line-height: 1.5625rem;
+        letter-spacing: 0.0804rem;
         text-transform: uppercase;
         color: #000000;
       }
@@ -79,20 +79,20 @@ justify-content: center;
       .wrapper {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 1.25rem;
 
         .container-button {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
-          width: 120px;
-          height: 48px;
+          width: 7.5rem;
+          height: 3rem;
           background: ${almostWhite};
 
           button {
             cursor: pointer;
-            width: 16px;
-            heihgt: 18px;
+            width: 1rem;
+            heihgt: 1.125rem;
             background: transparent;
             border: transparent;
             height: auto;
@@ -103,7 +103,7 @@ justify-content: center;
 
             &:focus {
               color: ${darkOrange};
-              outline: 2px dotted ${almostBlack};
+              outline: 0.125rem dotted ${almostBlack};
             }
           }
         }
@@ -111,9 +111,9 @@ justify-content: center;
         .add {
           background: ${darkOrange};
           font-weight: 700;
-          font-size: 13px;
-          line-height: 18px;
-          letter-spacing: 1px;
+          font-size: 0.8125rem;
+          line-height: 1.125rem;
+          letter-spacing: 0.0625rem;
           text-decoration: none;
           text-transform: uppercase;
           color: ${white};
@@ -121,16 +121,16 @@ justify-content: center;
           border: transparent;
           cursor: pointer;
           transition: 0.2s ease-in-out;
-          max-width: 160px;
+          max-width: 10rem;
           width: 100%;
-          height: 48px;
+          height: 3rem;
 
           &:hover {
             background: ${lightOrange};
           }
 
           &:focus {
-            border: 2.6px dotted ${almostBlack};
+            border: 0.1625rem dotted ${almostBlack};
             background: ${lightOrange};
           }
         }
@@ -139,15 +139,15 @@ justify-content: center;
   }
 
   .details {
-    margin-top: 161px;
+    margin-top: 10.0625rem;
     display: flex;
     align-items: flex-start;
 
     h3 {
       font-weight: 700;
-      font-size: 32px;
-      line-height: 36px;
-      letter-spacing: 1.14286px;
+      font-size: 2rem;
+      line-height: 2.25rem;
+      letter-spacing: 0.0714rem;
       text-transform: uppercase;
       color: #000000;
     }
@@ -156,13 +156,13 @@ justify-content: center;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      gap: 30px;
-      max-width: 635px;
+      gap: 1.875rem;
+      max-width: 39.6875rem;
 
       p {
         font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         color: #000000;
         mix-blend-mode: normal;
         opacity: 0.5;
@@ -170,27 +170,27 @@ justify-content: center;
     }
 
     .list-box {
-      padding-left: 125px;
+      padding-left: 7.8125rem;
       ul {
-        margin-top: 30px;
+        margin-top: 1.875rem;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 0.9375rem;
 
         li {
           p {
             display: flex;
-            gap: 10px;
+            gap: 0.625rem;
             span {
               font-weight: 700;
-              font-size: 15px;
-              line-height: 25px;
+              font-size: 0.9375rem;
+              line-height: 1.5625rem;
               color: #D87D4A;
             }
 
             font-weight: 500;
-            font-size: 15px;
-            line-height: 25px;
+            font-size: 0.9375rem;
+            line-height: 1.5625rem;
             color: #000000;
             mix-blend-mode: normal;
             opacity: 0.7;
@@ -201,18 +201,18 @@ justify-content: center;
   }
 
   ul {
-    margin-top: 160px;
+    margin-top: 10rem;
   }
 }
 
-@media(max-width: 1256px) {
+@media(max-width: 78.5rem) {
   .container {
-    padding: 60px 60px 30px 60px;
+    padding: 3.75rem 3.75rem 1.875rem 3.75rem;
   }
   .details {
     display: flex !Important;
     flex-direction: column;
-    gap: 120px;
+    gap: 7.5rem;
     .features {
       max-width: unset !important;
     }
@@ -221,17 +221,17 @@ justify-content: center;
       display: flex;
       width: 100%;
       justify-content: space-between;
-      padding: 0px !important;
+      padding: 0rem !important;
        
       ul {
-        margin: 0px !Important;
-        padding-right: 120px;
+        margin: 0rem !Important;
+        padding-right: 7.5rem;
         align-items: flex-start;
       }
     }
   }
   ul {
-    gap: 90px;
+    gap: 5.625rem;
     flex-wrap: wrap;
     margin: 0 auto;
 
@@ -241,43 +241,43 @@ justify-content: center;
     }
 
     a {
-      margin: 0px !important;
+      margin: 0rem !important;
     }
   }
   .grid-items {
     .text {
-      max-width: 339px !Important;
+      max-width: 21.1875rem !Important;
     }
   }
 }
 
 
 // tablet
-@media (max-width: 828px) {
+@media (max-width: 51.75rem) {
   .container {
-    padding: 40px 60px 30px 60px;
+    padding: 2.5rem 3.75rem 1.875rem 3.75rem;
   }
   .grid-items {
     img {
-      width: 280px !important;
+      width: 17.5rem !important;
     }
   }
 }
 
 // mobile
-@media (max-width: 684px) {
+@media (max-width: 42.75rem) {
   .features {
     position: relative;
-    top: -50px;
+    top: -3.125rem;
   }
   .grid-items {
     display: flex !important;
     flex-direction: column;
-    gap: 40px;
+    gap: 2.5rem;
 
     h1 {
-      font-size: 28px !important;
-      line-height: 38px !important;
+      font-size: 1.75rem !important;
+      line-height: 2.375rem !important;
     }
 
     img {
@@ -292,28 +292,27 @@ justify-content: center;
 
 
   .details {
-    gap: 88px;
+    gap: 5.5rem;
 
     h3 {
-      font-size: 24px !important;
-      line-height: 36px !important;
+      font-size: 1.5rem !important;
+      line-height: 2.25rem !important;
     }
 
     .list-box {
       flex-direction: column;
-      gap: 24px;
+      gap: 1.5rem;
       ul {
-        padding: 0px !important;
+        padding: 0rem !important;
       }
     }
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 32.5rem) {
   .container {
-    padding: 30px 20px !important;
+    padding: 1.875rem 1.25rem !important;
   }
-}
-`
+}`
 
 export default ProductDetailStyled;

@@ -5,7 +5,8 @@ const CartStyled = styled.section`
 margin-right: 10.3125rem;
 background: ${white};
 border-radius: 0.5rem;
-width: 23.5625rem;
+width: 100%;
+max-width: 23.5625rem;
 height: 30.5rem;
 position: absolute;
 top: 2.5rem;
@@ -52,7 +53,7 @@ z-index: 300 !Important;
     }
   
     &:focus-visible {
-      border: 1px solid ${black};
+      border: 0.0625rem solid ${black};
     }
   }
 }
@@ -76,11 +77,11 @@ ul {
     &:hover {
       background: ${lightOrange};
     }
-    border-radius: 20px;    
+    border-radius: 1.25rem;    
   }
 
   .no-product {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     font-weight: 500;
     font-size: 0.9375rem;
     line-height: 1.5625rem;
@@ -226,6 +227,35 @@ a {
     bottom: -31.25rem;
     height: 30.5rem;
     opacity: 1;
+  }
+}
+
+@media (max-width: 71.75rem) {
+  margin-right: 3.75rem;
+}
+
+@media (max-width: 36.5rem) {
+  margin: 0px;
+  padding: 2rem 1rem; 
+}
+
+@media (max-width: 21.25rem) {
+  max-width: 100% !important;
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      .content-list {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        .details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
   }
 }`
 

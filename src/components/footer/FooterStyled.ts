@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 // colors
 import { footerBackground, white, darkOrange} from "../../styles/colors";
 
@@ -72,8 +71,8 @@ p {
     .social-icons {
       display: flex;
       align-items: flex-end;
-      gap: 16px;
-      padding-bottom: 6px;
+      gap: 1rem;
+      padding-bottom: 0.375rem;
     }
   }
   .row3 {

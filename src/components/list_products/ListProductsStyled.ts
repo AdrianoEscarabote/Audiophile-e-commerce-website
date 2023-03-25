@@ -56,7 +56,7 @@ li {
     letter-spacing: 0.0804rem;
     text-transform: uppercase;
     position: relative;
-    bottom: 12px;
+    bottom: 0.75rem;
   }
   .img {
     position: absolute;
@@ -74,6 +74,14 @@ li {
     color: ${black};
     mix-blend-mode: normal;
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 48rem) {
+  li {
+    p {
+      position: initial !Important;
+    }
   }
 }`
 
