@@ -53,3 +53,18 @@ export const initialState: FormState = {
   errorMessageName: "",
   errorMessagePhone: "",
 };
+
+export interface ProductsData {
+  name: string
+  imagePath: string
+  price: number
+  quantity: number
+}
+
+export interface ProductsTypes {
+  products: ProductsData[]
+}
+
+export interface RootState {
+  cartReducer: ProductsTypes
+}

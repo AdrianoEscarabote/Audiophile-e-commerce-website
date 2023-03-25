@@ -18,7 +18,7 @@ section {
   background: ${white};
   border-radius: 0.5rem;
   width: 33.75rem;
-  height: 36.3125rem;
+  height: auto;
   padding: 3rem;
   position: relative;
   left: 0%;
@@ -47,7 +47,6 @@ section {
     margin-top: 2.0625rem;
     display: grid;
     grid-template-columns: 56% 44%;
-    height: 8.75rem;
     border-radius: 0.5rem;
     overflow: hidden;
 

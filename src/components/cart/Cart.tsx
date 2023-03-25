@@ -8,7 +8,6 @@ import rootReducer from "@/redux/root-reducer"
 import { cleanCart, Decrease, Increase } from "@/redux/cart/actions"
 import { CartProps, RootState } from "@/types/CartProps"
 import { selectProductTotalPrice, selectProductsCount } from "@/redux/cart/cart.selector"
-import { ProductTypes } from "@/types/CartProps"
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
 
@@ -23,11 +22,7 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
 
   
   const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
-
-  useEffect(() => {
-    console.log(products)
-  })
-  
+ 
   const handleCleanCart = () => {
     dispatch(cleanCart())
   }

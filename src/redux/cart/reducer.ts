@@ -1,4 +1,5 @@
 import { ActionProps, Product } from "@/types/CartReducerTypes";
+import { useEffect, useReducer } from "react";
 import cartActionTypes from "./action-types";
 
 const initialState: Product = { 
@@ -51,5 +52,16 @@ const cartReducer = (state = initialState, action: ActionProps) => {
     return {...state}
   }
 }
+
+/* export const useCartReducer = () => {
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  // atualizar o localStorage sempre que houver uma alteração no estado do carrinho
+  useEffect(() => {
+    localStorage.setItem(CART_STATE_KEY, JSON.stringify(state));
+  }, [state]);
+
+  return [state, dispatch];
+}; */
 
 export default cartReducer;

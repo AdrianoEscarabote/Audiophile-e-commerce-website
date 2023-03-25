@@ -1,5 +1,10 @@
+import { cleanCart } from "@/redux/cart/actions";
+import { selectProductsCount, selectProductTotalPrice } from "@/redux/cart/cart.selector";
+import { RootState } from "@/types/CartProps";
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CheckoutModalStyled from "./CheckoutModalStyled";
 
 interface CheckoutModalProps {
@@ -8,11 +13,20 @@ interface CheckoutModalProps {
 
 const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
 
+  const dispatch = useDispatch();
+  const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
+  const ProductsCount = useSelector(selectProductsCount);
+  const totalPrice = useSelector(selectProductTotalPrice);
+
   window.addEventListener("keydown", (ev) => {
     if (ev.key == "Escape") {
-      closeModal()
-    }
-  })
+      closeModal();
+    };
+  });
+
+  const handleCleanCart = () => {
+    dispatch(cleanCart());
+  };
 
   return (
     <CheckoutModalStyled onClick={closeModal}>
@@ -25,23 +39,26 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
           <div className="col1">
             <div className="item">
               <div className="details">
-                <Image src="/assets/cart/image-xx99-mark-two-headphones.jpg" width="50" alt="" height="50"/>
-                <p>XX99 MK II
-                  <span>$ 2,999</span>
+                <Image src={`/assets/cart/image-${products[0].imagePath}.jpg`} width="50" alt="" height="50"/>
+                <p>{products[0].name}
+                  <span>$ {products[0].price.toLocaleString("en", { minimumFractionDigits: 0 })}</span>
                 </p>
               </div>
-              <p className="amount">x1</p>
+              <p className="amount">x{products[0].quantity}</p>
             </div>
-            <p className="amout-itens">and 2 other item(s)</p>
+            <p className="amout-itens">and {ProductsCount - 1} other item(s)</p>
           </div>
           <div className="col2">
             <p>grand total
-              <span>$ 5,446</span>
+              <span>$ {(totalPrice + 50).toLocaleString("en", { minimumFractionDigits: 0 })}</span>
             </p>
           </div>
         </div>
 
-        <Link href="/" onClick={closeModal}>back to home</Link>
+        <Link href="/" onClick={() => {
+          closeModal()
+          handleCleanCart()
+        }}>back to home</Link>
       </section>
     </CheckoutModalStyled>
   );

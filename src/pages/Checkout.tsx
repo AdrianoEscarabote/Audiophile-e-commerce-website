@@ -6,6 +6,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import {  SetStateAction, useEffect, useReducer, useRef, useState } from "react";
+import { RootState } from "@/types/CheckOutPropsTypes";
+import { useSelector } from "react-redux";
+import rootReducer from "@/redux/root-reducer";
+import { selectProductTotalPrice } from "@/redux/cart/cart.selector";
 
 const formReducer = (state: FormState, action: Action ) => {
   switch(action.type) {
@@ -130,7 +134,6 @@ const Checkout = () => {
     }
   }
 
-
   const handleClickCountryName = (name: string) => {
     if (name)  {
       dispatch({ type: "SET_COUNTRY", payload: name})
@@ -146,11 +149,6 @@ const Checkout = () => {
     setCash((prevState) => !prevState)
     setEMoney((prevState) => !prevState)
   }
-
-
-
-
-
 
   const [countriesListOpen, setCountriesListOpen] = useState<boolean>(false)
 
@@ -205,6 +203,13 @@ const Checkout = () => {
   
     setIsFormValid(isAllFieldsValid as SetStateAction<boolean>);
   }
+
+  const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer)
+
+  const ProductsTotalPrice = useSelector(selectProductTotalPrice)
+  const shipping = 50
+  const vat = ProductsTotalPrice / 5
+  const grandTotal = ProductsTotalPrice + shipping
 
   return (
     <>
@@ -314,58 +319,38 @@ const Checkout = () => {
             <section className="summary">
               <h2>summary</h2>
               <ul>
-                <li>
-                  <div className="details">
-                    <Image src="/assets/cart/image-xx59-headphones.jpg" alt="" width={64} height={64} />
-                    <div className="price">
-                      <p className="name">XX99 MK II</p>
-                      <span>$ 2,999</span>
-                    </div>
-                  </div>
-                  <div className="amount">
-                    <span>x2</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="details">
-                    <Image src="/assets/cart/image-zx7-speaker.jpg" alt="" width={64} height={64} />
-                    <div className="price">
-                      <p className="name">XX99 MK II</p>
-                      <span>$ 2,999</span>
-                    </div>
-                  </div>
-                  <div className="amount">
-                    <span>x2</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="details">
-                    <Image src="/assets/cart/image-zx9-speaker.jpg" alt="" width={64} height={64} />
-                    <div className="price">
-                      <p className="name">XX99 MK II</p>
-                      <span>$ 2,999</span>
-                    </div>
-                  </div>
-                  <div className="amount">
-                    <span>x2</span>
-                  </div>
-                </li>
+                {
+                  products && products.map((product) => (
+                    <li>
+                      <div className="details">
+                        <Image src={`/assets/cart/image-${product.imagePath}.jpg`} alt="" width={64} height={64} />
+                        <div className="price">
+                          <p className="name">{product.name}</p>
+                          <span>$ {product.price}</span>
+                        </div>
+                      </div>
+                      <div className="amount">
+                        <span>x{product.quantity}</span>
+                      </div>
+                    </li>
+                  ))
+                }
               </ul>
               
               <div className="total">
-                <p>total <span>$ 5,396</span></p>
+                <p>total <span>$ {ProductsTotalPrice.toLocaleString("en", { minimumFractionDigits: 0 })}</span></p>
               </div>
 
               <div className="shipping">
-                <p>shipping <span>$ 50</span></p>
+                <p>shipping <span>$ {shipping.toLocaleString("en", { minimumFractionDigits: 0 })}</span></p>
               </div>
 
               <div className="vat">
-                <p>vat (included) <span>$ 1,079</span></p>
+                <p>vat (included) <span>$ {vat.toLocaleString("en", { minimumFractionDigits: 0 })}</span></p>
               </div>
 
               <div className="grand-total">
-                <p>grand total <span>$ 5,446</span></p>
+                <p>grand total <span>$ {grandTotal.toLocaleString("en", { minimumFractionDigits: 0 })}</span></p>
               </div>
 
               <button onClick={isFormValid ? handleClickOpenModal : undefined} className={isFormValid ? "" : "disabled"}>continue & pay</button>
