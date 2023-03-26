@@ -48,7 +48,7 @@ const Headphones = () => {
                 <span>new product</span>
                 <h2>XX99 Mark II Headphones</h2>
                 <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}  backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}  backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             </div>
 
@@ -56,7 +56,7 @@ const Headphones = () => {
               <div className="text">
                 <h2>XX99 Mark I Headphones</h2>
                 <p>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.xx99markiheadphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.xx99markiheadphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
               <picture>
                 <source
@@ -86,7 +86,7 @@ const Headphones = () => {
               <div className="text">
                 <h2>XX59 Headphones</h2>
                 <p>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.xx59headphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.xx59headphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             </div>
 

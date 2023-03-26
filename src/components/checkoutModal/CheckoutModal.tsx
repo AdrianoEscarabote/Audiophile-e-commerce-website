@@ -44,9 +44,13 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
                   <span>$ {products[0].price.toLocaleString("en", { minimumFractionDigits: 0 })}</span>
                 </p>
               </div>
-              <p className="amount">x{products[0].quantity}</p>
+              <p className="amount">x{1}</p>
             </div>
-            <p className="amout-itens">and {ProductsCount - 1} other item(s)</p>
+            <p className="amout-itens">
+              {
+                products[0].quantity === 1 && products.length === 1 ? "" : `and ${ProductsCount - 1} other item(s)`
+              }
+            </p>
           </div>
           <div className="col2">
             <p>grand total

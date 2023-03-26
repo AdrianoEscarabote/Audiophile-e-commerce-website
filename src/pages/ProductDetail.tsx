@@ -14,6 +14,7 @@ import { DataProps } from "@/types/ProductDetailsProps";
 import { useDispatch } from "react-redux";
 import { findProduct } from "@/redux/productdetails/actions";
 import { addProductToCart } from "@/redux/cart/actions";
+import { RootState } from "@/types/CartProps";
 
 interface ProductTypeCart {
   name: string,
@@ -27,7 +28,7 @@ interface productState {
   name: string
 };
 
-interface RootState {
+interface RootStateProduct {
   productReducer: productState;
 };
 
@@ -35,7 +36,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1)
 
   // name - redux
-  const { name } = useSelector((rootReducer: RootState) => rootReducer.productReducer);
+  const { name } = useSelector((rootReducer: RootStateProduct) => rootReducer.productReducer);
 
   // data
   const dispatch = useDispatch()
@@ -77,6 +78,15 @@ const ProductDetail = () => {
     dataFormated.map(() => ProductToCart.quantity = quantity)
   }, [dataFormated])
 
+
+  const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
+
+  useEffect(() => {
+    // salvar dados do carrinho no localStorage sempre que o estado do carrinho mudar
+    const cartString = JSON.stringify(products)
+    localStorage.setItem("cart", cartString)
+  }, [products])
+
   return (
     <>
       <Head>
@@ -111,11 +121,11 @@ const ProductDetail = () => {
                       <span className="price">$ {product.price}</span>
                       <div className="wrapper">
                         <div className="container-button">
-                          <button onClick={decreaseQuantity}>-</button>
+                          <button aria-label="decrease amount" onClick={decreaseQuantity}>-</button>
                           <span>{quantity}</span>
-                          <button onClick={increaseQuantity}>+</button>
+                          <button aria-label="increase amount" onClick={increaseQuantity}>+</button>
                         </div>
-                        <button className="add" onClick={handleAddProduct}>add to cart</button>
+                        <button aria-label="add product to cart" className="add" onClick={handleAddProduct}>add to cart</button>
                       </div>
                     </div>
                   </section>

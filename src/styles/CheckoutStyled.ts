@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { almostBlack, almostWhite, black, darkOrange, lightOrange, white } from "./colors";
+import { almostWhite, black, darkOrange, lightOrange, white } from "./colors";
 
 const CheckoutStyled = styled.main`
 display: flex;
@@ -18,6 +18,13 @@ justify-content: center;
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.5;
+  }
+
+  input {
+    cursor: pointer;
+    &:hover {
+      border: 1px solid ${darkOrange} !important;
+    }
   }
 
   .wrapper {
@@ -118,6 +125,7 @@ justify-content: center;
               gap: 1rem;
 
               label {
+                cursor: pointer;
                 width: 100%;
                 padding: 1rem;
                 border: 0.0625rem solid #CFCFCF;
@@ -330,7 +338,6 @@ justify-content: center;
   opacity: 0.4;
 }
 
-
 .list_countries {
   position: absolute;
   width: 100%;
@@ -388,6 +395,20 @@ justify-content: center;
   border: 0.0625rem solid #D87D4A !important;
 }
 
+.error_input {
+  border: 2px solid #CD2C2C !important;
+}
+
+.empty-cart {
+  font-size: 26px;
+  font-weight: 700;
+  color: #CD2C2C;
+}
+
+.error-font {
+  color: #CD2C2C !important;
+}
+
 @media (max-width: 88.625rem) {
   .wrapper {
     flex-direction: column;
@@ -443,7 +464,6 @@ justify-content: center;
   .container {
     padding: 1.875rem 1.25rem !important;
   }
-}
-`
+}`
 
 export default CheckoutStyled;

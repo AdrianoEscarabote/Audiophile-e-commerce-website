@@ -5,6 +5,9 @@ import Head from 'next/head';
 import { useDispatch } from 'react-redux';
 import { findProduct } from '@/redux/productdetails/actions';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { addProductToCart, cleanCart } from '@/redux/cart/actions';
+import { ProductTypes } from '@/types/CartProps';
 
 const nameProducts = {
   zx9speaker: "zx9-speaker", 
@@ -34,7 +37,7 @@ const Home = () => {
               <h2>new product</h2>
               <h1>XX99 Mark II Headphones</h1>
               <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p> 
-              <Link href='/ProductDetail' onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</Link>
+              <Link aria-label='view product' href='/ProductDetail' onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</Link>
             </div>
           </div>
         </section>
@@ -46,7 +49,7 @@ const Home = () => {
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</Link>
+                <Link aria-label='view product' href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</Link>
               </div>
             </div>
             <div className="zx7-speaker">
@@ -65,7 +68,7 @@ const Home = () => {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</Link>
+                <Link aria-label='view product' href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</Link>
               </div>
             </div>
           </section>

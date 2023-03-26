@@ -164,6 +164,26 @@ section {
       line-height: 28px;
     }
   }
+}
+
+@media (max-height: 640px) {
+  section {
+    height: 440px !Important;
+    overflow-y: scroll !Important;
+    &::-webkit-scrollbar {
+      width: 0.75rem;              
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;        
+    }
+    &::-webkit-scrollbar-thumb {
+      background: ${darkOrange};    
+      &:hover {
+        background: ${lightOrange};
+      }
+      border-radius: 1.25rem;    
+    }
+  }
 }` 
 
 export default CheckoutModalStyled;

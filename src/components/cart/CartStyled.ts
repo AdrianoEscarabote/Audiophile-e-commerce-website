@@ -1,4 +1,4 @@
-import { black, white, almostWhite, darkOrange, lightOrange } from "@/styles/colors";
+import { black, white, almostWhite, darkOrange, lightOrange, hoverBtnMain } from "@/styles/colors";
 import styled from "styled-components";
 
 const CartStyled = styled.section`
@@ -257,6 +257,30 @@ a {
       }
     }
   }
-}`
+}
+@media (max-height: 620px) {
+  overflow-y: scroll !important;
+  height: 70%;
+  top: 0.5rem;
+
+  ul {
+    height: auto;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.65rem;              
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${hoverBtnMain};    
+    &:hover {
+      background: ${lightOrange};
+    }
+    border-radius: 1.25rem;    
+  }
+}
+`
 
 export default CartStyled;

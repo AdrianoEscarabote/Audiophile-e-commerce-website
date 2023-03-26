@@ -259,7 +259,7 @@ main {
 
           &:focus {
             background-color: ${black};
-            outline: 0.1625rem dotted ${white};
+            outline: 0.1625rem dotted ${black};
             color: ${white};
           }
         }

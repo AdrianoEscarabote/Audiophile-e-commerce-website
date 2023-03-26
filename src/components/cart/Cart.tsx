@@ -5,8 +5,8 @@ import CartStyled from "./CartStyled"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import rootReducer from "@/redux/root-reducer"
-import { cleanCart, Decrease, Increase } from "@/redux/cart/actions"
-import { CartProps, RootState } from "@/types/CartProps"
+import { addProductToCart, cleanCart, Decrease, Increase } from "@/redux/cart/actions"
+import { CartProps, ProductTypes, RootState } from "@/types/CartProps"
 import { selectProductTotalPrice, selectProductsCount } from "@/redux/cart/cart.selector"
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
@@ -18,11 +18,16 @@ export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
   
   useEffect(() => {
     cartOpen ? document.querySelector("body")?.classList.add("overflow-hidden") : document.querySelector("body")?.classList.remove("overflow-hidden");
-  }, [cartOpen])
-
+  }, [cartOpen]);
   
   const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
- 
+  
+  useEffect(() => {
+    // salvar dados do carrinho no localStorage sempre que o estado do carrinho mudar
+    const cartString = JSON.stringify(products)
+    localStorage.setItem("cart", cartString)
+  }, [products])
+
   const handleCleanCart = () => {
     dispatch(cleanCart())
   }

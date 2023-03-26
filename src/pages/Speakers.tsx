@@ -47,14 +47,14 @@ const Speakers = () => {
                 <span>new product</span>
                 <h2>zx9 speaker</h2>
                 <p>Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.zx9speaker)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.zx9speaker)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             </div>
             <div className="zx7">
               <div className="text">
                 <h2>zx7 speaker</h2>
                 <p>Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.zx7speaker)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.zx7speaker)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
               <picture>
                 <source

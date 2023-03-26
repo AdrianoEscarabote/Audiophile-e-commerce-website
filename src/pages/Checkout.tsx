@@ -136,7 +136,8 @@ const Checkout = () => {
 
   const handleClickCountryName = (name: string) => {
     if (name)  {
-      dispatch({ type: "SET_COUNTRY", payload: name})
+      dispatch({ type: "SET_COUNTRY", payload: name })
+      dispatch({ type: "SET_ERROR_COUNTRY", payload: "" })
       setCountriesListOpen(false)
     }
   }
@@ -199,7 +200,7 @@ const Checkout = () => {
     const isPhoneValid = phoneRegex.test(phone);
     const isEMoneyPinValid = e_money_pin.length >= 4;
   
-    const isAllFieldsValid = isEmailValid && isPhoneValid && isEMoneyPinValid && address && city && country && e_money_number && name;
+    const isAllFieldsValid = products.length >= 1 && isEmailValid && isPhoneValid && isEMoneyPinValid && address && city && country && e_money_number && name;
   
     setIsFormValid(isAllFieldsValid as SetStateAction<boolean>);
   }
@@ -220,6 +221,11 @@ const Checkout = () => {
         <div className="container">
           <Link href="/">Go Back</Link>
           <div className="wrapper">
+            {
+              products.length === 0 ? (
+                <p className="empty-cart">Your cart is empty add some product!</p>
+              ) : ""
+            }
             <section className="checkout">
               <h1>checkout</h1>
 
@@ -229,49 +235,50 @@ const Checkout = () => {
                   <h2>Billing Details</h2>
                   <div className="wrapper-billing">
                     <div className="wrapper-input">
-                      <label htmlFor="name">Name</label>
+                      <label htmlFor="name" className={formData.errorMessageName
+                       ? "error-font" : ""}>Name</label>
                       <span>{formData.errorMessageName}</span>
-                      <input type="text" name="name" value={formData.name} onChange={handleChange} id="name" placeholder="Alexel Ward" />
+                      <input className={formData.errorMessageName ? "error_input" : ""} type="text" name="name" value={formData.name} onChange={handleChange} id="name" placeholder="Alexel Ward" />
                     </div>
 
                     <div className="wrapper-input">
-                      <label htmlFor="email">Email Address</label>
+                      <label htmlFor="email" className={formData.errorMessageEmail ? "error-font" : ""}>Email Address</label>
                       <span>{formData.errorMessageEmail}</span>
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} id="email" placeholder="alexel@mail.com" />
+                      <input className={formData.errorMessageEmail ? "error_input" : ""} type="email" name="email" value={formData.email} onChange={handleChange} id="email" placeholder="alexel@mail.com" />
                     </div>
 
                     <div className="wrapper-input">
-                      <label htmlFor="phone">Phone</label>
+                      <label htmlFor="phone" className={formData.errorMessagePhone ? "error-font" : ""}>Phone</label>
                       <span>{formData.errorMessagePhone}</span>
-                      <input type="text" name="phone" id="phone" value={formData.phone.replace(/[^0-9\s\(\)\-\+]/g, '')} onChange={handleChange} placeholder="+1 202-555-0136" />
+                      <input className={formData.errorMessagePhone ? "error_input" : ""} type="text" name="phone" id="phone" value={formData.phone.replace(/[^0-9\s\(\)\-\+]/g, '')} onChange={handleChange} placeholder="+1 202-555-0136" />
                     </div>
 
                   </div>
                   <h2>shipping info</h2>
                   <div className="wrapper-shipping">
                     <div className="wrapper-input">
-                      <label htmlFor="address">Address</label>
+                      <label htmlFor="address" className={formData.errorMessageAddress ? "error-font" : ""}>Address</label>
                       <span>{formData.errorMessageAddress}</span>
-                      <input type="text" value={formData.address} onChange={handleChange} name="address" id="address" placeholder="1137 Williams Avenue" />
+                      <input className={formData.errorMessageAddress ? "error_input" : ""} type="text" value={formData.address} onChange={handleChange} name="address" id="address" placeholder="1137 Williams Avenue" />
                     </div>
 
                     <div className="wrapper-input">
-                      <label htmlFor="city">City</label>
+                      <label htmlFor="city" className={formData.errorMessageCity ? "error-font" : ""}>City</label>
                       <span>{formData.errorMessageCity}</span>
-                      <input type="text" value={formData.city} onChange={handleChange} name="city" id="city" placeholder="New York" />
+                      <input className={formData.errorMessageCity ? "error_input" : ""} type="text" value={formData.city} onChange={handleChange} name="city" id="city" placeholder="New York" />
                     </div>
 
                     <div className="wrapper-input">
-                      <label htmlFor="country">Country</label>
+                      <label htmlFor="country" className={formData.errorMessageCountry ? "error-font" : ""}>Country</label>
                       <span>{formData.errorMessageCountry}</span>
-                      <input type="text" value={formData.country} onFocus={() => setCountriesListOpen(true)} onChange={handleChange} name="country" id="country" placeholder="United States" ref={inputRef} />
+                      <input className={formData.errorMessageCountry ? "error_input" : ""} type="text" value={formData.country} onFocus={() => setCountriesListOpen(true)} onChange={handleChange} name="country" id="country" placeholder="United States" ref={inputRef} />
                       {
                         countriesListOpen && CountriesList ? (
                           <ul className="list_countries" ref={listRef}>
                             {
                               CountriesList.map((item, index) => (
                                 <li key={index}>
-                                  <button type="button" onClick={(ev) => handleClickCountryName(ev.currentTarget.innerText)}>
+                                  <button type="button" aria-label={`select ${item.country_name}`} onClick={(ev) => handleClickCountryName(ev.currentTarget.innerText)}>
                                     {item.country_name}
                                   </button>
                                 </li>
@@ -303,14 +310,14 @@ const Checkout = () => {
 
                   <div className="wrapper-money">
                     <div className="wrapper-input">
-                      <label htmlFor="number">e-Money Number</label>
+                      <label htmlFor="number" className={formData.errorMessageEMoneyNumber ? "error-font" : ""}>e-Money Number</label>
                       <span>{formData.errorMessageEMoneyNumber}</span>
-                      <input type="text" maxLength={9} value={formData.e_money_number.replace(/[^0-9/]/g, '')} onChange={handleChange} name="number" id="number" placeholder="238521993" />
+                      <input className={formData.errorMessageEMoneyNumber ? "error_input" : ""} type="text" maxLength={9} value={formData.e_money_number.replace(/[^0-9/]/g, '')} onChange={handleChange} name="number" id="number" placeholder="238521993" />
                     </div>
                     <div className="wrapper-input">
-                      <label htmlFor="pin">e-Money PIN</label>
+                      <label htmlFor="pin" className={formData.errorMessageEMoneyPin ? "error-font" : ""}>e-Money PIN</label>
                       <span>{formData.errorMessageEMoneyPin}</span>
-                      <input type="text" maxLength={4} value={formData.e_money_pin.replace(/[^0-9/]/g, '')} onChange={handleChange} name="pin" id="pin" placeholder="6891" />
+                      <input className={formData.errorMessageEMoneyPin ? "error_input" : ""} type="text" maxLength={4} value={formData.e_money_pin.replace(/[^0-9/]/g, '')} onChange={handleChange} name="pin" id="pin" placeholder="6891" />
                     </div>
                   </div>
                 </fieldset>
@@ -353,7 +360,7 @@ const Checkout = () => {
                 <p>grand total <span>$ {grandTotal.toLocaleString("en", { minimumFractionDigits: 0 })}</span></p>
               </div>
 
-              <button onClick={isFormValid ? handleClickOpenModal : undefined} className={isFormValid ? "" : "disabled"}>continue & pay</button>
+              <button aria-label={isFormValid ? "Click to pay and continue!" : "fill in all inputs and make sure you have items in your cart"} onClick={isFormValid ? handleClickOpenModal : undefined} className={isFormValid ? "" : "disabled"}>continue & pay</button>
             </section>
           </div>
           {

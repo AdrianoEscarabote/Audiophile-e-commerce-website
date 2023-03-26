@@ -46,7 +46,7 @@ const Earphones = () => {
                 <span>new product</span>
                 <h2>YX1 WIRELESS EARPHONES</h2>
                 <p>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
-                <LinkSeeProduct onClick={() => handleClickLink(nameProducts.yx1earphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct aria-label="view product" onClick={() => handleClickLink(nameProducts.yx1earphones)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             </section>
             <ListProducts />
