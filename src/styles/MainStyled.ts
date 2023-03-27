@@ -103,15 +103,6 @@ main {
     max-width: 90rem;
     width: 100%;
     padding: 12.5rem 10.3125rem 0rem 10.3125rem;
-
-    ul {
-      /* padding: 0 1.25rem 0rem 1.25rem; */
-      width: 100%;
-
-      li {
-        padding: 0 0rem 0rem 1.625rem;
-      }
-    }
   
     .grid-items {
       margin-top: 10.5rem;
@@ -325,6 +316,8 @@ main {
   main {
     .content {
       padding: 1.875rem 3.75rem !important;
+      background-size: 103% 100% !important;
+      background-position: 3.5rem -4.0625rem !important;
     } 
   }
 
@@ -346,7 +339,7 @@ main {
 }
 
 // tablet
-@media (max-width: 828px) {
+@media (max-width: 51.75rem) {
   .info {
     margin: 6rem 0rem;
     display: flex !Important;
@@ -364,8 +357,9 @@ main {
       align-items: center;
       justify-content: center;
       background: url("./assets/home/tablet/image-hero.jpg") no-repeat !Important;
-      background-size: 100% 90% !Important;
-      background-position: center -0px !Important;
+      background-size: 660px 100% !Important;
+      padding: 1.875rem 3.75rem !important;
+      background-position: center -4.375rem !Important;
       
       .col1 {
         align-items: center;
@@ -435,9 +429,7 @@ main {
     .content {
       height: 31.875rem !Important;
       padding: 0rem 1.25rem 1.875rem 1.25rem !Important;
-      background: url("./assets/home/mobile/image-hero.jpg") no-repeat !Important;
-      background-size: 100% 90% !Important;
-      background-position: center -0rem !Important;
+      background-position: center -3.375rem !Important; 
       .wrapper {
         width: 100%;
         justify-content: space-between !Important;
@@ -495,6 +487,16 @@ main {
         background-size: 100% 100%;
         background-position: right !Important;
       }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  main {
+    .content {
+      background: url("./assets/home/mobile/image-hero.jpg") no-repeat !Important;
+      background-position: center -5rem !important;
+      background-size: 100% 110% !Important;
     }
   }
 }`

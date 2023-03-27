@@ -102,18 +102,20 @@ const ProductDetail = () => {
               dataFormated.map((product) => (
                 <>
                   <section key={product.id} className="grid-items">
-                    <picture>
-                      <source
-                        srcSet={product.image.tablet}
-                        media="(min-width: 685px) and (max-width: 848px)"
-                      />
-                      <source
-                        srcSet={product.image.mobile}
-                        media="(max-width: 685px)"
-                        height={300}
-                      />
-                      <Image src={product.image.desktop} alt="" width={540} height={560} />
-                    </picture>
+                    <div className="image">
+                      <picture>
+                        <source
+                          srcSet={product.image.tablet}
+                          media="(min-width: 685px) and (max-width: 848px)"
+                        />
+                        <source
+                          srcSet={product.image.mobile}
+                          media="(max-width: 685px)"
+                          height={300}
+                        />
+                        <Image src={product.image.desktop} alt="" width={540} height={560} />
+                      </picture>
+                    </div>
                     <div className="text">
                       <h2>{product.new ? "new product" : null}</h2>
                       <h1>{product.name}</h1>

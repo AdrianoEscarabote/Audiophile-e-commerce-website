@@ -205,6 +205,20 @@ justify-content: center;
   }
 }
 
+@media (min-width: 59.25rem) {
+  .image {
+    width: 33.75rem;
+    height: 35rem;
+    overflow: hidden;
+    img {
+      &:hover {
+        transition: 0.8s ease-in-out;
+        transform: scale(110%);
+      }
+    }
+  }
+}
+
 @media(max-width: 78.5rem) {
   .container {
     padding: 3.75rem 3.75rem 1.875rem 3.75rem;

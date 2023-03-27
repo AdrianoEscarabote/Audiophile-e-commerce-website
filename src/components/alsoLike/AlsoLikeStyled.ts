@@ -41,6 +41,20 @@ h3 {
   }
 }
 
+@media (min-width: 928px) {
+  .other-image {
+    width: 350;
+    height: auto;
+    overflow: hidden;
+    img {
+      &:hover {
+        transition: 0.4s ease-in-out;
+        transform: scale(110%);
+      }
+    }
+  }
+}
+
 @media (max-width: 42.8125rem) {
   margin-top: 5.625rem;
   .grid-items {

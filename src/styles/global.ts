@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import Skeleton from 'react-loading-skeleton';
 
 export const GlobalStyle = createGlobalStyle`
 /* Box sizing rules */

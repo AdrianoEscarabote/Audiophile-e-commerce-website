@@ -221,14 +221,13 @@ const Checkout = () => {
         <div className="container">
           <Link href="/">Go Back</Link>
           <div className="wrapper">
-            {
-              products.length === 0 ? (
-                <p className="empty-cart">Your cart is empty add some product!</p>
-              ) : ""
-            }
             <section className="checkout">
+              {
+                products.length === 0 ? (
+                  <p className="empty-cart">Your cart is empty add some product!</p>
+                ) : null
+              }
               <h1>checkout</h1>
-
               <form noValidate>
                 <fieldset>
                   <legend className="sr-only">Enter your information in all fields</legend>
