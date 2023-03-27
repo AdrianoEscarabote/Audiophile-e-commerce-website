@@ -10,6 +10,7 @@ import { RootState } from "@/types/CheckOutPropsTypes";
 import { useSelector } from "react-redux";
 import rootReducer from "@/redux/root-reducer";
 import { selectProductTotalPrice } from "@/redux/cart/cart.selector";
+import { useCartLocalStorage } from "@/custom/useCartLocalStorage";
 
 const formReducer = (state: FormState, action: Action ) => {
   switch(action.type) {
@@ -54,6 +55,7 @@ const Checkout = () => {
   const [formData, dispatch] = useReducer(formReducer, initialState);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
+  useCartLocalStorage()
 
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -327,8 +329,8 @@ const Checkout = () => {
               <h2>summary</h2>
               <ul>
                 {
-                  products && products.map((product) => (
-                    <li>
+                  products && products.map((product, index) => (
+                    <li key={index}>
                       <div className="details">
                         <Image src={`/assets/cart/image-${product.imagePath}.jpg`} alt="" width={64} height={64} />
                         <div className="price">

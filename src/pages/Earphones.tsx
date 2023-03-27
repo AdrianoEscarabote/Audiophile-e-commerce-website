@@ -6,6 +6,7 @@ import { LinkSeeProduct } from "@/styles/shared/linkSeeProduct";
 import Head from "next/head";
 import { useDispatch } from "react-redux";
 import { findProduct } from "@/redux/productdetails/actions";
+import { useCartLocalStorage } from "@/custom/useCartLocalStorage";
 
 const nameProducts = {
   yx1earphones: "yx1-earphones",
@@ -13,10 +14,13 @@ const nameProducts = {
 
 const Earphones = () => {
   const dispatch = useDispatch();
+  useCartLocalStorage()
 
   const handleClickLink = (nameToFind: string) => {
     dispatch(findProduct(nameToFind))
+    localStorage.setItem("name_product", nameToFind)
   }
+
 
   return (
     <>

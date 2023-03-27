@@ -2,7 +2,7 @@ import ProductDetailStyled from "../styles/ProductDetailStyled";
 import { useSelector } from "react-redux";
 import rootReducer from "@/redux/root-reducer";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridImages from "@/components/gridImages/GridImages";
@@ -15,12 +15,17 @@ import { findProduct } from "@/redux/productdetails/actions";
 import { addProductToCart } from "@/redux/cart/actions";
 import { RootState } from "@/types/CartProps";
 import { ProductTypeCart, RootStateProduct, DataProps } from "@/types/ProductDetailsProps"; 
+import { useCartLocalStorage } from "@/custom/useCartLocalStorage";
 
 const ProductDetail = () => {
+  const effectRan = useRef(false)
   const [quantity, setQuantity] = useState<number>(1)
-
   // name - redux
   const { name } = useSelector((rootReducer: RootStateProduct) => rootReducer.productReducer);
+
+  useEffect(() => {
+    name ? null : dispatch(findProduct(localStorage.getItem("name_product")))
+  }, [])
 
   // data
   const dispatch = useDispatch()
@@ -28,6 +33,7 @@ const ProductDetail = () => {
 
   const clickLinkRenderNewData = (nameToFind: string) => {
     dispatch(findProduct(nameToFind))
+    localStorage.setItem("name_product", nameToFind)
     setQuantity(1)
     refetch()
   }
@@ -42,33 +48,30 @@ const ProductDetail = () => {
     quantity === 1 ? null : setQuantity((quantity) => quantity - 1)
   }
 
-  const ProductToCart: ProductTypeCart = {
-   id: 0,
-   imagePath: "",
-   name: "",
-   price: 0,
-   quantity: 0
-  }
-
   const handleAddProduct = () => {
-    dispatch(addProductToCart(ProductToCart))
-  } 
-
-  useEffect(() => {
-    dataFormated.map(product => ProductToCart.id = product.id)
-    dataFormated.map(product => ProductToCart.name = product.name)
-    dataFormated.map(product => ProductToCart.imagePath = product.slug)
-    dataFormated.map(product => ProductToCart.price = product.price)
-    dataFormated.map(() => ProductToCart.quantity = quantity)
-  }, [dataFormated])
-
-
+    const ProductToCart: ProductTypeCart = {
+      id: dataFormated[0].id,
+      imagePath: dataFormated[0].slug,
+      name: dataFormated[0].name,
+      price: dataFormated[0].price,
+      quantity: quantity
+    };
+    dispatch(addProductToCart(ProductToCart));
+  }; 
+  
   const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
 
+  useCartLocalStorage();
+  
   useEffect(() => {
     // save cart data to localStorage whenever cart state changes
-    const cartString = JSON.stringify(products)
-    localStorage.setItem("cart", cartString)
+    if (effectRan.current === true) {
+      const cartString = JSON.stringify(products)
+      localStorage.setItem("cart", cartString)
+    }
+    return () => {
+      effectRan.current = true
+    }
   }, [products])
 
   return (
@@ -84,8 +87,8 @@ const ProductDetail = () => {
             {
               dataFormated &&
               dataFormated.map((product) => (
-                <>
-                  <section key={product.id} className="grid-items">
+                <div key={product.id}>
+                  <section className="grid-items">
                     <div className="image">
                       <picture>
                         <source
@@ -139,7 +142,7 @@ const ProductDetail = () => {
                   </section>
                   <GridImages gallery={product.gallery} />
                   <AlsoLike others={product.others} clickLinkRenderNewData={clickLinkRenderNewData} />
-                </>
+                </div>
               ))
             }
           </>

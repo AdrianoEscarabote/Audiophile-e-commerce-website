@@ -6,6 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { findProduct } from "@/redux/productdetails/actions";
+import { useCartLocalStorage } from "@/custom/useCartLocalStorage";
 
 const nameProducts = { 
   zx9speaker: "zx9-speaker",
@@ -14,9 +15,11 @@ const nameProducts = {
 
 const Speakers = () => {
   const dispatch = useDispatch();
+  useCartLocalStorage()
 
-  const handleClickLink = (nameToString: string) => {
-    dispatch(findProduct(nameToString))
+  const handleClickLink = (nameToFind: string) => {
+    dispatch(findProduct(nameToFind))
+    localStorage.setItem("name_product", nameToFind)
   }
 
   return (

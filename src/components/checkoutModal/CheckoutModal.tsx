@@ -25,6 +25,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
   });
 
   const handleCleanCart = () => {
+    localStorage.clear()
     dispatch(cleanCart());
   };
 
@@ -60,8 +61,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ closeModal }) => {
         </div>
 
         <Link href="/" onClick={() => {
-          closeModal()
           handleCleanCart()
+          closeModal()
         }}>back to home</Link>
       </section>
     </CheckoutModalStyled>
