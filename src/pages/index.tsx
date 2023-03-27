@@ -7,7 +7,7 @@ import { findProduct } from '@/redux/productdetails/actions';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { addProductToCart, cleanCart } from '@/redux/cart/actions';
-import { ProductTypes } from '@/types/CartProps';
+import { ProductTypes } from '@/types/CartReducerTypes';
 
 const nameProducts = {
   zx9speaker: "zx9-speaker", 
@@ -22,6 +22,18 @@ const Home = () => {
   const handleClickLink = (name: string) => {
     dispatch(findProduct(name))
   }
+
+  useEffect(() => {
+    // retrieve cart data from localStorage when component mounts
+    const savedCart = localStorage.getItem('cart')
+    if (savedCart) {
+      dispatch(cleanCart()) // clear the cart before adding new products
+      const parsedCart: ProductTypes[] = JSON.parse(savedCart)
+      parsedCart.forEach((product) => {
+        dispatch(addProductToCart(product))
+      })
+    }
+  }, [])
 
   return (
     <>

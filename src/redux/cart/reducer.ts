@@ -10,11 +10,11 @@ const cartReducer = (state = initialState, action: ActionProps) => {
   
   switch(action.type) {
     case cartActionTypes.ADD_PRODUCT:
-      // verificar se o produto já está no carrinho
+      // check if the product is already in the cart
       const productIsAlreadyInCart = state.products.some(
         (product) => product.id === action.payload.id
       )
-      // se ele estiver, aumentar a sua quantidade em 1
+      // if he is, increase his amount by 1
       if (productIsAlreadyInCart) {
         return {
           ...state,
@@ -23,7 +23,7 @@ const cartReducer = (state = initialState, action: ActionProps) => {
             : product)
         }
       }
-      // se ele não estiver, adicioná-lo
+      // if it isn't, add it
       return {
         ...state,
         products: [...state.products, {...action.payload, quantity: action.payload.quantity}]

@@ -10,27 +10,11 @@ import AlsoLike from "@/components/alsoLike/AlsoLike";
 import ListProducts from "@/components/list_products/ListProducts";
 import InfoComponent from "@/components/infoSection/InfoComponent";
 import useFetch from "@/custom/useFetch";
-import { DataProps } from "@/types/ProductDetailsProps";
 import { useDispatch } from "react-redux";
 import { findProduct } from "@/redux/productdetails/actions";
 import { addProductToCart } from "@/redux/cart/actions";
 import { RootState } from "@/types/CartProps";
-
-interface ProductTypeCart {
-  name: string,
-  price: number,
-  imagePath: string,
-  quantity: number,
-  id: number
-}
-
-interface productState {
-  name: string
-};
-
-interface RootStateProduct {
-  productReducer: productState;
-};
+import { ProductTypeCart, RootStateProduct, DataProps } from "@/types/ProductDetailsProps"; 
 
 const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1)
@@ -82,7 +66,7 @@ const ProductDetail = () => {
   const { products } = useSelector((rootReducer: RootState) => rootReducer.cartReducer);
 
   useEffect(() => {
-    // salvar dados do carrinho no localStorage sempre que o estado do carrinho mudar
+    // save cart data to localStorage whenever cart state changes
     const cartString = JSON.stringify(products)
     localStorage.setItem("cart", cartString)
   }, [products])

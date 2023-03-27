@@ -403,6 +403,7 @@ justify-content: center;
   font-size: 26px;
   font-weight: 700;
   color: #CD2C2C;
+  margin-bottom: 20px;
 }
 
 .error-font {

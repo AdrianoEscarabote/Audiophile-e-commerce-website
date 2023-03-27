@@ -258,7 +258,7 @@ a {
     }
   }
 }
-@media (max-height: 620px) {
+@media (max-height: 38.75rem) {
   overflow-y: scroll !important;
   height: 70%;
   top: 0.5rem;

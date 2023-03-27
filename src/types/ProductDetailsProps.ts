@@ -87,3 +87,19 @@ export interface DataProps {
     }
   ]
 }
+
+export interface ProductTypeCart {
+  name: string,
+  price: number,
+  imagePath: string,
+  quantity: number,
+  id: number
+}
+
+export interface productState {
+  name: string
+};
+
+export interface RootStateProduct {
+  productReducer: productState;
+};

@@ -167,10 +167,10 @@ const Checkout = () => {
   function handleClickOutside(event: MouseEvent) {
     if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
       if (listRef.current && listRef.current.contains(event.target as Node)) {
-        // Clicou dentro da lista de países, não faz nada
+        // Clicked inside the list of countries, does nothing
         null
       } else {
-        // Clicou fora da lista de países, fecha a lista
+        // Clicked outside the list of countries, date the list
         setCountriesListOpen(false);
       }
     }
@@ -216,6 +216,7 @@ const Checkout = () => {
     <>
       <Head>
         <title>Audiophile - Checkout</title>   
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <CheckoutStyled>
         <div className="container">

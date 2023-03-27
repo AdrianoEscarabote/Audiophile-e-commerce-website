@@ -140,7 +140,7 @@ section {
 }
 
 @media (max-width: 36.25rem) {
-  padding: 0px 10px;
+  padding: 0rem 0.625rem;
   section {
     padding: 2rem 1.25rem !important;
     height: auto;
@@ -160,13 +160,13 @@ section {
     }
     h2 {
       margin: 1.25rem 0rem 1rem 0rem;
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 1.5rem;
+      line-height: 1.75rem;
     }
   }
 }
 
-@media (max-height: 640px) {
+@media (max-height: 40rem) {
   section {
     height: 440px !Important;
     overflow-y: scroll !Important;
