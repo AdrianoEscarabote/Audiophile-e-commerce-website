@@ -1,9 +1,5 @@
 - Deploy [click here](https://audiophile-e-commerce-website-adrianoescarabote.vercel.app/)
 
-# VIDEO
-
-// video here
-
 # Frontend Mentor - Audiophile e-commerce website solution
 
 This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -13,6 +9,7 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 - [Overview](#overview)
   - [The challenge](#the-challenge)
 - [My process](#my-process)
+  - [Screenshot](#screenshot)
   - [Built with](#built-with)
   - [Continued development](#continued-development)
 - [Author](#author)
@@ -34,6 +31,10 @@ Users should be able to:
   - VAT is calculated as 20% of the product total, excluding shipping
 - See an order confirmation modal after checking out with an order summary
 - **Bonus**: Keep track of what's in the cart, even after refreshing the browser 
+
+### Screenshot
+
+![](./screenshot/desktop-main.jpeg)
 
 ## My process
 
