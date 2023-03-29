@@ -3,6 +3,10 @@ import styled from "styled-components";
 const AlsoLikeStyled = styled.section`
 margin-top: 10rem;
 
+img {
+  object-fit: cover;
+}
+
 h3 {
   font-weight: 700;
   font-size: 2rem;

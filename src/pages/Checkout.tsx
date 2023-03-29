@@ -335,11 +335,15 @@ const Checkout = () => {
                         <Image src={`/assets/cart/image-${product.imagePath}.jpg`} alt="" width={64} height={64} />
                         <div className="price">
                           <p className="name">{product.name}</p>
-                          <span>$ {product.price}</span>
+                          <p>
+                            <span>$ {product.price}</span>
+                          </p>
                         </div>
                       </div>
                       <div className="amount">
-                        <span>x{product.quantity}</span>
+                        <p>
+                          <span>x{product.quantity}</span>
+                        </p>
                       </div>
                     </li>
                   ))

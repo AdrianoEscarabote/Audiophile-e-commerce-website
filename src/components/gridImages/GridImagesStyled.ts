@@ -14,6 +14,7 @@ margin-top: 10rem;
 }
 img {
   border-radius: 0.5rem;
+  object-fit: cover;
 }
 
 .col2 {

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { darkOrange, lightOrange } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
 /* Box sizing rules */
@@ -9,6 +10,9 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 /* Remove default margin */
 body,
@@ -74,8 +78,30 @@ select {
   clip: rect(0,0,0,0);
   border: 0;
 }
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 body {
   text-rendering: optimizeSpeed;
+  &::-webkit-scrollbar {
+    width: 0.75rem;              
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${darkOrange};    
+    &:hover {
+      background: ${lightOrange};
+    }    
+  }
 }
 body.overflow-hidden {
   overflow: hidden;

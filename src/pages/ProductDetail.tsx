@@ -120,7 +120,7 @@ const ProductDetail = () => {
                   </section>
                   <section className="details">
                     <div className="features">
-                      <h3>features</h3>
+                      <h2>features</h2>
                       <p>{product.feature1}</p>
                       <p>{product.feature2}</p>
                     </div>

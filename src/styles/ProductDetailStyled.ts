@@ -31,6 +31,12 @@ justify-content: center;
     grid-template-columns: 50% 50%;
     margin-top: 3.5rem;
 
+    .image {
+      img {
+        object-fit: cover;
+      }
+    }
+
     .text {
       justify-self: flex-end;
       display: flex;
@@ -205,7 +211,7 @@ justify-content: center;
   }
 }
 
-@media (min-width: 59.25rem) {
+@media (min-width: 62.375rem) {
   .image {
     width: 33.75rem;
     height: 35rem;

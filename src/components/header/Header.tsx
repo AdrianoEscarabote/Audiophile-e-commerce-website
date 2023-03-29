@@ -32,7 +32,7 @@ export const Header = () => {
     <HeaderStyled>
       <div className="container">
         <div className="content">
-          <nav>
+          <nav aria-label="main">
             <div className="wrapper-nav">
               <button onClick={handleClickMenu} aria-label={menuOpen ? "close menu" : "open menu"}>
                 <Image src={menuOpen ? "/assets/shared/tablet/icon-menu-close.svg" : "/assets/shared/tablet/icon-menu.svg"} alt="" width="23" height="20" />
@@ -61,14 +61,31 @@ export const Header = () => {
               ) :
               null
             }
-            <button aria-expanded={cartOpen} className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
-            <Image 
-            src="./assets/shared/desktop/icon-cart.svg"
-            width="23"
-            height="20"
-            alt="" />
-            <span className="product_count">{ProductsCount != 0 ? ProductsCount : null}</span>
-            </button>  
+            <div className="cart">
+              <button
+                aria-expanded={cartOpen}
+                className={cartOpen ? "cart-open" : ""}
+                onClick={handleClickCart}
+                aria-label={cartOpen ? "close cart" : "open cart"}
+              >
+                <Image
+                  src="./assets/shared/desktop/icon-cart.svg"
+                  width="23"
+                  height="20"
+                  alt=""
+                />
+                <span className="visually-hidden" aria-live="polite">
+                  {ProductsCount !== 0 ? `Items in cart: ${ProductsCount}` : null}
+                </span>
+              </button>
+              {
+                ProductsCount !== 0 ?
+                <span>
+                  {ProductsCount}
+                </span>
+                : null
+              }
+            </div>
           </nav>
         </div> 
       </div>

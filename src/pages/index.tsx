@@ -43,7 +43,7 @@ const Home = () => {
           <ListProducts />
           <section className="grid-items">
             <div className="zx9-speaker">
-              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="380" height="466" />
+              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="Product ZX9 Speaker" width="380" height="466" />
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
@@ -62,7 +62,7 @@ const Home = () => {
                   srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
                   media="(max-width: 828px)"
                 />
-                <Image src="/assets/home/desktop/image-earphones-yx1.jpg" alt="" width="540" height="320" />
+                <Image src="/assets/home/desktop/image-earphones-yx1.jpg" alt="Product Yx1 Earphones" width="540" height="320" />
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
