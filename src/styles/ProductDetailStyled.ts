@@ -40,7 +40,7 @@ justify-content: center;
       max-width: 27.8125rem;
       
 
-      h2 {
+      .new-product {
         font-weight: 400;
         font-size: 0.875rem;
         line-height: 1.1875rem;

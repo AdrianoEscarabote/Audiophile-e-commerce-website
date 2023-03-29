@@ -32,7 +32,7 @@ const Home = () => {
         <section className="hero-image">
           <div className="content">
             <div className="col1">
-              <h2>new product</h2>
+              <p className="new-product">new product</p>
               <h1>XX99 Mark II Headphones</h1>
               <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p> 
               <Link aria-label='view product' href='/ProductDetail' onClick={() => handleClickLink(nameProducts.xx99markiiheadphones)}>see product</Link>
@@ -43,17 +43,17 @@ const Home = () => {
           <ListProducts />
           <section className="grid-items">
             <div className="zx9-speaker">
-              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="380" height="473" />
+              <Image src="/assets/home/desktop/image-speaker-zx9.png" alt="" width="380" height="466" />
               <div className="text">
                 <h2>ZX9 SPEAKER</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <Link aria-label='view product' href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</Link>
+                <Link aria-label='Product ZX9 Speaker' href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx9speaker)}>see product</Link>
               </div>
             </div>
             <div className="zx7-speaker">
               <div className="text">
                 <h3>zx7 speaker</h3>
-                <Link href="/ProductDetail" onClick={() => handleClickLink(nameProducts.zx7speaker)}>see product</Link>
+                <Link href="/ProductDetail" aria-label="Product ZX7 Speaker" onClick={() => handleClickLink(nameProducts.zx7speaker)}>see product</Link>
               </div>
             </div>
             <div className="yx1-earphones">
@@ -66,7 +66,7 @@ const Home = () => {
               </picture>
               <div className="text">
                 <h3>YX1 EARPHONES</h3>
-                <Link aria-label='view product' href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</Link>
+                <Link aria-label={`Product Yx1 Earphones`} href="/ProductDetail" onClick={() => handleClickLink(nameProducts.yx1earphones)}>see product</Link>
               </div>
             </div>
           </section>

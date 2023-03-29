@@ -30,11 +30,15 @@ flex-direction: column;
   width: 100%;
   padding: 7.5rem 10.3125rem 1.875rem 10.3125rem;
 
-
   .zx9,
   .zx7 {
     display: flex;
     justify-content: space-between;
+
+    img {
+      border-radius: 0.5rem;
+      object-fit: cover;
+    }
     
     .text {
       display: flex;

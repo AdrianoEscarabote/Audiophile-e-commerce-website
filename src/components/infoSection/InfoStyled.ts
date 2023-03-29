@@ -11,6 +11,7 @@ img {
   border-radius: 0.5rem;
   position: relative;
   left: 16px;
+  object-fit: cover;
 }
 
 .text-info {
@@ -39,7 +40,7 @@ img {
     line-height: 1.5625rem;
     color: ${black};
     mix-blend-mode: normal;
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 

@@ -8,7 +8,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ className, linkClick }) => 
   return (
     <ListProductsStyled className={className}>
       <li>
-        <Link href="/Headphones" onClick={linkClick}>
+        <Link aria-label="Headphones page - Audiophile" href="/Headphones" onClick={linkClick}>
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-headphones.png" width="200" height="200" alt=""  />
           <p>headphones
             <span>
@@ -19,8 +19,8 @@ const ListProducts: React.FC<ListProductsProps> = ({ className, linkClick }) => 
         </Link>
       </li>
       <li>
-        <Link href="/Speakers" onClick={linkClick}>
-          <Image className='img'  src="/assets/shared/desktop/image-category-thumbnail-speakers.png"  width="200" height="200" alt=""  />
+        <Link aria-label="Speakers page - Audiophile" href="/Speakers" onClick={linkClick}>
+          <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-speakers.png" width="200" height="200" alt=""  />
           <p>speakers
             <span>
               shop
@@ -30,7 +30,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ className, linkClick }) => 
         </Link>
       </li>
       <li>
-        <Link href="/Earphones" onClick={linkClick}>
+        <Link aria-label="Earphones page - Audiophile" href="/Earphones" onClick={linkClick}>
           <Image className='img' src="/assets/shared/desktop/image-category-thumbnail-earphones.png"  width="220" height="200" alt=""  />
           <p>earphones
             <span>

@@ -25,13 +25,13 @@ export const Footer = () => {
         <div className="row2">
           <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
           <div className="social-icons">
-            <a href="/" aria-label="go to our facebook">
+              <a href="https://www.facebook.com/" target={"_blank"} aria-label="Facebook">
               <Image src="/assets/shared/desktop/icon-facebook.svg" alt="" width="24" height="24" />
             </a>
-            <a href="" aria-label="go to our twitter">
+            <a href="https://twitter.com/" target={"_blank"} aria-label="Twitter">
               <Image src="/assets/shared/desktop/icon-twitter.svg" alt="" width="24" height="24" />
             </a>
-            <a href="" aria-label="go to our instagram">
+            <a href="https://www.instagram.com/" target={"_blank"} aria-label="Instagram">
               <Image src="/assets/shared/desktop/icon-instagram.svg" alt="" width="24" height="24" />
             </a>
           </div>

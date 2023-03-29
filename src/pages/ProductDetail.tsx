@@ -104,7 +104,7 @@ const ProductDetail = () => {
                       </picture>
                     </div>
                     <div className="text">
-                      <h2>{product.new ? "new product" : null}</h2>
+                      <p className="new-product">{product.new ? "new product" : null}</p>
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>
                       <span className="price">$ {product.price}</span>

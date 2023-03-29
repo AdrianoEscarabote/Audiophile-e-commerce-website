@@ -41,6 +41,7 @@ align-items: center;
 
       img {
         border-radius: 0.5rem;
+        object-fit: cover;
       }
   
       .text {

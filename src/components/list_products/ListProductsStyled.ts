@@ -73,7 +73,7 @@ li {
     text-transform: uppercase;
     color: ${black};
     mix-blend-mode: normal;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 

@@ -31,54 +31,47 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <div className="container">
-    
         <div className="content">
-
-          <div className="wrapper">
-
-            <button onClick={handleClickMenu} aria-label={menuOpen ? "close menu" : "open menu"}>
-              <Image src={menuOpen ? "/assets/shared/tablet/icon-menu-close.svg" : "/assets/shared/tablet/icon-menu.svg"} alt="" width="23" height="20" />
-            </button>
-
-            <Link href="/">
-              <Image 
-              src="./assets/shared/desktop/logo.svg"
-              alt="main page" 
-              width="143"
-              height="25" />
-            </Link>
-
-          </div>
-
           <nav>
+            <div className="wrapper-nav">
+              <button onClick={handleClickMenu} aria-label={menuOpen ? "close menu" : "open menu"}>
+                <Image src={menuOpen ? "/assets/shared/tablet/icon-menu-close.svg" : "/assets/shared/tablet/icon-menu.svg"} alt="" width="23" height="20" />
+              </button>
+              <Link href="/" aria-label="Home page - Audiophile">
+                <Image 
+                src="./assets/shared/desktop/logo.svg"
+                alt="main page" 
+                width="143"
+                height="25" />
+              </Link>
+            </div>
             <ul className="list-desktop">
-              <li><Link href="/">home</Link></li>
-              <li><Link href="/Headphones">headphones</Link></li>
-              <li><Link href="/Speakers">speakers</Link></li>
-              <li><Link href="/Earphones">earphones</Link></li>
+              <li><Link href="/" aria-label="Home page - Audiophile">home</Link></li>
+              <li><Link href="/Headphones" aria-label="Headphones page - Audiophile">headphones</Link></li>
+              <li><Link href="/Speakers" aria-label="Speakers page - Audiophile">speakers</Link></li>
+              <li><Link href="/Earphones" aria-label="Earphones page - Audiophile">earphones</Link></li>
             </ul>
-          </nav>
-
-          <button className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
+            {
+              cartOpen ? (
+                <div className="wrapper-cart" onClick={handleClickCart}>
+                  <div className="content-cart" onClick={handleClickCart}> 
+                    <Cart closeCart={handleClickCart} cartOpen={cartOpen} /> 
+                  </div>
+                </div>
+              ) :
+              null
+            }
+            <button aria-expanded={cartOpen} className={cartOpen ? "cart-open" : ""} onClick={handleClickCart} aria-label={cartOpen ? "close cart" : "open cart"}>
             <Image 
             src="./assets/shared/desktop/icon-cart.svg"
             width="23"
             height="20"
             alt="" />
-            <span>{ProductsCount != 0 ? ProductsCount : null}</span>
-          </button>  
+            <span className="product_count">{ProductsCount != 0 ? ProductsCount : null}</span>
+            </button>  
+          </nav>
         </div> 
       </div>
-      {
-        cartOpen ? (
-          <div className="wrapper-cart" onClick={handleClickCart}>
-            <div className="content-cart" onClick={handleClickCart}> 
-              <Cart closeCart={handleClickCart} cartOpen={cartOpen} /> 
-            </div>
-          </div>
-        ) :
-        null
-      }
       {
         menuOpen ? (
           <>

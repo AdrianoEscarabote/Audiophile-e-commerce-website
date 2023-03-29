@@ -43,7 +43,7 @@ main {
           bottom: 0.6875rem;
         }
   
-        h2 {
+        .new-product {
           font-weight: 400;
           font-size: 0.875rem;
           line-height: 1.1875rem;
@@ -83,16 +83,16 @@ main {
           transition: 0.2s ease-in-out;
           position: relative;
           bottom: 2.875rem;
-          background-color: ${darkOrange};
-          border: unset;
+          background-color: transparent;
+          border: 1px solid ${darkOrange};
           color: ${white};
 
           &:hover {
-            background-color: ${lightOrange} !important;
+            background-color: ${darkOrange} !important;
           }
 
           &:focus {
-            background-color: ${lightOrange};
+            background-color: ${darkOrange};
             outline: 0.1625rem dotted ${white};
           }
         }
@@ -261,11 +261,12 @@ main {
       grid-template-columns: 50% 50%;
       place-content: center;
       margin: 12.5rem 0rem;
-
+      
       img {
         border-radius: 0.5rem;
         position: relative;
         left: 16px;
+        object-fit: cover;
       }
 
       .text-info {
@@ -294,7 +295,7 @@ main {
           line-height: 1.5625rem;
           color: ${black};
           mix-blend-mode: normal;
-          opacity: 0.5;
+          opacity: 0.8;
         }
       }
     }

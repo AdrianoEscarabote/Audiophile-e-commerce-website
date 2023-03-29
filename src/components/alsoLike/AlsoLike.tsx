@@ -28,7 +28,7 @@ const AlsoLike: React.FC<AlsoLikeProps> = ({ others, clickLinkRenderNewData }) =
                   </picture>
                 </div>
                 <h4>{item.name}</h4>
-                <LinkSeeProduct onClick={() => clickLinkRenderNewData(item.slug)} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
+                <LinkSeeProduct onClick={() => clickLinkRenderNewData(item.slug)} aria-label={item.name} backgroundcolor="#D87D4A" hoverbackground="#FBAF85" fontcolor="#FFFFFF" href="/ProductDetail">see product</LinkSeeProduct>
               </div>
             ))
           }
