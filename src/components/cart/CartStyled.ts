@@ -1,4 +1,4 @@
-import { black, white, almostWhite, darkOrange, lightOrange, hoverBtnMain } from "@/styles/colors";
+import { black, white, almostWhite, darkOrange, lightOrange, hoverBtnMain } from "../../styles/colors";
 import styled from "styled-components";
 
 const CartStyled = styled.section`

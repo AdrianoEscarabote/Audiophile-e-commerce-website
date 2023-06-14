@@ -4,10 +4,9 @@ import { useEffect } from "react"
 import CartStyled from "./CartStyled"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import rootReducer from "@/redux/root-reducer"
-import { cleanCart, Decrease, Increase } from "@/redux/cart/actions"
+import { cleanCart, Decrease, Increase } from "../../redux/cart/actions"
 import { CartProps, RootState } from "@/types/CartProps"
-import { selectProductTotalPrice, selectProductsCount } from "@/redux/cart/cart.selector"
+import { selectProductTotalPrice, selectProductsCount } from "../../redux/cart/cart.selector"
 
 export const Cart: React.FC<CartProps> = ({ cartOpen, closeCart }) => {
 
