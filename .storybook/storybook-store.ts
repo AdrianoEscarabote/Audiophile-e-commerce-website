@@ -1,8 +1,8 @@
 import { createStore } from "redux"
 import rootReducer from "../src/redux/root-reducer"
-import teste from "../src/testUtils/index"
+import getMockState from "../src/testUtils/getMockState"
 
-const initialState = teste()
+const initialState = getMockState()
 
 const store = createStore(rootReducer, initialState)
 
