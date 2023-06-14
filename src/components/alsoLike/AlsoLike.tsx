@@ -1,4 +1,4 @@
-import { LinkSeeProduct } from "@/styles/shared/linkSeeProduct";
+import { LinkSeeProduct } from "../../styles/shared/linkSeeProduct";
 import Image from "next/image";
 import AlsoLikeStyled from "./AlsoLikeStyled";
 import { ItemTypes, AlsoLikeProps } from "@/types/AlsoLikeProps";

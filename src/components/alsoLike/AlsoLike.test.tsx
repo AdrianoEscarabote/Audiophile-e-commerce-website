@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import AlsoLike from './AlsoLike'
 
 const others = [
@@ -39,6 +39,18 @@ describe("Also Like Component", () => {
       <AlsoLike others={others} clickLinkRenderNewData={() => {}}  />
     )
 
+  })
+
+  it("should render correctly with the data passed", async () => {
+
+    render(
+      <AlsoLike others={others} clickLinkRenderNewData={() => {}}  />
+    )
+
+    const productName = await screen.findByText("XX99 Mark I")
+
+    expect(productName).toBeInTheDocument()
+    
   })
 
 })
