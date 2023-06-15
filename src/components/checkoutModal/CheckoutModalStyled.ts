@@ -1,4 +1,4 @@
-import { almostWhite, black, darkOrange, lightOrange, white } from "@/styles/colors";
+import { almostWhite, black, darkOrange, lightOrange, white } from "../../styles/colors";
 import styled from "styled-components";
 
 const CheckoutModalStyled = styled.div`

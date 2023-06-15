@@ -1,5 +1,5 @@
-import { cleanCart } from "@/redux/cart/actions";
-import { selectProductsCount, selectProductTotalPrice } from "@/redux/cart/cart.selector";
+import { cleanCart } from "../../redux/cart/actions";
+import { selectProductsCount, selectProductTotalPrice } from "../../redux/cart/cart.selector";
 import { RootState } from "@/types/CartProps";
 import Image from "next/image";
 import Link from "next/link";
