@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // colors
-import { almostBlack, black, darkOrange, white } from "../../styles/colors";
+import { almostBlack, darkOrange, white } from "../../styles/colors";
 
 export const HeaderStyled = styled.header`
 background: ${almostBlack};

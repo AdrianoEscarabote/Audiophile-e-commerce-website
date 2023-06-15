@@ -1,11 +1,11 @@
-import { HeaderStyled } from "@/components/header/HeaderStyled";
+import { HeaderStyled } from "./HeaderStyled";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Cart } from "../cart/Cart";
 import ListProducts from "../list_products/ListProducts";
 import { useSelector } from "react-redux";
-import { selectProductsCount } from "@/redux/cart/cart.selector";
+import { selectProductsCount } from "../../redux/cart/cart.selector";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
