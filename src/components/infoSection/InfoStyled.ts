@@ -1,4 +1,4 @@
-import { black, darkOrange } from "@/styles/colors";
+import { black, darkOrange } from "../../styles/colors";
 import styled from "styled-components";
 
 const InfoStyled = styled.section`
