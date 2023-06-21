@@ -1,4 +1,4 @@
-import { FooterStyled } from "@/components/footer/FooterStyled"
+import { FooterStyled } from "./FooterStyled"
 import Image from "next/image"
 import Link from "next/link";
 

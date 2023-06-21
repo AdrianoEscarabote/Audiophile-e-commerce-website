@@ -1,9 +1,9 @@
-import { render } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { Cart } from "./Cart"
 import configureMockStore from 'redux-mock-store';
 import getCartMockState from "../../testUtils/getCartMockState"
 import { Provider } from "react-redux";
-import { Decrease, Increase, cleanCart } from "../../redux/cart/actions";
+import { Decrease, Increase } from "../../redux/cart/actions";
 
 const mockStore = configureMockStore()
 
@@ -22,15 +22,18 @@ describe("Cart Component", () => {
     jest.clearAllMocks()
   })
   
-  it("should render correctly", () => {
+  it("should render correctly", async () => {
     render(
       <Provider store={store}>
         <Cart cartOpen={true} closeCart={() => {}} />
       </Provider>
     )
+    const productName = await screen.findByText("XX99 Mark I Headphones")
+    
+    expect(productName).toBeInTheDocument()
   })
 
-  it("should clear cart", () => {
+  it("should clea cart", async () => {
 
     render(
       <Provider store={store}>
@@ -38,7 +41,9 @@ describe("Cart Component", () => {
       </Provider>
     )
 
-    store.dispatch(cleanCart())
+    const buttonClearCart = await screen.findByText("Remove all")
+
+    fireEvent.click(buttonClearCart)
 
     const actions = store.getActions()
 

@@ -1,4 +1,4 @@
-import { almostWhite, black, darkOrange } from "@/styles/colors";
+import { almostWhite, black, darkOrange } from "../../styles/colors";
 import styled from "styled-components";
 
 const ListProductsStyled = styled.ul`
